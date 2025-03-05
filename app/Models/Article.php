@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\ServiceCategoryEnum;
+use App\Enums\ServiceCategoryEnum;
 use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
