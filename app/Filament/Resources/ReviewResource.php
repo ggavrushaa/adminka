@@ -21,6 +21,11 @@ class ReviewResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-star';
 
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
     public static function form(Form $form): Form
     {
         return $form
@@ -42,22 +47,22 @@ class ReviewResource extends Resource
                                 TextInput::make('quote_uk')->label('Цитата')->required(),
                                 TextInput::make('text_uk')->label('Текст')->required(),
                             ]),
-                        ]),
-                        Forms\Components\Select::make('rating')->label('Оценка')->options([
-                            1 => '1',
-                            2 => '2',
-                            3 => '3',
-                            4 => '4',    
-                            5 => '5',
-                        ])->required(),
-                        Forms\Components\TextInput::make('author')->label('Автор')->required(),
-                        Forms\Components\TextInput::make('position')->label('Должность'),
-                        Forms\Components\TextInput::make('project_name')->label('Название проекта')->required(),
-                        Forms\Components\TextInput::make('link')->label('Ссылка')->url(),
-                        Forms\Components\Select::make('source_id')->label('Сайт')
-                        ->options(ReviewSource::all()->pluck('name', 'id'))
-                        ->searchable(),
-                        Forms\Components\Toggle::make('show_on_site')->label('Показывать на сайте'),
+                    ]),
+                Forms\Components\Select::make('rating')->label('Оценка')->options([
+                    1 => '1',
+                    2 => '2',
+                    3 => '3',
+                    4 => '4',
+                    5 => '5',
+                ])->required(),
+                Forms\Components\TextInput::make('author')->label('Автор')->required(),
+                Forms\Components\TextInput::make('position')->label('Должность'),
+                Forms\Components\TextInput::make('project_name')->label('Название проекта')->required(),
+                Forms\Components\TextInput::make('link')->label('Ссылка')->url(),
+                Forms\Components\Select::make('source_id')->label('Сайт')
+                    ->options(ReviewSource::all()->pluck('name', 'id'))
+                    ->searchable(),
+                Forms\Components\Toggle::make('show_on_site')->label('Показывать на сайте'),
             ]);
     }
 

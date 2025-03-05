@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ServiceCategoryResource\Pages;
-use App\Filament\Resources\ServiceCategoryResource\RelationManagers;
-use App\Models\ServiceCategory;
+use App\Filament\Resources\MediaResource\Pages;
+use App\Filament\Resources\MediaResource\RelationManagers;
+use App\Models\Media;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,17 +13,21 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class ServiceCategoryResource extends Resource
+class MediaResource extends Resource
 {
-    protected static ?string $model = ServiceCategory::class;
+    protected static ?string $model = Media::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                //
+                Forms\Components\TextInput::make('name')->label('Название')->required(),
+                Forms\Components\FileUpload::make('image')->label('Картинка')->image()->directory('media'),
+                Forms\Components\FileUpload::make('image_white')->label('Картинка белая')->image()->directory('media'),
+                Forms\Components\Toggle::make('show_on_site')->label('Показывать на сайте'),
             ]);
     }
 
@@ -33,21 +37,20 @@ class ServiceCategoryResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('id')->label('#'),
                 Tables\Columns\TextColumn::make('name')->label('Название'),
+                Tables\Columns\ToggleColumn::make('show_on_site')->label('Показывать на сайте'),
             ])
-            ->reorderable('order_column')
-            ->defaultSort('order_column')
             ->filters([
                 //
             ])
             ->actions([
-                // Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
-            
     }
 
     public static function getRelations(): array
@@ -60,9 +63,9 @@ class ServiceCategoryResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListServiceCategories::route('/'),
-            // 'create' => Pages\CreateServiceCategory::route('/create'),
-            'edit' => Pages\EditServiceCategory::route('/{record}/edit'),
+            'index' => Pages\ListMedia::route('/'),
+            'create' => Pages\CreateMedia::route('/create'),
+            'edit' => Pages\EditMedia::route('/{record}/edit'),
         ];
     }
 }

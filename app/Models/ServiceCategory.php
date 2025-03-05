@@ -9,7 +9,7 @@ class ServiceCategory extends Model
     protected $table = 'service_categories';
 
     protected $fillable = [
-        'name',
+        'name', 'order_column',
     ];
 
     public static function syncWithEnum()
