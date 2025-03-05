@@ -16,6 +16,8 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class ServiceCategoryResource extends Resource
 {
     protected static ?string $model = ServiceCategory::class;
+    protected static ?string $pluralModelLabel = 'Категории услуг';
+    protected static ?string $navigationGroup = 'Услуги';
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 

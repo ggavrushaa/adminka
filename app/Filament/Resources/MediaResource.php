@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class MediaResource extends Resource
 {
     protected static ?string $model = Media::class;
+    protected static ?string $pluralModelLabel = 'Медиа';
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 

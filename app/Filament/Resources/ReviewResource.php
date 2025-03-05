@@ -18,8 +18,10 @@ use App\Models\ReviewSource;
 class ReviewResource extends Resource
 {
     protected static ?string $model = Review::class;
+    protected static ?string $pluralModelLabel = 'Отзывы';
 
     protected static ?string $navigationIcon = 'heroicon-o-star';
+    protected static ?string $navigationBadgeTooltip = 'Количество отзывов';
 
     public static function getNavigationBadge(): ?string
     {

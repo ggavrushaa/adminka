@@ -18,9 +18,10 @@ class WorkResource extends Resource
 {
     protected static ?string $model = Work::class;
 
-    protected static ?string $pluralModelLabel = 'Cases';
+    protected static ?string $pluralModelLabel = 'Кейсы';
 
     protected static ?string $navigationIcon = 'heroicon-m-briefcase';
+    protected static ?string $navigationBadgeTooltip = 'Количество кейсов';
 
     public static function getNavigationBadge(): ?string
     {

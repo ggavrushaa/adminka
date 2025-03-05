@@ -17,10 +17,11 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class TechStackResource extends Resource
 {
     protected static ?string $model = TechStack::class;
+    protected static ?string $pluralModelLabel = 'Технологии';
+    protected static ?string $navigationGroup = 'Технологии';
+
 
     protected static ?string $navigationIcon = 'heroicon-o-code-bracket';
-
-    // protected static ?string $pluralModelLabel = 'Технологии';
 
     public static function form(Form $form): Form
     {

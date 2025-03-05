@@ -16,6 +16,8 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class TechCategoryResource extends Resource
 {
     protected static ?string $model = TechCategory::class;
+    protected static ?string $pluralModelLabel = 'Категории технологий';
+    protected static ?string $navigationGroup = 'Технологии';
 
     protected static ?string $navigationIcon = 'heroicon-o-bars-3-bottom-right';
 
