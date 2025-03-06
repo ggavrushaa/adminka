@@ -41,7 +41,7 @@ class PartnersRequestResource extends Resource
                     'ru' => 'Русский',
                     'uk' => 'Украинский', 
                     'en' => 'Английский',
-                ]),
+                ])->visible(fn ($record) => $record == null),
             ]);
     }
 

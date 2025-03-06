@@ -35,12 +35,12 @@ class ContactRequestResource extends Resource
                 Forms\Components\TextInput::make('email')->email()->label('Email')->required(),
                 Forms\Components\Textarea::make('message')->label('Сообщение')->required(),
                 Forms\Components\TextInput::make('position')->label('Должность')->required(),
-                Forms\Components\Toggle::make('status')->label('Статус'),
-                Forms\Components\Select::make('language')->label('Язык')->options([
-                    'ru' => 'Русский',
-                    'uk' => 'Украинский', 
-                    'en' => 'Английский',
-                ]),
+                // Forms\Components\Toggle::make('status')->label('Статус'),
+                // Forms\Components\Select::make('language')->label('Язык')->options([
+                //     'ru' => 'Русский',
+                //     'uk' => 'Украинский', 
+                //     'en' => 'Английский',
+                // ]),
             ]);
     }
 
