@@ -42,7 +42,9 @@ class DirectionResource extends Resource
                 Tables\Columns\TextColumn::make('name_ru')->label('Название RU'),
                 Tables\Columns\TextColumn::make('name_en')->label('Название EN'),
                 Tables\Columns\ToggleColumn::make('show_on_site')->label('Показывать на сайте'),
-            ])
+            ]) 
+                ->reorderable('order_column')
+                ->defaultSort('order_column')
             ->filters([
                 //
             ])

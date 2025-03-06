@@ -10,7 +10,7 @@ class Direction extends Model
 
     protected $fillable = [
         'name_uk', 'name_en', 'name_ru', 
-        'show_on_site',
+        'show_on_site', 'order_column',
     ];
-    
+
 }

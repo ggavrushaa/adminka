@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('name_en');
             $table->string('name_ru');
             $table->boolean('show_on_site')->default(false);
+            $table->integer('order_column')->default(0);
 
             $table->timestamps();
         });
