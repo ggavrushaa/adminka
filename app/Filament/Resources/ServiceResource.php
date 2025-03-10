@@ -97,7 +97,7 @@ class ServiceResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('id')->label('#'),
                 Tables\Columns\TextColumn::make('name_uk')->label('Название'),
-                Tables\Columns\TextColumn::make('category')->label('Категория'),
+                Tables\Columns\TagsColumn::make('category')->label('Категория'),
                 Tables\Columns\ToggleColumn::make('show_on_site')->label('Показывать на сайте'),
             ])
             ->filters([

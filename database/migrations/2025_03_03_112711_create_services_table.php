@@ -61,8 +61,8 @@ return new class extends Migration {
             $table->string('name_en');
             $table->string('name_uk');
 
-            $table->string('category');
-            $table->string('image');
+            $table->string('image')->nullable();
+            $table->integer('views')->default(0);
 
             $table->text('text_ru');
             $table->text('text_en');

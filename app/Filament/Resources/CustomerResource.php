@@ -18,7 +18,7 @@ class CustomerResource extends Resource
     protected static ?string $model = Customer::class;
     protected static ?string $pluralModelLabel = 'Клиенты';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-user';
     protected static ?string $navigationBadgeTooltip = 'Количество клиентов';
 
     public static function getNavigationBadge(): ?string

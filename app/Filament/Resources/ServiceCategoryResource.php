@@ -19,7 +19,7 @@ class ServiceCategoryResource extends Resource
     protected static ?string $pluralModelLabel = 'Категории услуг';
     protected static ?string $navigationGroup = 'Услуги';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-cube';
 
     public static function form(Form $form): Form
     {

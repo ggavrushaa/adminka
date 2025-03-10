@@ -17,7 +17,7 @@ class DirectionResource extends Resource
 {
     protected static ?string $model = Direction::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-arrow-right-circle';
 
     protected static ?string $navigationGroup = 'Услуги';
     protected static ?string $pluralModelLabel = 'Направления';

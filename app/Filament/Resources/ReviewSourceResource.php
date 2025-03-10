@@ -17,6 +17,7 @@ class ReviewSourceResource extends Resource
 {
     protected static ?string $model = ReviewSource::class;
     protected static ?string $pluralModelLabel = 'Источники отзывов';
+    protected static ?string $navigationGroup = 'Фидбэк';
 
     protected static ?string $navigationIcon = 'heroicon-o-folder';
 

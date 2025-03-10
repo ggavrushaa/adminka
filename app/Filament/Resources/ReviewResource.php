@@ -21,6 +21,7 @@ class ReviewResource extends Resource
     protected static ?string $pluralModelLabel = 'Отзывы';
 
     protected static ?string $navigationIcon = 'heroicon-o-star';
+    protected static ?string $navigationGroup = 'Фидбэк';
     protected static ?string $navigationBadgeTooltip = 'Количество отзывов';
 
     public static function getNavigationBadge(): ?string
