@@ -1,0 +1,479 @@
+@import "vars"
+
+.anim-letter-header
+  .case-header__content
+    .stop-motion-animation
+      .word-anim__wrapper
+        width: rem(130)
+
+  .case-header__info
+    .description
+      max-width: 1200px
+
+.active-filters
+  display: flex
+  flex-wrap: wrap
+  gap: 12px
+  .active-filter
+    font-size: rem(16)
+    font-weight: 400
+    line-height: rem(22)
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 8px
+    border: rem(1) solid $text-dark-grey
+    color: $text-dark-grey
+    padding: rem(12) rem(11)
+    text-transform: none
+    min-width: 48px
+    &.hidden
+      display: none
+  .clear-all, .show-more
+    border-color: $burning-orange
+
+.blog-catalog
+  margin-bottom: rem(48)
+  .h2
+    text-transform: uppercase
+    color: $text-dark-grey
+    font-size: rem(24)
+    line-height: rem(34)
+  .blog-filters
+    padding: 48px 0 40px 0
+    display: flex
+    flex-direction: column
+    gap: 20px
+  .btn-filter
+    font-size: rem(16)
+    font-weight: 400
+    line-height: rem(24)
+    text-transform: none
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 8px
+    span
+      font-size: rem(24)
+      line-height: rem(24)
+
+  .filters
+    height: calc(100% - rem(40))
+    border-radius: rem(20) rem(20) 0 0
+    padding: rem(30) 0 0 0
+    transform: translateY(100%)
+    display: block !important
+    opacity: 1!important
+    transform: translateY(100%)
+    transition: all .5s
+    &.active, &.fade-in
+      transform: translateY(0px)
+    .modal-top
+      position: sticky
+      top: 0
+      padding-bottom: rem(12)
+      background-color: $bg-white
+      z-index: 1
+
+    .modal-close
+      top: rem(35)
+      z-index: 1
+
+    .modal-content
+      padding: 0 rem(20)
+      overflow: auto
+      height: 100%
+      padding-bottom: rem(30)
+
+    .modal-title
+      font-size: rem(24)
+      font-weight: 400
+      line-height: rem(34)
+      margin-bottom: rem(12)
+    .btn-tertiary
+      display: block
+      font-size: rem(16)
+      font-weight: 400
+      line-height: rem(22)
+      padding: 0
+      margin: 0
+      text-transform: none
+      border: none
+    .filters-content
+      margin-top: rem(12)
+      display: flex
+      flex-wrap: wrap
+      align-items: flex-start
+      justify-content: flex-start
+      gap: rem(16) rem(12)
+      .form-group
+        margin: 0
+        &.checkbox
+          & .form-control
+            & + label
+              margin: 0
+              padding: 0
+              font-size: rem(16)
+              font-weight: 400
+              line-height: rem(22)
+              padding: rem(12) rem(11)
+              min-width: 48px
+              text-align: center
+              border: rem(1) solid $bauhaus
+              border-radius: rem(8)
+              white-space: nowrap
+              transition: all .3s
+              &::before
+                display: none
+              @media (hover: hover)
+                &:hover
+                  border-color: $glowing-meteor
+                  background-color: $glowing-meteor
+                  color: white
+            &:checked
+              + label
+                background-color: $burning-orange !important
+                border-color: $burning-orange !important
+                color: white
+      .show-more
+        display: none
+
+.blog-card
+  display: block
+  .img
+    img
+      width: 100%
+      display: block
+      border-radius: rem(10)
+  .info
+    margin-top: 20px
+    font-size: rem(12)
+    font-weight: 400
+    line-height: rem(16)
+    letter-spacing: rem(1)
+    color: $text-dark-grey
+    .date
+      margin-bottom: rem(16)
+      color: $bauhaus
+      text-transform: uppercase
+    .tag
+      display: inline-block
+      margin-bottom: rem(16)
+      color: $bauhaus
+      padding: rem(10) rem(12)
+      background-color: #EFEFEF
+      border-radius: rem(6)
+      text-transform: uppercase
+    .title
+      font-size: rem(16)
+      font-weight: 500
+      line-height: rem(23)
+
+.blog-list
+  display: flex
+  flex-direction: column
+  gap: 40px
+
+.blog-page
+  .page-wrapper
+    padding-bottom: rem(48)
+  .sidebar
+    display: none
+  .post
+    .h1
+      font-size: rem(24)
+      font-weight: 500
+      line-height: rem(32)
+      color: $text-dark-grey
+      margin-bottom: rem(24)
+    .post-info
+      display: flex
+      flex-direction: column
+      gap: rem(16)
+      margin-bottom: rem(40)
+      align-items: flex-start
+      justify-content: flex-start
+      .post-date
+        font-size: rem(12)
+        font-weight: 400
+        line-height: rem(16)
+        letter-spacing: rem(1)
+      .post-tags
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        gap: rem(10)
+      .post-tag
+        display: inline-block
+        margin-bottom: rem(12)
+        line-height: rem(16)
+        color: $bauhaus
+        padding: rem(9) rem(12)
+        background-color: #EFEFEF
+        border-radius: rem(6)
+        text-transform: uppercase
+        margin: 0
+
+    .post-img
+      display: block
+      width: 100%
+      margin-bottom: rem(40)
+      img
+        display: block
+        width: 100%
+        border-radius: rem(12)
+
+@media (min-width: 768px)
+  .anim-letter-header
+    .case-header__content
+      .stop-motion-animation
+        .word-anim__wrapper
+          width: rem(170)
+          margin-left: 0
+          transform: translateX(rem(-10))
+
+  .blog-catalog
+    margin-bottom: rem(80)
+    .blog-filters
+      padding: rem(80) 0 rem(32) 0
+      border-bottom: 1px solid $disco-ball
+      margin-bottom: rem(40)
+    .btn-filter, .active-filters
+      display: none
+    .filters
+      position: static
+      transform: none
+      padding: 0
+      z-index: 0
+      .modal-top
+        display: none
+      .modal-content
+        padding: 0
+      .filters-content
+        margin: 0
+        .form-group
+          display: none
+          @for $i from 1 through 8
+            &:nth-child(#{$i})
+              display: block
+
+        .show-more
+          display: block
+          border: rem(1) solid $burning-orange
+          color: $text-dark-grey
+          padding: rem(12)
+          min-width: rem(48)
+          line-height: rem(22)
+          &::before
+            content: attr(data-768)
+          &.hide
+            display: none
+
+  .blog-list
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: rem(40) rem(24)
+
+
+  .blog-page 
+    .post 
+      .h1
+        font-size: rem(28)
+        line-height: rem(37)
+      .post-info
+        flex-direction: row
+        flex-wrap: wrap
+      .post-date
+        min-height: rem(34)
+        display: flex
+        align-items: center
+        justify-content: flex-start
+      .post-img 
+        img
+          border-radius: rem(16)
+    .page-wrapper
+      padding-bottom: rem(80)
+
+          
+        
+
+
+@media (min-width: 1024px)
+  .anim-letter-header
+    .case-header__content
+      .stop-motion-animation
+        .word-anim__wrapper
+          width: rem(210)
+
+  .blog-catalog
+    margin-bottom: rem(100)
+    .blog-filters
+      padding: rem(100) 0 rem(32) 0
+      gap: rem(32)
+      margin-bottom: rem(60)
+      .h2
+        font-size: rem(36)
+        line-height: rem(51)
+    .filters
+      .filters-content
+        gap: rem(16)
+        .form-group
+          display: none
+          @for $i from 1 through 12
+            &:nth-child(#{$i})
+              display: block
+
+        .show-more
+          &::before
+            content: attr(data-1024)
+
+  .blog-list
+    grid-template-columns: repeat(3, 1fr)
+    gap: rem(40) rem(24)
+    .blog-card
+      &:nth-child(4n+1)
+        grid-column: 1/-1
+        display: grid
+        grid-template-columns: 6fr 4fr
+        flex-direction: row
+        align-items: start
+        gap: 40px
+        .img
+          img
+            width: 100%
+            border-radius: rem(16)
+        .info
+          font-size: 14px
+          line-height: 19px
+          margin: 0
+          padding: 20px 0 10px 0
+          .date
+            margin-bottom: rem(20)
+          .tag
+            width: auto
+            display: inline-block
+            margin-bottom: rem(20)
+          .title
+            font-size: rem(24)
+            line-height: rem(34)
+      &:nth-child(8n+5)
+        grid-template-columns: 4fr 6fr
+        .img
+          grid-column: 2/3
+          grid-row: 1/2
+        .info
+          grid-column: 1/2
+          grid-row: 1/2
+
+  .blog-page 
+    .page-wrapper
+      display: grid
+      grid-template-columns: auto rem(320)
+      gap: rem(40)
+      align-items: start
+    .sidebar
+      display: block
+      .sidebar-title
+        color: $text-dark-grey
+        margin-bottom: rem(32)
+      .list
+        display: flex
+        flex-direction: column
+        gap: rem(32)
+
+@media (min-width: 1280px)
+  .anim-letter-header
+    .case-header__content
+      .stop-motion-animation
+        .word-anim__wrapper
+          width: rem(300)
+          transform: translateX(rem(-5))
+
+  .blog-catalog
+    margin-bottom: rem(100)
+    .filters
+      .filters-content
+        .form-group
+          @for $i from 1 through 14
+            &:nth-child(#{$i})
+              display: block
+
+        .show-more
+          &::before
+            content: attr(data-1280)
+
+  .blog-list
+    gap: rem(60) rem(40)
+    .blog-card
+      &:nth-child(4n+1)
+        grid-template-columns: 2fr 1fr
+        gap: 0
+        .info
+          padding: rem(50) 0 rem(20) rem(40)
+          .title
+            font-size: rem(28)
+            line-height: rem(40)
+      &:nth-child(8n+5)
+        grid-template-columns: 1fr 2fr
+        .info
+          padding: rem(50) rem(40) rem(20) 0
+
+@media (min-width: 1440px)
+  .blog-catalog
+    .filters
+      .filters-content
+        .form-group
+          display: block !important
+        .show-more
+          display: none
+
+  .blog-list
+    // gap: rem(60) rem(40)
+    .blog-card
+      width: 100%
+      &:nth-child(4n+1)
+        display: flex
+        flex-direction: row
+        gap: rem(40)
+        .img
+          width: 100%
+          max-width: calc(70% - rem(60))
+        .info
+          width: 100%
+          max-width: calc(30% + rem(20))
+          padding-left: 0
+          .title
+            font-size: rem(32)
+            line-height: rem(45)
+
+      &:nth-child(8n+5)
+        flex-direction: row-reverse
+        .info
+          padding-right: 0
+
+
+  .blog-page 
+    .breadcrumb
+      padding: rem(32) 0 rem(72) 0 !important
+    .page-wrapper
+      grid-template-columns: auto rem(440)
+      gap: rem(60)
+      padding-bottom: rem(100)
+
+    .post 
+      .h1
+        font-size: rem(44)
+        line-height: rem(58)
+      .post-info 
+        .post-tag
+          font-size: rem(12)
+          line-height: rem(15)
+
+    .sidebar 
+      .sidebar-title
+        font-size: rem(32)
+        line-height: rem(42)
+        margin-bottom: rem(40)
+      .list
+        gap: rem(40)
+  

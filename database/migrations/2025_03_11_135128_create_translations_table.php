@@ -8,18 +8,19 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('settings', function (Blueprint $table) {
+        Schema::create('translations', function (Blueprint $table) {
             $table->id()->from(1001);
-
-            $table->string('key');
-            $table->json('value');
-
+            $table->foreignId('page_id')->constrained('translations_pages');
+            $table->string('field')->unique();
+            $table->text('text_en');
+            $table->text('text_ru');
+        $table->text('text_uk');
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('settings');
+        Schema::dropIfExists('translations');
     }
 };

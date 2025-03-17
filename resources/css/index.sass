@@ -1,0 +1,1652 @@
+@import "vars"
+
+.home-header
+  overflow: hidden
+  position: relative
+  min-height: 100vh
+  min-height: calc(var(--vh, 1vh) * 100 - var(--header-height))
+  padding: 60px 0 20px 0
+  display: flex
+  flex-direction: column
+  justify-content: center
+  transition: all .4s
+  & .container
+    position: relative
+  & .section-name
+    position: relative
+    z-index: 1
+    pointer-events: none
+    & .section-name__title
+      & .section-name__title-text
+        -webkit-text-stroke: 2px $text-white
+        text-stroke: 2px $text-white
+        line-height: rem(71)
+        text-transform: uppercase
+      & .glitch
+        font-size: inherit
+        display: block
+        -webkit-text-fill-color: transparent
+        text-fill-color: transparent
+        -webkit-text-stroke: 2px $text-white
+        text-stroke: 2px $text-white
+
+  & .home-header__images
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    gap: 0 25px
+    margin-top: 80px
+    & img
+      display: block
+      flex: 1 1 100%
+      width: 100%
+      max-width: rem(215)
+      height: rem(40)
+      &:nth-child(2)
+        max-width: rem(150)
+
+  & .home-header__anim
+    //width: 450px
+    //height: 450px
+    position: absolute
+    top: 0
+    right: -45%
+    animation: none!important
+    // animation: anim-header-rotate 100s infinite
+    display: flex
+    align-items: center
+    justify-content: center
+    & img
+      opacity: 0
+
+.about-header
+  justify-content: flex-start
+  padding-top: 0!important
+  & .section-name
+    & .section-name__title
+      & .section-name__title-text
+        font-size: rem(40)
+
+.section-tech
+  position: relative
+  overflow: hidden
+  & .tech-top
+    display: flex
+    flex-direction: column
+    gap: 20px 0
+    margin-bottom: 30px
+    & .section-name
+      & .btn-wrapper
+        display: none
+    & .tech-description
+      color: $white
+      & .btn-wrapper
+        display: none
+        & .btn-tertiary
+          &:after
+            bottom: -2px
+            left: calc(50% - 17px)
+
+          &:hover
+            &:after
+              width: calc(100% - 37px)
+
+  & .tab-block
+    & .tab-bottom
+      & .tab-bottom__item
+        display: flex
+        flex-direction: column
+        gap: 12px 0
+        & .tech-item
+          display: flex
+          align-items: center
+          justify-content: center
+          gap: 0 8px
+          background-color: $deep-black
+          border-radius: rem(8)
+          color: $white
+          min-height: 48px
+          & .img
+            width: 24px
+            height: 24px
+            position: relative
+            & img
+              transition: all .3s
+              opacity: 1
+              position: absolute
+              left: 0
+              top: 0
+              width: 100%
+              height: 100%
+              object-fit: contain
+              &.hover
+                opacity: 0
+          &:hover
+            & .img
+              & img
+                opacity: 0
+                &.hover
+                  opacity: 1
+
+    & .btn-wrapper
+      margin-top: 20px
+      display: flex
+      align-items: center
+      justify-content: center
+      & .btn
+        padding: 10px 0
+
+.section-clients
+  position: relative
+  overflow: hidden
+  padding: 60px 0
+  & .clients-slider
+    margin-top: 30px
+    & .swiper-slide
+      width: 100%
+      padding-bottom: 100%
+      position: relative
+      background-color: $deep-black
+      border-radius: rem(20)
+      transition: all .5s
+      @media (hover: hover)
+        &:hover
+          background-color: $bg-white
+          box-shadow: 0px 0px 0px 0px #0808081A
+          & .img
+            & img
+              opacity: 0
+              &.hover
+                opacity: 1
+      & .img
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+        width: 100%
+        max-width: 209px
+        height: 75px
+        & img
+          position: absolute
+          left: 0
+          top: 0
+          width: 100%
+          height: 100%
+          object-fit: contain
+          transition: all .4s
+          &.hover
+            opacity: 0
+
+    & .swiper-scrollbar
+      margin-top: 24px
+      background-color: $deep-black
+      border-radius: 0px
+
+.section-reviews
+  position: relative
+  // overflow: hidden
+  padding: 0 0 40px 0
+  background-color: $bg-white
+  & .section-name
+    position: sticky
+    top: 65px
+    z-index: 1
+    padding: 60px 20px 0 20px
+    background-color: $bg-white
+    margin: 0 -20px
+    & .section-name__subtitle, & .section-name__title
+      position: relative
+      z-index: 2
+
+    & .marquee-text
+      position: absolute
+      left: 0
+      top: 20px
+      z-index: 1
+      width: 100%
+      & .marquee-group
+        animation-duration: 30s
+      &:before
+        content: ''
+        position: absolute
+        left: 0
+        top: 0
+        width: 100%
+        height: 200px
+      &._number-2, &._number-3
+        display: none
+
+  //@media (hover: hover)
+  //  & .section-name
+  //    position: relative
+  //    top: auto
+  //    padding-top: 125px
+
+  & .tab-block
+    overflow: visible
+    & .tab-top-padding
+      background-color: $bg-white
+      position: sticky
+      top: 208px
+      z-index: 1
+      margin: 0 -20px
+    & .tab-top
+      margin: 0 20px
+    & .tab-bottom
+      overflow: visible
+      margin-top: 20px
+      & .tab-bottom__wrapper
+        transform: none!important
+      & .tab-bottom__item
+        // display: flex
+        flex-direction: column
+        gap: 40px 0
+        display: none
+        min-height: 100vh
+        &.active
+          display: flex
+        & .col
+          display: flex
+          flex-direction: column
+          gap: 40px 0
+    & .review-card
+      padding: 30px 20px
+      border-radius: rem(30)
+      box-shadow: 0px 3px 14px rgba(20, 20, 43, 0.08), 0px -2px 4px rgba(20, 20, 43, 0.02), 0px 12px 24px rgba(20, 20, 43, 0.04)
+      background-color: $white
+      & .review-star
+        justify-content: flex-end
+        margin-bottom: 15px
+      & blockquote
+        padding-left: 54px
+        font-weight: 500
+        font-size: rem(16)
+        text-transform: uppercase
+        position: relative
+        &:before
+          content: ''
+          position: absolute
+          left: 0
+          top: 0
+          width: 38px
+          height: 29px
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='38' height='29' viewBox='0 0 38 29' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.1224 0H12.9898C5.23469 0 0 4.83333 0 15.08V29H15.1224V13.92H7.7551V13.5333C7.7551 9.08667 9.30612 7.15333 13.1837 7.15333H15.1224V0ZM38 0H35.8673C28.1122 0 22.8776 4.83333 22.8776 15.08V29H38V13.92H30.6327V13.5333C30.6327 9.08667 32.1837 7.15333 36.0612 7.15333H38V0Z' fill='%23373737'/%3E%3C/svg%3E")
+          @include bg-center
+            background-size: contain
+      & .editor
+        white-space: normal
+        & p, & ul, & ol
+          margin: 16px 0 8px 0
+
+      & .btn-wrapper
+        display: flex
+        justify-content: flex-start
+        & .btn
+          padding-left: 0
+      & .reviewer-info
+        margin-bottom: -8px
+        & p, & a
+          font-size: rem(12)
+          font-weight: 400
+          margin: 8px 0
+          display: block
+          color: $text-dark-grey
+        & a
+          color: $blue-pencil
+        & .reviewer-info__text_bold
+          font-weight: 500
+        & .reviewer-info__text_uppercase
+          text-transform: uppercase
+        & .reviewer-info__text_grey
+          color: $text-light-grey
+
+.section-form
+  background-color: $burning-orange
+  padding: 60px 0
+  position: relative
+  overflow: hidden
+  & .marquee-text
+    position: absolute
+    left: -20px
+    top: 50%
+    transform: translateY(-50%)
+    width: calc(100% + 40px)
+    z-index: -1
+    & .marquee-group
+      & span
+        color: #FF7B33
+        font-size: rem(200)
+        line-height: 100%
+  & .section-name
+    position: relative
+    z-index: 1
+    & .section-name__title
+      & .section-name__title-text
+        font-size: rem(52)
+    & .btn-wrapper
+      margin-top: 40px
+      & .btn
+        width: 100%
+        padding: 18px 0
+        display: inline-block
+        text-align: center
+
+  & .form-download
+    position: relative
+    z-index: 1
+    margin-top: 40px
+    display: flex
+    flex-direction: column
+    gap: 40px 0
+
+.contacts-form
+  margin: 60px 0
+  & .contacts-form__top
+    margin-bottom: 30px
+    display: flex
+    flex-wrap: nowrap
+    & span
+      display: block
+      min-width: 32px
+      max-width: 32px
+      min-height: 32px
+      max-height: 32px
+      border: 2px solid $disco-ball
+      border-radius: 50%
+      margin-right: 80px
+      position: relative
+      transition: all .2s
+      &:before
+        content: ''
+        position: absolute
+        left: 30px
+        top: 50%
+        transform: translateY(-50%)
+        width: 80px
+        height: 2px
+        background-color: $disco-ball
+      &:after
+        content: ''
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+        width: 10px
+        height: 10px
+        background-color: $blue-pencil
+        border-radius: 50%
+        //transition: opacity .2s, width .2s .2s, height .2s .2s, background-image .2s .4s
+        transition: all .3s
+        opacity: 0
+        background-position: center
+        background-repeat: no-repeat
+      &:last-child
+        margin-right: 0
+        &:before
+          display: none
+
+      &.current
+        border-color: $blue-pencil
+        &:after
+          opacity: 1
+      &.completed
+        &:before
+          background-color: $blue-pencil
+        &:after
+          width: calc(100% + 2px)
+          height: calc(100% + 2px)
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='20' height='21' viewBox='0 0 20 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.16797 11.0479L7.5013 14.3812L15.8346 6.04785' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+
+.about-mission
+  padding: 48px 0
+  & .section-name__title
+    & .section-name__title-text
+      color: #373737
+      margin-bottom: rem(32)
+  & .mission-title
+    color: $text-dark-grey
+    font-size: rem(32)
+    font-weight: 400
+    line-height: 150%
+    margin-bottom: 40px
+
+  & .mission-main
+    display: flex
+    flex-direction: column
+    gap: 20px 0
+    & .item
+      border-radius: 20px
+      border: 2px solid $bauhaus
+      padding: 20px
+      & .mission-title
+        color: $burning-orange
+        font-size: rem(24)
+        font-weight: 500
+        line-height: 140%
+        text-transform: uppercase
+        margin-bottom: 24px
+      & .mission-text
+        color: $text-dark-grey
+        font-size: rem(16)
+        line-height: 140%
+
+      &._orange
+        background-color: $burning-orange
+        border-color: $burning-orange
+        & .mission-title
+          color: white
+          text-transform: none
+          font-weight: 300
+          margin-bottom: 32px
+        & .mission-author
+          color: white
+          font-size: rem(24)
+          font-weight: 500
+          line-height: 140%
+
+.about-partner
+  position: relative
+  overflow: hidden
+  padding: 48px 0
+  & .container
+    display: flex
+    flex-direction: column
+    gap: 40px 0
+  & .about-partner__title
+    color: $text-white
+    font-size: rem(32)
+    font-weight: 700
+    line-height: 140%
+    & mark, & .marker
+      background: none
+      color: $burning-orange
+
+  & .about-partner__list
+    color: $text-white
+    font-size: rem(18)
+    font-weight: 400
+    line-height: 140%
+    & li
+      display: flex
+      align-items: flex-start
+      justify-content: flex-start
+      gap: 0 10px
+      padding: 0 0 8px 10px
+      margin-bottom: 16px
+      &:last-child
+        margin-bottom: 0
+      & span
+        color: $burning-orange
+        font-size: rem(24)
+        display: flex
+        align-items: center
+        gap: 0 8px
+        &:after
+          content: ''
+          display: block
+          min-width: 2px
+          max-width: 2px
+          height: 30px
+          background-color: $text-white
+          transform: rotate(10deg)
+
+.about-stat
+  padding: 48px 0
+  & .section-name
+    margin-bottom: 40px
+    & .section-name__title
+      & .section-name__title-text
+        font-size: 32px
+        color: $text-dark-grey
+
+  & .items
+    display: flex
+    flex-direction: column
+    gap: 36px 0
+    & .item
+      padding-bottom: 24px
+      border-bottom: 1px solid $disco-ball
+      position: relative
+      & .item-img
+        margin-bottom: 20px
+      & .item-title
+        color: $text-dark-grey
+        font-size: rem(24)
+        font-weight: 700
+        line-height: 140%
+        text-transform: uppercase
+        margin-bottom: 16px
+      & .item-desc
+        color: $text-dark-grey
+        font-size: rem(16)
+        font-weight: 300
+        line-height: 140%
+      & .btn-link
+        width: 40px
+        height: 40px
+        padding: 0
+        border-radius: 50%
+        border: 1.429px solid $burning-orange
+        position: absolute
+        top: 0
+        right: 0
+        display: flex
+        align-items: center
+        justify-content: center
+        transition: all .3s
+        &:before
+          color: $text-dark-grey
+          font-size: 22px
+          transition: all .3s
+        &:active
+          border-color: $glowing-meteor
+          background-color: $burning-orange
+          &:before
+            color: white
+        @media (hover: hover)
+          &:hover
+            border-color: $glowing-meteor
+            background-color: $glowing-meteor
+            &:before
+              color: white
+
+.stack-header, .partners-header
+  padding-bottom: 20px
+  min-height: 400px
+  position: relative
+  overflow: hidden
+  & .case-header__info
+    & .description
+      color: $text-white
+      font-size: 16px
+      font-weight: 300
+      line-height: 22px
+      margin-top: 24px
+
+.tech-stack__main
+  padding: 48px 0
+  & .section-name__title
+    & .section-name__title-text
+      color: $text-dark-grey
+      margin-bottom: 44px
+
+  & .list
+    display: flex
+    flex-direction: column
+    gap: 40px 0
+    & .list__item
+      display: flex
+      flex-direction: column
+      gap: 20px 0
+      padding-bottom: 24px
+      border-bottom: 2px solid $disco-ball
+      &:last-child
+        border-bottom: none
+      & .list__item-title
+        font-size: rem(24)
+        font-weight: 400
+        line-height: 34px
+        letter-spacing: 0em
+      & .list__item-labels
+        display: flex
+        flex-wrap: wrap
+        gap: 16px
+        & .label
+          font-size: 16px
+          font-weight: 300
+          line-height: 22px
+          letter-spacing: 0em
+          padding: 11px 11.5px
+          border-radius: 8px
+          border: 1px solid $text-dark-grey
+          display: flex
+          gap: 0 8px
+          & img
+            width: auto
+            height: 24px
+
+.partners-header
+  .stop-motion-animation
+    .word-letter
+      font-size: rem(48)
+    .word-anim__wrapper
+      width: rem(65)
+      height: rem(40)
+      .word-anim
+        transform: translate(-50%,-50%) scale(.26)
+
+.partners-main
+  padding: rem(48) 0
+  .desc
+    font-size: rem(18)
+    font-weight: 300
+    line-height: rem(26)
+    margin-bottom: rem(40)
+
+  ul
+    display: flex
+    flex-direction: column
+    gap: rem(24)
+    li
+      border: rem(2) solid $bauhaus
+      border-radius: rem(20)
+      padding: rem(20) rem(16)
+      color: $text-dark-grey
+      margin: 0
+      list-style: none
+      .partner-img
+        width: 100%
+        border-bottom: rem(1) solid $disco-ball
+        margin-bottom: rem(12)
+        img
+          display: block
+          width: 100%
+      .partner-name
+        font-size: rem(24)
+        font-weight: 700
+        line-height: rem(39)
+        text-align: center
+        margin-bottom: rem(6)
+      .partner-desc
+        font-size: rem(16)
+        font-weight: 300
+        line-height: rem(26)
+
+.create-partners
+  .title
+    font-size: rem(32)
+    font-weight: 700
+    line-height: rem(42)
+    max-width: 100%
+    position: relative
+    z-index: 1
+    strong
+      color: $text-dark-grey
+  .form
+    background-color: $bg-white
+    padding: rem(32) rem(16)
+    border-radius: rem(16)
+    position: relative
+    z-index: 1
+    .form-title
+      font-size: rem(28)
+      font-weight: 700
+      line-height: rem(40)
+      color: $text-dark-grey
+      margin-bottom: rem(20)
+    .btn-submit
+      display: block
+      width: 100%
+      margin-top: rem(32)
+      padding: rem(18) 0
+
+  .marquees
+    .marquee-group
+      span
+        font-size: rem(200)
+        line-height: 120%
+
+  & .mash
+    display: grid
+    grid-template-columns: repeat(3, 40px)
+    gap: 0 14px
+    margin-top: 40px
+    justify-content: center
+    position: relative
+    z-index: 1
+    & .btn
+      display: flex
+      align-items: center
+      justify-content: center
+      background-color: white
+      color: $burning-orange
+      padding: 0
+      height: 40px
+      &:after
+        width: 100%
+        height: 100%
+        border-radius: 0px
+        &:hover
+          color: white
+          background-color: $bg-black
+
+@media (max-width: 430px)
+  .home-header
+    &._ua
+      & .section-name
+        & .section-name__title
+          & .section-name__title-text
+            font-size: rem(36)
+            line-height: 140%
+
+@media (min-width: 768px)
+  .home-header
+    & .section-name
+      & .section-name__title
+        & .section-name__title-text
+          line-height: rem(112)
+    & .home-header__images
+      gap: 0 40px
+
+    & .home-header__anim
+      top: -50px
+      right: -200px
+      animation: none!important
+
+  .about-header
+    & .section-name
+      & .section-name__title
+        & .section-name__title-text
+          font-size: rem(80)
+
+  .section-tech
+    padding: 100px 0 60px 0
+    & .tech-top
+      flex-direction: row
+      gap: 0 24px
+      justify-content: space-between
+      align-items: flex-end
+      & .section-name
+        min-width: 355px
+        max-width: 355px
+        & .btn-wrapper
+          display: block
+          & .btn
+            padding: 20px 10px 0 0
+            justify-content: flex-end
+            margin-top: 8px
+    & .tab-block
+      & .tab-bottom
+        & .tab-bottom__item
+          display: grid
+          grid-template-columns: repeat(4, 1fr)
+          align-items: start
+          gap: 12px 24px
+      & .btn-wrapper
+        display: none
+
+  .section-clients
+    padding: 80px 0
+    & .clients-slider
+      margin-top: 40px
+      & .swiper-slide
+        width: 360px
+        height: 360px
+        padding-bottom: 0
+        & .img
+          max-width: 256px
+      & .swiper-scrollbar
+        margin-top: 40px
+
+  .section-reviews
+    padding: 35px 0 100px 0
+    & .section-name
+      & .marquee-text
+        top: auto
+        bottom: -20px
+    & .tab-block
+      & .tab-top-padding
+        top: 234px
+      & .tab-bottom
+        margin-top: 40px
+      & .review-card
+        padding: 60px
+        border-radius: rem(20)
+
+  .section-form
+    & .section-name
+      & .section-name__title
+        & .section-name__title-text
+          font-size: rem(72)
+          line-height: 130%
+      & .btn-wrapper
+        & .btn
+          max-width: 295px
+          font-size: rem(14)
+          padding: 19px 0
+
+  .about-mission
+    padding: 80px 0
+    & .mission-title
+      font-size: rem(48)
+      margin-bottom: 60px
+
+    & .mission-main
+      gap: 40px 0
+      & .item
+        padding: 40px
+        & .mission-title
+          font-size: rem(36)
+        & .mission-text
+          font-size: rem(20)
+
+        &._orange
+          background-color: $burning-orange
+          border-color: $burning-orange
+          & .mission-title
+            font-size: rem(36)
+          & .mission-author
+            font-size: rem(36)
+
+  .about-partner
+    padding: 80px 0
+    & .about-partner__title
+      font-size: rem(48)
+
+    & .about-partner__list
+      font-size: rem(24)
+
+  .about-stat
+    padding: 80px 0
+    & .section-name
+      margin-bottom: 54px
+      & .section-name__title
+        & .section-name__title-text
+          font-size: 48px
+
+    & .items
+      & .item
+        & .item-title
+          font-size: rem(36)
+          margin-bottom: 20px
+        & .item-desc
+          font-size: rem(20)
+        & .btn-link
+          width: 56px
+          height: 56px
+
+  .stack-header, .partners-header
+    min-height: 400px
+    & .case-header__info
+      & .description
+        font-size: 20px
+        line-height: 28px
+        margin-top: 28px
+
+    & .stop-motion-animation
+      display: flex
+      flex-wrap: wrap
+      gap: 0 36px
+      & .word-letter
+        font-size: 85px
+        -webkit-text-stroke: 3px $text-white
+
+      & .word-anim
+        transform: translate(-50%,-50%) scale(.45)
+
+      & .word-anim__wrapper
+        width: 130px
+        height: 80px
+
+  .tech-stack__main
+    padding: 80px 0
+    & .list .list__item
+      & .list__item-title
+        font-size: rem(32)
+
+  .partners-header
+    .stop-motion-animation
+      .word-letter
+        font-size: rem(95)
+      .word-anim__wrapper
+        width: rem(120)
+        margin-right: rem(-8)
+        .word-anim
+          transform: translate(-50%,-50%) scale(.45)
+
+  .partners-main
+    padding: rem(80) 0
+    .desc
+      font-size: rem(20)
+      line-height: rem(28)
+      margin-bottom: rem(60)
+    ul
+      li
+        padding: rem(32) rem(24)
+        .partner-img
+          height: 80px
+          margin: 0 auto rem(12) auto
+          img
+            height: 100%
+        .partner-desc
+          text-align: center
+
+  .create-partners
+    padding: rem(80) 0
+    .title
+      font-size: rem(44)
+      line-height: rem(58)
+      margin-bottom: rem(48)
+    .form
+      padding: rem(54)
+      .form-title
+        font-size: rem(32)
+        line-height: rem(50)
+        margin-bottom: rem(48)
+      .form-group
+        display: flex
+        flex-direction: row
+        margin-bottom: rem(30)
+        width: 100%
+        gap: rem(12)
+        &.email
+          display: block
+          .form-label
+            margin-bottom: rem(8)
+        .form-label
+          margin-bottom: 0
+          white-space: nowrap
+        .form-control__wrapper, .form-control
+          width: 100%
+
+      .btn-submit
+        display: block
+        margin: rem(32) 0 0 auto
+        width: auto
+        padding: rem(18) rem(38)
+
+    .mash
+      grid-template-columns: repeat(3, rem(64))
+      margin-top: rem(48)
+      .btn
+        height: rem(64)
+        &::before
+          font-size: rem(32)
+
+@media (min-width: 1024px)
+  .home-header
+    padding: 60px 0 100px 0
+    & .section-name
+      & .section-name__title
+        & .section-name__title-text
+          line-height: rem(144)
+
+    & .home-header__anim
+      top: 0
+
+  .about-header
+    & .section-name
+      & .section-name__title
+        & .section-name__title-text
+          font-size: rem(100)
+
+  .section-tech
+    & .tech-top
+      & .tech-description
+        max-width: 470px
+        margin-bottom: 20px
+    & .tab-block
+      & .tab-bottom
+        & .tab-bottom__item
+          grid-template-columns: repeat(5,1fr)
+          & .tech-item
+            font-size: rem(16)
+
+  .section-clients
+    padding: 40px 0 100px 0
+    & .clients-slider
+      width: 100%
+      height: calc(((100vw - 90px) / 3) * 2 + 76px)
+      & .swiper-slide
+        height: calc((100vw - 90px) / 3) !important
+      & .swiper-scrollbar
+        position: absolute
+        left: 0
+        bottom: 0
+        width: 100%
+        margin-top: 0
+
+  .section-reviews
+    & .tab-block
+      & .tab-bottom
+        & .tab-bottom__item
+          display: none
+          grid-template-columns: repeat(2, 1fr)
+          gap: 0 20px
+          &.active
+            display: grid
+      & .review-card
+        padding: 30px 20px
+        & .btn-wrapper
+          & .btn
+            font-size: 14px
+
+  .section-form
+    & .section-name
+      & .section-name__title
+        & .section-name__title-text
+          font-size: rem(80)
+          max-width: 800px
+
+  .about-mission
+    padding: 100px 0
+    & .section-name__title
+      & .section-name__title-text
+        font-size: rem(54)
+        // margin-bottom: rem(64)
+    & .mission-main
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      gap: 40px
+      & .item
+        &._orange
+          grid-column: 1/3
+          grid-row: 2/3
+
+  .about-stat
+    padding: 100px 0
+    & .items
+      gap: 36px 0
+      & .item
+        display: grid
+        grid-template-columns: 400px auto
+        align-items: center
+        gap: 0 20px
+        padding-right: 76px
+        & .item-img
+          grid-column: 1/2
+          grid-row: 1/2
+        & .item-title
+          font-size: rem(36)
+          margin-bottom: 0
+          grid-column: 1/2
+          grid-row: 2/3
+        & .item-desc
+          font-size: rem(20)
+          grid-column: 2/3
+          grid-row: 1/3
+        & .btn-link
+          width: 56px
+          height: 56px
+          top: calc(50% - 24px)
+          transform: translateY(calc(-50% + 12px))
+
+  .stack-header, .partners-header
+    min-height: 400px
+    & .case-header__info
+      & .description
+        font-size: rem(24)
+        line-height: 33px
+        margin-top: 32px
+
+    & .stop-motion-animation
+      gap: 0 46px
+      & .word-letter
+        font-size: 125px
+        -webkit-text-stroke: 5px $text-white
+
+      & .word-anim
+        transform: translate(-50%,-50%) scale(.65)
+
+      & .word-anim__wrapper
+        width: 160px
+        height: 110px
+
+  .tech-stack__main
+    padding: 100px 0
+    & .section-name__title
+      & .section-name__title-text
+        font-size: rem(54)
+        margin-bottom: 64px
+    & .list
+      gap: 36px 0
+      & .list__item
+        flex-direction: row
+        & .list__item-title
+          min-width: 350px
+          max-width: 350px
+        & .list__item-labels
+          gap: 24px
+
+  .partners-header
+    .stop-motion-animation
+      .word-anim__wrapper
+        .word-anim
+          transform: translate(-50%,-50%) scale(.6)
+
+  .partners-main
+    padding: rem(100) 0
+    .desc
+      font-size: rem(24)
+      line-height: rem(34)
+    ul
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      gap: rem(24)
+      li
+        min-height: rem(289)
+        .partner-desc
+          text-align: center
+          font-size: rem(18)
+          line-height: 160%
+
+@media (min-width: 1280px)
+
+  .common-background
+    position: relative
+    &:before
+      pointer-events: none
+      position: absolute
+      top: -500px
+      left: 0
+      right: 0
+      bottom: 0
+      background-image: url('../../../img/home/bg_combined-sections_1440.png')
+      background-repeat: no-repeat
+      background-size: 100% auto
+      background-position: center
+      z-index: 1
+
+  .section-tech, .section-marquee, .section-services, .section-clients
+    & .container, & .marquee-text
+      position: relative
+      z-index: 1
+
+  .home-header
+    & .section-name
+      & .section-name__title
+        & .section-name__title-text
+          line-height: rem(105)
+          & br
+            display: none
+
+    & .home-header__anim
+      //width: 700px
+      //height: 700px
+      top: 50%
+      right: 0
+      transform: translateY(-50%)
+
+  .section-tech
+    & .container
+      display: grid
+      grid-template-columns: 5fr 7fr
+      align-items: flex-start
+      justify-content: space-between
+      gap: 0 20px
+
+    & .tech-top
+      flex-direction: column
+      align-items: flex-start
+      margin-bottom: 0
+      & .section-name
+        margin-bottom: 24px
+        & .section-name__title
+          & .section-name__title-text
+            font-size: rem(48)
+        & .btn-wrapper
+          display: none
+
+      & .tech-description
+        max-width: 70.64%
+        margin-bottom: 0
+        & .btn-wrapper
+          display: flex
+          justify-content: flex-start
+          margin-top: 24px
+          & .btn
+            padding: 14px 0 0 0
+
+    & .tab-block
+      & .tab-bottom
+        margin-top: 40px
+        & .tab-bottom__item
+          grid-template-columns: repeat(4,1fr)
+
+  //.section-tech, .section-marquee, .section-services, .section-clients
+  //  background-image: url("../../../img/home/bg_combined-sections_1440.png")
+  //  background-position: right center
+  //  background-repeat: no-repeat
+  //  background-attachment: fixed
+  //  background-size: cover
+
+  .section-clients
+    padding: 100px 0
+    & .clients-slider
+      height: auto
+      & .swiper-wrapper
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        gap: 20px
+        & .swiper-slide
+          width: auto
+          height: auto!important
+          padding-bottom: 100%
+          & .img
+            max-width: 210px
+
+      & .swiper-scrollbar
+        display: none
+
+  .section-reviews
+    & .section-name
+      & .marquee-text
+        width: calc(var(--vw) - 24px)
+        //left: -94px
+        left: calc((var(--padding-container) * -1) + 20px)
+        bottom: auto
+        top: 20px
+        &._number-2
+          display: flex
+        &._number-2
+          top: calc(100% + 30px)
+          & .marquee-group
+            animation-duration: 50s
+
+    & .tab-block
+      position: relative
+      & .tab-top-padding
+        display: flex
+        justify-content: flex-end
+        background-color: rgba(0,0,0,0)
+        padding: 0
+        top: 185px
+        margin-top: -60px
+      & .tab-top
+        margin: 0
+        & .tab-top__item
+          font-size: rem(20)
+
+      & .review-card
+        max-width: 495px
+        padding: 60px 40px
+        & .editor
+          & p, & ul, & ol
+            font-size: rem(16)
+        & .reviewer-info
+          & p.reviewer-info__text_uppercase
+            font-size: rem(14)
+        &:nth-child(even)
+          margin: 0 0 0 auto
+
+      & .tab-bottom
+        & .tab-bottom__item
+          gap: 0 20px
+          & .col
+            gap: 130px 0
+            &:nth-child(1)
+              padding-top: 170px
+
+      & .marquee-text
+        position: absolute
+        top: 95px
+        width: 100vw
+        left: -94px
+        &._number-3
+          display: none
+
+  .section-form
+    padding: 120px 0
+    & .container
+      display: grid
+      grid-template-columns: 8fr 4fr
+      gap: 0 20px
+
+    & .marquee-text
+      //width: 100vw
+      width: var(--vw)
+      left: calc(var(--padding-container) * -1)
+
+    & .section-name
+      & .section-name__subtitle
+        margin-bottom: 20px
+
+    & .form-download
+      margin-top: 73px
+
+  .about-mission
+    padding: 100px 0
+    & .mission-main
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      gap: 40px
+      & .item
+        &._orange
+          grid-column: 1/3
+          grid-row: 2/3
+
+  .about-partner
+    padding: 100px 0
+    & .container
+      flex-direction: row
+      justify-content: space-between
+      gap: 0 80px
+    & .about-partner__title
+      font-size: rem(54)
+      flex: 1 1 100%
+
+    & .about-partner__list
+      flex: 1 1 100%
+
+  .about-stat
+    & .section-name
+      & .section-name__title
+        & .section-name__title-text
+          font-size: rem(54)
+    & .items
+      & .item
+        grid-template-columns: 300px auto 360px 56px
+        padding: 0 20px 24px 0
+        & .item-img
+          margin: 0
+          grid-column: auto
+          grid-row: auto
+        & .item-title
+          font-size: rem(36)
+          margin-bottom: 0
+          grid-column: auto
+          grid-row: auto
+        & .item-desc
+          font-size: rem(20)
+          grid-column: auto
+          grid-row: auto
+        & .btn-link
+          position: static
+          transform: none
+
+  .stack-header, .partners-header
+    min-height: 540px
+    & .case-header__info
+      & .description
+        margin-top: 48px
+        font-size: rem(30)
+        line-height: rem(42)
+        max-width: 1200px
+
+    & .stop-motion-animation
+      gap: 0 46px
+      & .word-letter
+        font-size: 160px
+        -webkit-text-stroke: 5px $text-white
+
+      & .word-anim
+        transform: translate(-50%,-50%) scale(.76)
+
+      & .word-anim__wrapper
+        width: 185px
+        height: 121px
+
+  .partners-header
+    .stop-motion-animation
+      .word-anim__wrapper
+        .word-anim
+          transform: translate(-50%,-50%) scale(.75)
+
+  .partners-main
+    padding: rem(100) 0
+    .desc
+      font-size: rem(24)
+      line-height: rem(34)
+    ul
+      display: grid
+      grid-template-columns: repeat(3, 1fr)
+      gap: rem(24)
+      li
+        min-height: rem(320)
+        &:nth-child(5n+4)
+          grid-column: 1/3
+          
+  .create-partners
+    .container
+      display: grid
+      grid-template-columns: 5fr 7fr
+      gap: 64px
+      position: relative
+    .title
+      padding: 0
+      strong
+        display: block
+    .form
+      .form-title
+        font-size: rem(36)
+        line-height: 140%
+      .form-group 
+        margin-bottom: rem(24)
+        .form-label
+          font-size: rem(20)
+          line-height: 120%
+        .form-control
+          &::placeholder
+            font-size: rem(18)
+    .mash
+      position: absolute
+      bottom: 0
+      left: var(--padding-container)
+    
+        
+
+
+@media (min-width: 1440px)
+
+  .common-background
+    &:before
+      top: -600px
+      background-image: url('../../../img/home/bg_combined-sections_1440.png')
+
+  .home-header
+    & .section-name
+      margin-bottom: 35px
+      & .section-name__title
+        & .section-name__title-text
+          line-height: 134%
+
+    & .scene-wrapper
+      position: absolute
+      top: 50%
+      right: 130px
+      transform: translateY(-50%)
+      width: 600px
+      height: 800px
+      min-height: auto
+
+  .about-header
+    & .section-name
+      padding-top: 35px
+      & .section-name__title
+        & .section-name__title-text
+          font-size: rem(100)
+          letter-spacing: 3.5px
+
+  .section-tech
+    & .tech-top
+      & .section-name
+        & .section-name__title
+          & .section-name__title-text
+            font-size: rem(54)
+
+  .section-marquee
+    padding: 40px 0
+
+  .section-clients
+    padding: 60px 0 140px 0
+    & .section-name
+      & .section-name__title
+        & .section-name__title-text
+          font-size: rem(72)
+
+    & .clients-slider
+      margin-top: 60px
+      & .swiper-wrapper
+        grid-template-columns: repeat(6,1fr)
+        & .swiper-slide
+          & .img
+            max-width: 80.35%
+
+  .section-reviews
+    height: 100vh
+
+    overflow: hidden
+    & .section-name
+      & .section-name__title
+        & .section-name__title-text
+          font-size: rem(54)
+    & .tab-block
+      & .review-card
+        max-width: 500px
+        &:nth-child(even)
+          margin: 0 0 0 calc((1920px * 5) / 100)
+
+        & .editor
+          & p, & ul, & ol
+            font-size: rem(18)
+        & .btn-wrapper
+          & .btn
+            font-size: rem(16)
+
+        & .reviewer-info
+          & p
+            font-size: rem(16)
+
+      & .tab-bottom
+        margin-top: 160px
+        & .tab-bottom__item
+          gap: 0 calc((1920px * 5) / 100)
+          & .col
+            &:nth-child(1)
+              padding-top: 230px
+
+  .about-partner
+    padding: 150px 0
+    & .container
+      gap: 0 100px
+    & .about-partner__title
+      flex: auto
+      width: 100%
+      max-width: 563px
+
+    & .about-partner__list
+      flex: auto
+
+  .about-stat
+    & .section-name
+      margin-bottom: 54px
+    & .items
+      & .item
+        grid-template-columns: 300px auto 624px 56px
+
+  .stack-header, .partners-header
+    & .section-name
+      & .section-name__subtitle
+        margin-bottom: 48px
+        & .subtitle-section__text
+          font-size: rem(28)
+      & .subtitle-section__number
+        &:after
+          width: 80px
+          height: 4px
+    & .case-header__info
+      & .description
+        font-weight: 300
+        font-size: rem(30)
+        line-height: 42px
+        margin-top: 48px
+
+  .tech-stack__main
+    padding: 148px 0
+    & .list
+      & .list__item
+        gap: 0 130px
+
+  .partners-header 
+    .stop-motion-animation 
+      .word-anim__wrapper
+        margin: 0 rem(-10) 0 rem(10)
+
+  .partners-main
+    padding: rem(148) 0 rem(100) 0
+    ul 
+      li
+        min-height: rem(289)
+
+  .create-partners 
+    padding: rem(100) 0
+    .container
+      grid-template-columns: 6fr 6fr 
+    .title 
+      font-size: rem(48)
+      strong
+        display: inline
+
+@media (min-width: 2560px)
+  .section-tech
+    padding: 155px 0 85px 0
+    & .tech-top
+      & .section-name
+        min-width: 500px
+        max-width: 500px
+        margin-bottom: 32px
+        & .section-name__title
+          & .section-name__title-text
+            font-size: rem(72)
+            line-height: rem(86)
+
+    & .tab-block
+      & .tab-bottom
+        margin-top: 53px
+        & .tab-bottom__item
+          grid-template-columns: repeat(5, 1fr)
+          gap: 16px 23px
+          & .tech-item
+            font-size: rem(22)
+            min-height: 64px
+
+  .section-clients
+    & .clients-slider
+      & .swiper-wrapper
+        gap: 32px 30px
+
+  .section-reviews
+    & .section-name
+      top: 138px
+      padding-bottom: 30px
+    & .tab-block
+      margin-top: -100px
+      & .tab-top-padding
+        top: 270px
+        justify-content: flex-start
+        margin-left: 550px
+      & .tab-top
+        & .tab-top__item
+          font-size: rem(26)
+
+      & .review-card
+        max-width: 660px
+        padding: 85px 54px 80px 54px
+        border-radius: 26px
+        &  blockquote
+          font-size: rem(24)
+          line-height: 140%
+          padding-left: 72px
+          &:before
+            width: 50px
+            height: 38px
+
+        & .editor
+          & p, & ul, & ol
+            font-size: rem(24)
+            line-height: 140%
+
+        & .btn-wrapper
+          & .btn
+            font-size: rem(22)
+
+        & .reviewer-info
+          & p
+            font-size: rem(18)
+            &.reviewer-info__text_uppercase
+              font-size: rem(28)
+
+  .section-form
+    & .section-name
+      & .section-name__title
+        & .section-name__title-text
+          font-size: rem(134)
+          max-width: 100%
+
+      & .btn-wrapper
+        margin-top: 55px
+        & .btn
+          width: auto
+          padding: 30px 53px
+          font-size: rem(26)
+          max-width: 100%

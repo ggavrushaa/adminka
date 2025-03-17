@@ -79,7 +79,6 @@ class ReviewResource extends Resource
                 Tables\Columns\TextColumn::make('source.name')->label('Источник отзыва'),
                 Tables\Columns\TextColumn::make('text_uk')->label('Текст')->limit(50),
                 Tables\Columns\ToggleColumn::make('show_on_site')->label('Показывать на сайте'),
-
             ])
             ->filters([
                 //

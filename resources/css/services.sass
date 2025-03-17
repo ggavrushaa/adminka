@@ -1,0 +1,1193 @@
+@import "vars"
+
+.services-header
+  background: $bg-black linear-gradient(358deg,#fe6f21 -72.1%,rgba(41,41,41,0) 56.61%)
+  min-height: calc(var(--vh,1vh) * 100 - var(--header-height))
+  overflow: hidden
+  position: relative
+  padding-bottom: 20px
+  & .services-header__content
+    position: relative
+    z-index: 1
+  &._mobiledev, &._webdev
+    &:before
+      content: ''
+      width: 120%
+      height: 50%
+      position: absolute
+      display: block
+      left: 50%
+      bottom: 0
+      transform: translateX(-50%)
+      background-image: url("../../../img/services/services-header-mobiledev-bg.png")
+      background-size: cover
+      background-repeat: no-repeat
+      z-index: 1
+      filter: blur(10px)
+    & .services-header__img
+      margin-top: 54px
+  &._webdev
+    &:before
+      background-image: url("../../../img/services/services-header-webdev-bg.png")
+    & .services-header__img
+      margin-top: 40px
+
+
+  & .section-name
+    & .section-name__title
+      margin-bottom: 16px
+      & .section-name__title-text
+        font-size: rem(40)
+        -webkit-text-stroke: 2px $text-white
+        text-stroke: 2px $text-white
+        line-height: normal
+        text-transform: uppercase
+      & span
+        font-size: inherit
+        display: block
+        -webkit-text-fill-color: transparent
+        text-fill-color: transparent
+        -webkit-text-stroke: 2px $text-white
+        text-stroke: 2px $text-white
+
+  & .header-description
+    color: $text-white
+    font-size: rem(18)
+    font-style: normal
+    font-weight: 300
+    line-height: 140%
+
+  & .services-header__img
+    max-width: 260px
+    margin: 0 auto
+    position: relative
+    z-index: 1
+    & img
+      width: 100%
+
+
+.section-who__services
+  position: relative
+  overflow: hidden
+  & .section-name
+    margin-bottom: 0
+  & .who-features
+    margin-top: 24px
+
+  & .who-feature__content
+    & .content-feature__main
+      & .swiper-slide
+        & .feature-main__text
+          & .btn
+            padding: 18px 0
+            width: 100%
+            max-width: 360px
+            margin-top: 20px
+
+
+.road
+  overflow: hidden
+  position: relative
+  & .road-items
+    display: flex
+    flex-direction: column
+    gap: 60px 0
+    margin-top: 40px
+    & .item:not(._circle)
+      position: relative
+      &:before
+        content: ''
+        position: absolute
+        pointer-events: none
+        @include bg-center
+          background-size: cover
+
+      &:nth-child(1), &:nth-child(5), &:nth-child(8)
+        &:before
+          right: 0
+          top: calc(100% + 10px)
+          width: 255px
+          height: 270px
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='260' height='303' viewBox='0 0 260 303' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M46 2C105 78.5 211.5 -48.5 249.002 60.4999C303.332 218.415 67.9956 160.019 21.39 210C-15.8945 249.984 9.50006 282.5 34.0023 300.5' stroke='%23404040' stroke-width='4' stroke-dasharray='6 6'/%3E%3C/svg%3E")
+
+
+      &:nth-child(2), &:nth-child(7), &:nth-child(9), &:nth-child(10), &:nth-child(11)
+        &:before
+          right: 0
+          top: calc(100% + 5px)
+          width: calc(100% - 20px)
+          height: 220px
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='306' height='234' viewBox='0 0 306 234' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M220.885 1C244.865 55.3828 323.585 38.4194 299.459 165.645C275.333 292.871 40.2666 63.3656 2 233' stroke='%23404040' stroke-width='4' stroke-dasharray='6 6'/%3E%3C/svg%3E")
+          background-size: contain
+          background-position: left center
+      &:nth-child(3), &:nth-child(6)
+        &:before
+          right: 0
+          top: calc(100% + 5px)
+          width: calc(100% - 20px)
+          height: 220px
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='306' height='234' viewBox='0 0 306 234' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M220.885 1C244.865 55.3828 323.585 38.4194 299.459 165.645C275.333 292.871 40.2666 63.3656 2 233' stroke='%23404040' stroke-width='4' stroke-dasharray='6 6'/%3E%3C/svg%3E")
+          background-size: contain
+          background-position: left center
+      &:nth-child(4)
+        &:before
+          right: auto
+          left: 30px
+          top: calc(100% + 18px)
+          width: 215px
+          height: 240px
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='220' height='243' viewBox='0 0 220 243' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 2C46.5 70.5 284.5 53 199.5 175C146.549 251 89 240.5 8.5 240.5' stroke='%23404040' stroke-width='4' stroke-dasharray='6 6'/%3E%3C/svg%3E")
+          background-size: contain
+          background-position: left center
+
+      & .img
+        max-width: 200px
+        margin: 0 0 -30px auto
+        & img
+          width: 100%
+      & .info
+        & .info-number
+          color: $text-white
+          font-size: rem(24)
+          font-weight: 700
+          line-height: normal
+          margin-bottom: 16px
+        & .info-title
+          color: $burning-orange
+          font-size: rem(20)
+          font-weight: 500
+          line-height: normal
+          text-transform: uppercase
+          margin-bottom: 12px
+        & .info-desc
+          color: $text-white
+          font-size: rem(14)
+          font-weight: 300
+          line-height: 140%
+
+    & .item
+      &:nth-last-child(2)
+        &:before
+          display: none
+
+  & .circle-text
+    width: 100%
+    margin-top: 30px
+    @media (hover: hover)
+      &:hover
+        & .circle-svg
+          & text
+            color: $burning-orange
+        & .circle-bg
+          transform: scale(1.5)
+    & .circle-svg
+      width: 100%
+      max-width: 100%
+      & text
+        font-size: 8.5px
+        letter-spacing: 0.5px
+        transition-delay: 150ms
+
+    & .circle-bg
+      fill: $burning-orange
+      z-index: 2
+    & .circle-arrow
+      width: 15vw
+      height: 15vw
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M29.5568 1.56159C29.5568 1.24048 29.4292 0.932517 29.2021 0.705454C28.9751 0.478392 28.6671 0.35083 28.346 0.35083H13.8164C13.4953 0.35083 13.1873 0.478392 12.9602 0.705454C12.7332 0.932517 12.6056 1.24048 12.6056 1.56159C12.6056 1.88271 12.7332 2.19067 12.9602 2.41773C13.1873 2.64479 13.4953 2.77236 13.8164 2.77236H25.4231L0.851176 27.3412C0.738601 27.4537 0.649302 27.5874 0.588377 27.7344C0.527452 27.8815 0.496094 28.0392 0.496094 28.1984C0.496094 28.3576 0.527452 28.5152 0.588377 28.6623C0.649302 28.8094 0.738601 28.943 0.851176 29.0556C0.963751 29.1682 1.0974 29.2575 1.24448 29.3184C1.39157 29.3793 1.54922 29.4107 1.70842 29.4107C1.86763 29.4107 2.02527 29.3793 2.17236 29.3184C2.31944 29.2575 2.45309 29.1682 2.56567 29.0556L27.1352 4.48437V16.0907C27.1352 16.4119 27.2627 16.7198 27.4898 16.9469C27.7169 17.1739 28.0248 17.3015 28.346 17.3015C28.6671 17.3015 28.9751 17.1739 29.2021 16.9469C29.4292 16.7198 29.5568 16.4119 29.5568 16.0907V1.56159Z' fill='white'/%3E%3C/svg%3E")
+
+
+.text-block
+  & .container
+    display: grid
+    grid-template-columns: 1fr
+    gap: 24px 0
+    & .col
+      &:first-child
+        & .h2
+          color: $text-dark-grey
+          font-size: rem(30)
+          font-weight: 700
+          line-height: 140%
+          & strong
+            color: $burning-orange
+            font-weight: 700
+      &:last-child
+        & p
+          margin: 16px 0
+          &:first-child
+            margin-top: 0
+          &:last-child
+            margin-bottom: 0
+          & strong
+            color: $burning-orange
+            font-weight: 400
+
+.zebra
+  & .items
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: repeat(var(--item-count), 1fr)
+    gap: 24px 0
+    margin-top: 40px
+    & .item
+      padding: 20px
+      border-radius: 20px
+      border: 2px solid $text-dark-grey
+      color: $text-dark-grey
+      &:nth-child(even)
+        background-color: $burning-orange
+        border-color: $burning-orange
+        color: white
+        & .item-number
+          color: white
+
+      & .item-number
+        color: $burning-orange
+        font-size: rem(36)
+        font-weight: 500
+        line-height: rem(42)
+        margin-bottom: 24px
+      & .item-title
+        font-size: rem(24)
+        font-weight: 500
+        line-height: 140%
+        margin-bottom: 24px
+      & .item-desc
+        font-size: rem(16)
+        font-style: normal
+
+
+
+.section-case__services
+  & .cases
+    & .case
+      &:last-child
+        padding: 40px 0
+        & .h1
+          font-size: rem(52)
+          font-weight: 700
+          line-height: normal
+          text-transform: none
+          margin-bottom: 40px
+
+
+        & .circle-text
+          width: 100%
+          margin-top: 30px
+          & .circle-svg
+            width: 100%
+            max-width: 100%
+            & text
+              font-size: 8.2px
+              letter-spacing: 0px
+
+        & .circle-arrow
+          width: 15vw
+          height: 15vw
+
+
+.tools
+  & .section-name
+    & .section-name__title
+      & .section-name__title-text
+        margin-bottom: 32px
+  & .tools-banner
+    background-color: $burning-orange
+    padding: 16px 20px
+    border-radius: 20px
+    margin-bottom: 32px
+    & .banner-img
+      width: 132px
+      margin-bottom: 40px
+      & img
+        width: 100%
+        height: auto
+    & .banner-text
+      color: white
+      font-size: rem(18)
+      font-style: normal
+      font-weight: 400
+      line-height: 160%
+
+  & .tools-items
+    display: grid
+    grid-template-columns: 1fr
+    gap: 20px
+    margin-bottom: 32px
+    & .tools-item
+      border-radius: 20px
+      border: 2px solid $bauhaus
+      padding: 16px
+      & .tool-img
+        width: 72px
+        margin: 0 auto 24px auto
+        & img
+          width: 100%
+      & .tool-title
+        font-size: rem(24)
+        font-style: normal
+        font-weight: 700
+        line-height: 120%
+        text-align: center
+        margin-bottom: 16px
+      & .tool-text
+        text-align: center
+        font-size: rem(18)
+        font-weight: 300
+        line-height: 160%
+
+      &._pair
+        & .tool-img
+          width: auto
+          display: grid
+          grid-template-columns: repeat(3, 1fr)
+          align-items: center
+          justify-content: space-between
+          margin: 0 auto 24px auto
+          max-width: 90%
+          & img
+            width: 72px
+            margin: 0 auto
+            &:last-child
+              grid-column: 3/4
+        & .tool-title
+          display: grid
+          grid-template-columns: repeat(3, 1fr)
+          align-items: center
+          justify-content: space-between
+          max-width: 90%
+          margin: 0 auto 16px auto
+
+  & .tools-description
+    font-size: rem(24)
+    font-style: normal
+    font-weight: 300
+    line-height: 140%
+
+
+
+.tech-labels
+  & .btn-wrapper
+    & .btn
+      padding-left: 0
+      padding-right: 0
+      justify-content: flex-end
+      &:after
+        bottom: 7px
+        left: calc(50% - 17px)
+      @media (hover: hover)
+        &[class*=btn-icon-]
+          &:hover
+            &:after
+              width: calc(100% - 35px)
+
+
+  & .tech-labels__text
+    & .title
+      color: $text-dark-grey
+      font-size: rem(30)
+      font-weight: 700
+      line-height: 140%
+      margin-bottom: 24px
+    & .desc
+      color: $text-dark-grey
+    & .btn-wrapper
+      display: none
+
+  & .tech-labels__items
+    margin-top: 24px
+    & .btn-wrapper
+      display: block
+      margin-top: 24px
+    & .items
+      display: flex
+      flex-wrap: wrap
+      gap: 24px
+      & .item
+        display: flex
+        align-items: center
+        gap: 0 8px
+        border-radius: 8px
+        border: 1px solid $bauhaus
+        background: $bg-white
+        padding: 11px 12px
+        & img
+          min-width: 24px
+          max-height: 24px
+        &._last
+          min-width: 64px
+          & p
+            text-align: center
+            width: 100%
+
+  &._webdev:not(._without-border)
+    padding: 32px 0 0 0
+  &._webdev
+    & .container
+      & .items
+        border-bottom: 1px solid $disco-ball
+        padding-bottom: 32px
+    & .tech-labels__text
+      & .title
+        font-size: rem(20)
+
+
+  &._without-border
+    //padding-bottom: 40px
+    & .container
+      & .items
+        border-bottom: none
+        padding-bottom: 0
+
+
+.title-block
+  padding-bottom: 0
+
+
+
+@media (max-width: 420px)
+  .services-header
+    &.automation-ua
+      & .section-name
+        & .section-name__title
+          & .section-name__title-text
+            font-size: rem(30)
+
+
+@media (min-width: 768px)
+  .services-header
+    min-height: auto
+    & .section-name
+      & .section-name__subtitle
+        & .subtitle-section__text
+          font-size: rem(18)
+        & .subtitle-section__number
+          &:after
+            width: 80px
+            height: 4px
+
+      & .section-name__title
+        & .section-name__title-text
+          font-size: rem(80)
+
+    & .header-description
+      font-size: rem(24)
+      margin-top: 20px
+
+    & .services-header__img
+      max-width: 326px
+      margin-top: 20px
+
+
+    &.automation-ua
+      & .section-name
+        & .section-name__title
+          & .section-name__title-text
+            font-size: rem(70)
+
+
+
+  .road
+    padding: 75px 0
+    & .road-items
+      & .item:not(._circle)
+        display: flex
+        align-items: center
+        gap: 0 30px
+        &:nth-child(even)
+          flex-direction: row-reverse
+
+        &:nth-child(1), &:nth-child(5), &:nth-child(7), &:nth-child(9), &:nth-child(11)
+          &:before
+            left: 20px
+            top: 92px
+            right: auto
+            height: 260px
+            width: 50%
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='369' height='262' viewBox='0 0 369 262' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M235.799 1.71973C178.967 107.32 2.71094 9.3995 2.71094 149.56C2.71094 254.392 354.455 161.464 366.359 261.688' stroke='%23404040' stroke-width='4' stroke-dasharray='4.61 4.61'/%3E%3C/svg%3E")
+        &:nth-child(2), &:nth-child(6), &:nth-child(8)
+          &:before
+            width: 31%
+            height: 113px
+            left: 42%
+            right: auto
+            top: auto
+            bottom: -40%
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='227' height='117' viewBox='0 0 227 117' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M81.1869 0.87207C86.1789 46.9521 208.042 17.2658 222.499 61.9281C244.003 128.36 31.6509 113 0.546875 113.768' stroke='%23404040' stroke-width='4' stroke-dasharray='4.61 4.61'/%3E%3C/svg%3E")
+        &:nth-child(3)
+          &:before
+            left: 0
+            top: 25px
+            width: 243px
+            height: 216px
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='244' height='218' viewBox='0 0 244 218' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M243.92 0C174.28 1.92251 59.0887 70.6899 24.2226 123.81C-4.80035 168.028 -3.51649 186.482 6.30532 216.858' stroke='%23404040' stroke-width='4' stroke-dasharray='4.61 4.61'/%3E%3C/svg%3E")
+        &:nth-child(4), &:nth-child(10)
+          &:before
+            width: 175px
+            height: 160px
+            top: 80%
+            right: 10%
+            left: auto
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='177' height='165' viewBox='0 0 177 165' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.41599 1.89301C33.032 26.886 126.085 7.50699 165.049 59.184C204.014 110.861 119.192 149.927 71.911 163' stroke='%23404040' stroke-width='4' stroke-dasharray='4.61 4.61'/%3E%3C/svg%3E")
+
+
+
+
+        & .img
+          min-width: 230px
+          max-width: 230px
+          position: relative
+          z-index: 1
+          margin: 0
+        & .info
+          position: relative
+          z-index: 1
+          & .info-number
+            font-size: rem(18)
+            margin-bottom: 12px
+          & .info-title
+            font-size: rem(16)
+            margin-bottom: 9px
+          & .info-desc
+            font-size: rem(14)
+
+    & .circle-text
+      width: 310px
+      margin: -40px auto 0 auto
+      & .circle-arrow
+        width: 50px
+        height: 50px
+
+
+  .text-block
+    & .container
+      gap: 40px 0
+      & .col
+        &:first-child
+          & .h2
+            font-size: rem(72)
+            font-weight: 700
+            line-height: 140%
+        &:last-child
+          & p
+            margin: 24px 0
+            font-size: rem(18)
+
+
+  .zebra
+    & .items
+      & .item
+        padding: 24px
+        & .item-number
+          font-size: rem(40)
+          margin-bottom: 24px
+        & .item-title
+          font-size: rem(24)
+          margin-bottom: 24px
+
+
+  .section-case__services
+    & .cases
+      & .case
+        &:last-child
+          & .h1
+            font-size: rem(100)
+            max-width: 100%
+            margin-bottom: 60px
+
+          & .form-download__item
+            font-size: rem(24)
+            & .btn-bg-orange
+              max-width: 58px
+              padding: 0
+              font-size: 0px
+              border-radius: 50px
+          & .circle-text
+            position: relative
+            left: auto
+            top: auto
+            transform: none
+            width: 350px
+            margin: 60px auto 0 0
+            & .circle-arrow
+              width: 50px
+              height: 50px
+
+
+  .tools
+    & .tools-banner
+      padding: 32px 40px
+      margin-bottom: 50px
+      & .banner-text
+        font-size: rem(24)
+    & .tools-items
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      margin-bottom: 40px
+      & .tools-item
+        padding: 32px 24px
+        &:last-child
+          grid-column: 1/3
+        &._pair
+          & .tool-img, & .tool-title
+            max-width: 320px
+
+
+  .tech-labels
+    & .tech-labels__text
+      display: flex
+      align-items: center
+      justify-content: space-between
+      gap: 0 20px
+      & .title
+        font-size: rem(32)
+        margin: 0
+      & .desc
+        max-width: 52.2%
+        font-size: rem(18)
+
+    & .tech-labels__items
+      margin-top: 40px
+
+
+
+
+@media (min-width: 1024px)
+  .services-header
+    padding-bottom: 30px
+    & .section-name
+      & .section-name__title
+        & .section-name__title-text
+          font-size: rem(110)
+
+    & .services-header__img
+      max-width: 530px
+      margin: -15px 0 0 auto
+
+    &._mobiledev, &._webdev
+      &:before
+        transform: none
+        left: auto
+        right: 0
+        width: 84%
+        height: 70%
+        bottom: -10%
+      & .services-header__img
+        max-width: 470px
+        margin-top: 60px
+        margin-right: 50px
+    &._webdev
+      &:before
+        width: 1000px
+        height: 1000px
+        bottom: 0
+        background-image: url("../../../img/services/services-header-webdev-bg__1024.png")
+
+  .road
+    & .road-items
+      gap: 30px 0
+      & .item:not(._circle)
+        &:nth-child(1)
+          &:before
+            height: 340px
+            left: 0
+            top: 105px
+        &:nth-child(2)
+          &:before
+            height: 150px
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='294' height='152' viewBox='0 0 294 152' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M106 1C112.5 61 271.176 22.346 290 80.5C318 167 41.5 147 1 148' stroke='%23404040' stroke-width='4' stroke-dasharray='6 6'/%3E%3C/svg%3E")
+            left: 40%
+            bottom: -34%
+
+        &:nth-child(3)
+          &:before
+            width: 34%
+            height: 95%
+            left: 10px
+            top: 27%
+        &:nth-child(4)
+          &:before
+            width: 220px
+            height: 220px
+            top: 65%
+
+        & .img
+          min-width: 300px
+          max-width: 300px
+
+        & .info
+          gap: 0 40px
+          & .info-number
+            font-size: rem(24)
+            margin-bottom: 16px
+          & .info-title
+            font-size: rem(20)
+            margin-bottom: 12px
+          & .info-desc
+            font-size: rem(16)
+      & .circle-text
+        margin-top: 20px
+
+  .tools
+    & .tools-banner
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      gap: 0 40px
+      & .banner-img
+        min-width: 134px
+        max-width: 134px
+        margin: 0
+
+  .zebra
+    & .items
+      grid-template-columns: repeat(2, 1fr)
+      gap: 24px
+      grid-template-rows: auto
+      & .item
+        &:nth-child(4n+3), &:nth-child(4n+2)
+          background-color: $burning-orange!important
+          border-color: $burning-orange!important
+          color: white!important
+          & .item-number
+            color: white!important
+        &:nth-child(even)
+          background-color: white
+          border-color: $text-dark-grey
+          color: $text-dark-grey
+          & .item-number
+            color: $burning-orange
+
+
+        & .item-title
+          font-size: rem(28)
+
+  .section-case__services
+    & .cases
+      & .case
+        &:last-child
+          top: 0
+          & .circle-text
+            position: absolute
+            right: 20px
+            bottom: 20px
+            margin: 0
+
+
+  .tech-labels
+    & .tech-labels__text
+      & .title
+        font-size: rem(54)
+      & .desc
+        max-width: 59%
+        font-size: rem(18)
+
+    & .tech-labels__items
+      margin-top: 40px
+
+
+@media (min-width: 1280px)
+  .services-header
+    padding-bottom: 120px
+    background: #2b2b2b linear-gradient(180deg,#2b2b2b 0,#2b2b2b 50%,rgba(55,55,55,.8) 59%,#fe6f21 120%)
+    & .services-header__content
+      display: flex
+      align-items: flex-end
+      justify-content: space-between
+
+    & .services-header__info
+      max-width: 58.718%
+    & .section-name
+      & .section-name__title
+        & .section-name__title-text
+          font-size: rem(84)
+
+    & .services-header__img
+      max-width: 443px
+
+    &._mobiledev, &._webdev
+      &:before
+        right: var(--padding-container)
+        bottom: 0
+        width: 662px
+        height: 600px
+      & .services-header__content
+        //align-items: flex-start
+      & .services-header__img
+        max-width: 370px
+        margin: 40px 130px 0 0
+      &._webdev
+        &:before
+          right: 0
+          width: 1000px
+          height: 1000px
+
+    &.automation-ua
+      & .section-name
+        & .section-name__title
+          & .section-name__title-text
+            font-size: rem(80)
+
+
+  .road
+    overflow: hidden
+    min-height: calc(100vh - var(--header-height))
+    padding-top: 50px
+    & .section-name
+      position: relative
+      z-index: 1
+    & .road-items
+      flex-wrap: nowrap
+      flex-direction: row
+      align-items: flex-start
+      gap: 0 170px
+      & .item:not(._circle)
+        display: flex
+        flex-direction: row-reverse
+        & .info
+          min-width: 400px
+        & .img
+          min-width: 200px
+          max-width: 200px
+          height: 200px
+        &:nth-child(1)
+          align-items: flex-start
+          margin-right: -100px
+          &:before
+            width: 600px
+            height: 345px
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='1321' height='766' viewBox='0 0 1321 766' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1316.77 341.928C1214.95 143.388 892.613 -61.7653 606.19 24.0742C319.766 109.914 85.3869 553.271 4 764.22' stroke='%23404040' stroke-width='8' stroke-dasharray='13.14 13.14'/%3E%3C/svg%3E")
+            top: -20%
+            left: auto
+            right: calc(100% + 10px)
+
+          & .info
+            margin-top: 55px
+          & .img
+            margin-left: -30px
+
+        &:nth-child(2)
+          flex-direction: column-reverse
+          &:before
+            width: 480px
+            height: 350px
+            top: 40px
+            left: auto
+            right: calc(100% + 10px)
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='479' height='348' viewBox='0 0 479 348' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.49622 313C111.5 369 266.759 348.809 326 274.5C403.331 177.5 365.5 83 477 2.49938' stroke='%23404040' stroke-width='4' stroke-dasharray='6 6'/%3E%3C/svg%3E")
+
+
+        &:nth-child(3)
+          flex-direction: column
+          justify-content: center
+          &:before
+            width: 500px
+            height: 190px
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='497' height='192' viewBox='0 0 497 192' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 67.8248C131.334 -19.0204 338.269 -55.9544 495 190' stroke='%23404040' stroke-width='4' stroke-dasharray='6 6'/%3E%3C/svg%3E")
+            top: -15%
+            left: auto
+            right: calc(100% + 10px)
+
+          & .img
+            margin: 0 auto -20px auto
+        &:nth-child(4), &:nth-child(6), &:nth-child(8), &:nth-child(10), &:nth-child(12)
+          flex-direction: column-reverse
+          &:before
+            width: 439px
+            height: 450px
+            top: 30px
+            left: auto
+            right: calc(100% + 6px)
+            background-position: inherit
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='937' height='916' viewBox='0 0 937 916' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.98039 848.285C79.0565 937.699 507.622 946.825 665.286 777.117C840.242 588.796 723.315 133.321 934.629 4.12397' stroke='%23404040' stroke-width='8' stroke-dasharray='13.14 13.14'/%3E%3C/svg%3E")
+          & .img
+            margin: -20px -20% 0 auto
+        &:nth-child(5), &:nth-child(7), &:nth-child(9), &:nth-child(11)
+          flex-direction: column
+          justify-content: center
+          &:before
+            width: 500px
+            height: 253px
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='539' height='265' viewBox='0 0 539 265' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 56.7362C166 -36 470.671 -36.383 537 264' stroke='%23404040' stroke-width='4' stroke-dasharray='6 6'/%3E%3C/svg%3E")
+            top: -13%
+            left: auto
+            right: calc(100% + 5px)
+          & .img
+            margin: 0 auto -20px auto
+
+      & .item
+        &:nth-last-child(2)
+          &:before
+            display: block
+
+      & .item._circle
+        min-width: 400px
+        max-width: 400px
+        margin-left: -150px
+
+  .text-block
+    & .container
+      grid-template-columns: repeat(2, 6fr)
+      gap: 0 20px
+      & .col
+        &:first-child
+          & .h2
+            max-width: 500px
+        &:last-child
+          & p
+            font-size: rem(20)
+
+
+  .tools
+    & .tools-items
+      display: flex
+      flex-wrap: wrap
+      gap: 20px
+      & .tools-item
+        width: calc(33.333% - 14px)
+        &:nth-child(5n+4)
+          width: calc(40% - 10px)
+        &:nth-child(5n+5)
+          width: calc(60% - 10px)
+
+    & .tools-description
+      font-size: rem(32)
+
+
+  .zebra
+    padding: 150px 0 100px 0
+    //gap: 0
+    & .items
+      display: flex
+      flex-wrap: wrap
+      gap: 20px
+      & .item
+        width: calc(59.387% - 10px)
+        padding: 32px 40px
+        &:nth-child(4n+3), &:nth-child(4n+2)
+          width: calc(40.613% - 10px)
+          background-color: $burning-orange!important
+          border-color: $burning-orange!important
+          color: white!important
+          & .item-number
+            color: white!important
+        &:nth-child(even)
+          background-color: white
+          border-color: $text-dark-grey
+          color: $text-dark-grey
+          & .item-number
+            color: $burning-orange
+      &._three
+        & .item
+          background-color: white!important
+          border-color: $text-dark-grey!important
+          color: $text-dark-grey!important
+          & .item-number
+            color: $burning-orange!important
+          &:nth-child(6n+4), &:nth-child(6n+3)
+            background-color: $burning-orange!important
+            border-color: $burning-orange!important
+            color: white!important
+            & .item-number
+              color: white!important
+
+          &:nth-child(6n+1)
+            width: calc(43% - 14px)
+          &:nth-child(6n+2)
+            width: calc(25% - 14px)
+          &:nth-child(6n+3)
+            width: calc(32% - 14px)
+          &:nth-child(6n+4)
+            width: calc(51% - 14px)
+          &:nth-child(6n+5), &:nth-child(6n+6)
+            width: calc(24.5% - 14px)
+
+
+
+
+
+  .section-case__services
+    & .cases
+      & .case
+        &:last-child
+          & .h1__wrapper
+            max-width: 60%
+
+          & .circle-text
+            bottom: auto
+            right: 10%
+            top: 50%
+            transform: translateY(-50%)
+
+
+  .tech-labels
+    & .container
+      display: grid
+      align-items: start
+      grid-template-columns: 5fr 7fr
+      gap: 0 64px
+    & .tech-labels__text
+      flex-direction: column
+      align-items: flex-start
+      justify-content: flex-start
+      & .title
+        margin-bottom: 24px
+      & .desc
+        max-width: 100%
+      & .btn-wrapper
+        display: block
+        margin-top: 24px
+    & .tech-labels__items
+      margin-top: 0
+      & .btn-wrapper
+        display: none
+
+
+    &._webdev:not(._without-border)
+      padding-top: 36px
+      & .container
+        position: relative
+        padding-bottom: 32px
+        &:before
+          content: ''
+          position: absolute
+          left: var(--padding-container)
+          bottom: 0
+          width: calc(100% - (var(--padding-container) * 2))
+          height: 1px
+          background-color: $disco-ball
+
+    &._webdev
+      & .container
+        & .items
+          border-bottom: none
+          padding: 0
+      & .tech-labels__text
+        & .title
+          font-size: rem(20)
+
+
+    &._without-border
+      padding: 36px 0 130px 0
+
+
+
+
+.title-block
+  padding-bottom: 18px
+  & .section-name
+    & .section-name__title
+      & .section-name__title-text
+        font-size: rem(54)
+
+
+
+
+
+
+@media (min-width: 1440px)
+  .services-header
+    min-height: calc(100vh - var(--header-height))
+    display: flex
+    & .container
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      flex-grow: 1
+    & .services-header__content
+      flex: 1 1 100%
+      align-items: center
+    & .section-name
+      & .section-name__title
+        & .section-name__title-text
+          font-size: rem(100)
+
+    & .services-header__img
+      max-width: 620px
+
+
+    &._mobiledev, &._webdev
+      & .services-header__img
+        max-width: 500px
+        margin: 0
+    //&._webdev
+
+
+    &.automation-ua
+      & .section-name
+        & .section-name__title
+          & .section-name__title-text
+            font-size: rem(85)
+
+
+
+
+
+  .road
+    padding: 70px 0
+    & .section-name
+      & .section-name__title
+        & .section-name__title-text
+          font-size: rem(54)
+          max-width: rem(500)
+
+    & .road-items
+      & .item
+        &:not(._circle)
+          &:nth-child(1)
+            &:before
+              top: -35%
+
+  .zebra
+    & .section-name
+      & .section-name__title
+        & .section-name__title-text
+          font-size: rem(48)
+
+    & .items
+      & .item
+        & .item-number
+          font-size: rem(48)
+        & .item-title
+          font-size: rem(32)
+
+
+  .section-case__services
+    & .cases
+      & .case
+        &:last-child
+          & .h1__wrapper
+            & .h1
+              margin-bottom: 0
+              line-height: normal
+
+
+  @media (max-height: 720px)
+    .road
+      padding: 30px 0
+
+
+
+@media (min-width: 2560px)
+  .services-header
+    & .services-header__img
+      max-width: 837px
+    & .section-name
+      & .section-name__title
+        & .section-name__title-text
+          font-size: rem(134)
+
+    & .header-description
+      font-size: rem(34)
+
+    &.automation-ua
+      & .section-name
+        & .section-name__title
+          & .section-name__title-text
+            font-size: rem(130)
+
+
+
+
+

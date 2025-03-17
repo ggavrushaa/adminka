@@ -1,0 +1,486 @@
+@import "vars"
+
+.form-group
+  & .help-block
+    position: absolute
+    left: 0
+    top: calc(100% + 5px)
+    margin: 0
+
+.form
+  margin: 60px 0 56px 0
+  --step: 0
+  min-height: calc(var(--vh,1vh) * 100 - 116px)
+  overflow: hidden
+  & .section-name
+    text-align: center
+    margin-bottom: rem(44)
+
+
+
+.form-title
+  margin-bottom: 30px
+  white-space: pre-wrap
+  color: $text-dark-grey
+
+
+.form-pagination
+  display: flex
+  $var: 5
+  align-items: center
+  margin: 0 0 30px 0
+  & .pagination-item
+    display: flex
+    & svg
+      & .dot
+        fill: $blue-pencil
+        transform: scale(0)
+        transition: all .2s
+        transform-origin: center
+      & .circle
+        stroke: #D4D4D4
+        transition: all .2s
+      & .check
+        opacity: 0
+        transition: all .2s .2s
+
+    &._process
+      & svg
+        & .dot
+          transform: scale(1)
+        & .circle
+          stroke: $blue-pencil
+
+    &._complete
+      & svg
+        & .dot
+          transform: scale(3)
+
+        & .check
+          opacity: 1
+
+  & .pagination-separator
+    min-width: 80px
+    max-width: 80px
+    height: 2px
+    background-color: $disco-ball
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      width: 0
+      height: 100%
+      transition: width .4s
+      background-color: $blue-pencil
+    &.active
+      &:before
+        width: 100%
+
+
+.form-navigation
+  // margin-top: 30px
+  display: flex
+  flex-direction: column
+  gap: 20px 0
+  & .btn
+    text-align: center
+    flex: 1 1 100%
+    padding: 18px 32px
+    &._hide
+      display: none
+
+
+.form-content
+  overflow: hidden
+  &.overflow-visible
+    overflow: visible
+  & .form-content__wrapper
+    position: relative
+    display: flex
+    flex-wrap: nowrap
+    transform: translateX(calc(var(--step) * 100% * -1))
+    transition: all .7s
+    & .form-item
+      white-space: nowrap
+      min-width: 100%
+      opacity: 0
+      transition: opacity .5s, height .3s
+      padding-bottom: 30px
+      &.active
+        opacity: 1
+        height: auto!important
+        overflow: visible!important
+      &.hide
+        height: 0
+        overflow: hidden
+  & .select-wrapper
+    margin-bottom: 20px
+  & .form-group
+    &.file
+      & .form-label
+        font-size: rem(16)
+        font-style: normal
+        font-weight: 300
+        line-height: 30px
+        color: $white
+        border-radius: 10px
+        background: $deep-black
+        padding: rem(12) rem(20)
+        position: relative
+        display: flex
+        align-items: center
+        gap: 0 10px
+        cursor: pointer
+        transition: all .3s
+        &:before
+          content: ''
+          min-width: 24px
+          max-width: 24px
+          height: 24px
+          transition: all .3s
+          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.2648 5.03794C16.057 2.83013 12.4617 2.83013 10.2562 5.03794L4.13905 11.1504C4.09921 11.1903 4.07812 11.2442 4.07812 11.3004C4.07812 11.3567 4.09921 11.4106 4.13905 11.4504L5.0039 12.3153C5.04343 12.3546 5.09694 12.3767 5.15273 12.3767C5.20851 12.3767 5.26202 12.3546 5.30155 12.3153L11.4187 6.20278C12.1781 5.44341 13.1883 5.02622 14.2617 5.02622C15.3351 5.02622 16.3453 5.44341 17.1023 6.20278C17.8617 6.96216 18.2789 7.97231 18.2789 9.04341C18.2789 10.1168 17.8617 11.1247 17.1023 11.884L10.868 18.1161L9.8578 19.1262C8.91327 20.0708 7.37812 20.0708 6.43358 19.1262C5.97655 18.6692 5.72577 18.0622 5.72577 17.4153C5.72577 16.7684 5.97655 16.1614 6.43358 15.7043L12.6187 9.52153C12.7758 9.36685 12.982 9.28013 13.2023 9.28013H13.2047C13.425 9.28013 13.6289 9.36685 13.7836 9.52153C13.9406 9.67856 14.025 9.88481 14.025 10.1051C14.025 10.3231 13.9383 10.5293 13.7836 10.684L8.72812 15.7348C8.68827 15.7747 8.66718 15.8286 8.66718 15.8848C8.66718 15.9411 8.68827 15.995 8.72812 16.0348L9.59296 16.8997C9.63249 16.939 9.686 16.9611 9.74179 16.9611C9.79757 16.9611 9.85108 16.939 9.89062 16.8997L14.9437 11.8465C15.4101 11.3801 15.6656 10.7614 15.6656 10.1028C15.6656 9.44419 15.4078 8.8231 14.9437 8.35903C13.9805 7.39575 12.4148 7.3981 11.4516 8.35903L10.8516 8.96138L5.26874 14.5418C4.88983 14.9185 4.58947 15.3667 4.38509 15.8604C4.18071 16.354 4.07637 16.8833 4.07812 17.4176C4.07812 18.5028 4.50233 19.5223 5.26874 20.2887C6.06327 21.0809 7.1039 21.477 8.14452 21.477C9.18515 21.477 10.2258 21.0809 11.018 20.2887L18.2648 13.0465C19.3312 11.9778 19.9219 10.5551 19.9219 9.04341C19.9242 7.52935 19.3336 6.10669 18.2648 5.03794Z' fill='white'/%3E%3C/svg%3E")
+          @include bg-center
+            background-size: contain
+        @media (hover: hover)
+          &:hover
+            background-color: $burning-orange
+
+
+      & .add-more
+        display: none
+
+
+
+      & .form-control
+        position: absolute
+        left: 0
+        top: 0
+        z-index: -99
+        opacity: 0
+  & .form-item
+    & .radios
+      & .label
+        font-weight: 400
+        font-size: rem(16)
+        line-height: 30px
+        padding: 12px 8px
+        margin-bottom: 10px
+      & .form-group.checkbox, & .form-group.radio
+        margin-bottom: 12px
+        &:last-child
+          margin-bottom: 0
+        & .form-label
+          padding: 16px 0 16px 35%
+          background: $text-white
+          border-radius: 6px
+          &:before
+            left: calc(35% - 34px)
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='0.5' y='0.5' width='23' height='23' rx='3.5' stroke='%23D4D4D4'/%3E%3C/svg%3E")
+        & .form-control
+          &:checked
+            & + label
+              &:before
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='24' height='24' rx='4' fill='%23FE6F21'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M19.2559 6.41058C19.5814 6.73602 19.5814 7.26366 19.2559 7.58909L10.0893 16.7558C9.76382 17.0812 9.23618 17.0812 8.91074 16.7558L4.74408 12.5891C4.41864 12.2637 4.41864 11.736 4.74408 11.4106C5.06951 11.0851 5.59715 11.0851 5.92259 11.4106L9.5 14.988L18.0774 6.41058C18.4028 6.08514 18.9305 6.08514 19.2559 6.41058Z' fill='%23FCFCFC'/%3E%3C/svg%3E")
+
+
+      &.contact-in
+        margin-bottom: 40px
+        max-width: 804px
+        & .radio-input
+          position: relative
+          margin-bottom: 30px
+          background: #f1f1f1
+          border-radius: 10px
+          width: 100%
+          &.active
+            & .form-group
+              &.checkbox
+                z-index: 2
+                width: 54px
+                height: 54px
+                & .form-label
+                  color: rgba(0,0,0,0)
+                  overflow: hidden
+                  height: 100%
+                  width: 100%
+              &:not(.checkbox)
+                opacity: 1
+                pointer-events: auto
+
+          & .form-group
+            &.checkbox
+              margin-bottom: 0!important
+              & .form-label
+                padding-left: 54px
+                background: none
+                margin: 0
+                &:before
+                  left: 20px
+            &:not(.checkbox)
+              margin-bottom: 0
+              opacity: 0
+              pointer-events: none
+              position: absolute
+              top: 0
+              width: 100%
+              z-index: 1
+              & .form-control
+                padding-left: 54px
+                background: none
+                &::placeholder
+                  color: #373737
+              & .help-block
+                position: absolute
+                top: calc(100% + 5px)
+                // left: 20px
+        //& .form-group
+        //  transition: all .3s
+        //  &._hide
+        //    display: none
+        //& .form-group.checkbox, & .form-group.radio
+        //  & .form-label
+        //    padding-left: 54px
+        //    &:before
+        //      left: 20px
+
+    &.last-step
+      & .form-title
+        margin-bottom: 40px
+      & .last-step__description
+        white-space: normal
+
+
+  & .files
+    max-width: 444px
+    & .files-title
+      padding: 12px 8px
+      margin-bottom: 20px
+    & .files-group
+      position: relative
+      &.has-error
+        & .help-block
+          opacity: 1
+      & .form-group
+        display: flex
+        gap: 0 10px
+        &.loaded
+          & label
+            pointer-events: none
+          & .load-more
+            display: block
+        &._no-clickable
+          pointer-events: none
+        & label
+          margin-bottom: 0
+          width: 100%
+        & .load-more
+          display: none
+          min-width: rem(54)
+          max-width: rem(54)
+          min-height: rem(54)
+
+      & .help-block
+        font-weight: 300
+        font-size: rem(12)
+        line-height: 130%
+        margin-top: 8px
+        color: $error
+        position: absolute
+        left: 0
+        top: calc(100% + 5px)
+        opacity: 0
+        transition: all .3s
+
+
+
+
+
+
+@media (min-width: 768px)
+  .form-title
+    font-size: rem(36)
+  .form-group
+    display: flex
+    align-items: center
+    gap: 0 12px
+    position: relative
+    &.has-error
+      margin-bottom: 30px
+    & .form-label
+      margin-bottom: 0
+      font-size: rem(18)
+    & .form-control__wrapper
+      flex: 1 1 100%
+    //& .help-block
+    //  position: absolute
+    //  left: 0
+    //  top: calc(100% + 5px)
+    //  margin: 0
+
+    &.about-task
+      flex-direction: column
+      align-items: flex-start
+      justify-content: flex-start
+      & .form-control__wrapper
+        width: 100%
+
+  .form-navigation
+    // margin-top: 40px
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    flex-direction: row-reverse
+    gap: 0 20px
+    & .btn
+      max-width: 220px
+      padding: 17px 0
+      font-size: rem(16)
+      font-weight: 400
+
+
+  .form-content
+    .label
+      font-size: rem(18)
+    & .select-wrapper
+      display: flex
+      align-items: center
+      gap: 0 12px
+      & .label-title
+        margin-bottom: 0
+        font-size: rem(18)
+    & .form-item
+      padding-bottom: 40px
+      & .radios
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        align-items: start
+        justify-content: start
+        gap: 10px
+        & .label
+          font-size: rem(18)
+          grid-column: 1/-1
+          grid-row: 1/2
+          margin-bottom: 0
+        & .form-group.checkbox, & .form-group.radio
+          width: 100%
+          margin: 0
+          & .form-label
+            width: 100%
+
+
+        &.contact-in
+          display: flex
+          flex-direction: column
+          & .radio-input
+            margin-bottom: 20px
+
+
+
+@media (min-width: 1024px)
+  .form
+    & .section-name__title 
+      & .section-name__title-text
+          font-size: rem(54)
+
+
+  .form-title
+    font-size: rem(48)
+    margin-bottom: 40px
+  .form-group
+    margin-bottom: 30px
+
+  .form-content
+    & .form-content__wrapper
+      & .form-item
+        &.contact
+          display: flex
+          flex-direction: row
+          flex-wrap: wrap
+          gap: 0 20px
+          & .form-title
+            flex: 1 1 100%
+
+        & .radios
+          grid-template-columns: repeat(4, 1fr)
+          & .form-group.checkbox, & .form-group.radio
+            & .form-label
+              padding-left: 60px
+              font-size: rem(16)
+              &:before
+                left: 25px
+
+    & .files
+      display: flex
+      max-width: 100%
+      gap: 0 12px
+      margin-bottom: 30px
+      & .files-title
+        margin-bottom: 0
+      & .files-group
+        width: 100%
+        max-width: 465px
+        display: flex
+        flex-direction: column
+        gap: 24px 0
+        & .form-group
+          margin-bottom: 0
+
+
+
+@media (min-width: 1280px)
+  .form-content
+    & .form-content__wrapper
+      & .form-item
+        & .radios
+          grid-template-columns: auto repeat(4, 1fr)
+          & .label
+            grid-column: 1/2
+          & .form-group.checkbox, & .form-group.radio
+            & .form-label
+              padding-left: 60px
+              font-size: rem(16)
+              &:before
+                left: 25px
+
+        &.help
+          display: flex
+          flex-direction: row
+          flex-wrap: wrap
+          align-items: flex-start
+          gap: 0 10px
+          & .form-title
+            flex: 1 1 100%
+          & .form-group
+            &.solution
+              flex: 1 1 calc(50% - 10px)
+            &.about-task
+              flex: 1 1 100%
+              flex-direction: row
+              align-items: flex-start
+
+          & .select-wrapper
+            flex: 1 1 calc(50% - 10px)
+            margin-bottom: 30px
+          & .radios
+            flex: 1 1 100%
+
+
+@media (min-width: 1440px)
+  .form-content
+    & .form-content__wrapper
+      & .form-item
+        &.contact
+          display: grid
+          grid-template-columns: repeat(2, minmax(auto, 605px))
+          max-width: 1230px
+          gap: 10px 20px
+          align-items: start
+          justify-content: start
+          & .form-title
+            grid-column: 1/-1
+            grid-row: 1/2
+
+
+
