@@ -21,3 +21,7 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+/_docker
+/tmp
+docker-compose.yml
+.DS_Store

@@ -1,3 +1,9 @@
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+// import ScrollSmoother from 'gsap/ScrollSmoother';
+
 const supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
 // Custom VH
 let vh = window.innerHeight * 0.01;
@@ -77,6 +83,7 @@ let slider_clients;
 function enableSliderClients() {
     if (document.querySelector('.clients-slider')) {
         slider_clients = new Swiper('.clients-slider', {
+            modules: [Navigation, Pagination],
             scrollbar: {
                 el: '.swiper-scrollbar',
                 draggable: false,
@@ -430,6 +437,7 @@ function toggleRequired(block, action, current = false) {
 // Home page, swiper Feature
 if (document.querySelector('.content-feature__main')) {
     var swiperFeature = new Swiper('.content-feature__main', {
+        modules: [Navigation, Pagination],
         slidesPerView: 1,
         speed: 400,
         scrollbar: {
@@ -595,8 +603,8 @@ function windowOnLoad() {
         }
     }
 
-    document.querySelector('.ss-w').innerHTML = 'width: ' + window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    document.querySelector('.ss-h').innerHTML = 'height: ' + window.innerHeight;
+    // document.querySelector('.ss-w').innerHTML = 'width: ' + window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    // document.querySelector('.ss-h').innerHTML = 'height: ' + window.innerHeight;
 }
 
 if (document.querySelectorAll('.btn-scroll-top')) {
@@ -1208,6 +1216,7 @@ if (window.matchMedia('(min-width:1024px)').matches) {
 // Home case slider
 if(document.querySelector('.case-swiper')){
     new Swiper('.case-swiper', {
+        modules: [Navigation, Pagination],
         speed: 700,
         initialSlide: 1,
         loop: true,
@@ -1430,6 +1439,7 @@ if (solution_swiper_blocks.length > 0){
             const mainSlides = block.querySelectorAll('.solution-item__swiper .swiper-slide');
 
             let mainSwiper = new Swiper(block.querySelector('.solution-item__swiper'), {
+                modules: [Navigation, Pagination],
                 speed: 700,
                 spaceBetween: 20,
                 pagination: {
@@ -1448,6 +1458,7 @@ if (solution_swiper_blocks.length > 0){
 
             if (window.matchMedia('(max-width:1280px)').matches){
                 let thumbSwiper_node = new Swiper(block.querySelector('.solution-item__swiper-thumbs'), {
+                    modules: [Navigation, Pagination],
                     speed: 700,
                     slidesPerView: 1,
                     autoHeight: true,

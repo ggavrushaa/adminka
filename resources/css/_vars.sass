@@ -1,4 +1,6 @@
 @use 'sass:math'
+@use "sass:list"
+@use "sass:map"
 
 // Variables
 $bg-white: #FCFCFC
@@ -52,18 +54,15 @@ $error: #EC0101
 $breakpoints: (mob: 320, s-tablet: 768, l-tablet: 1024, s-laptop: 1280, l-laptop: 1440, desktop: 1920)
 
 @function adaptiv-val($startSize, $minSize, $breakpoint)
-  $breakpoint-keys: map-keys($breakpoints)
-  $breakpoint-values: map-values($breakpoints)
-  $breakpoint-index: index($breakpoint-keys, $breakpoint)
+  $breakpoint-keys: map.keys($breakpoints)
+  $breakpoint-values: map.values($breakpoints)
+  $breakpoint-index: list.index($breakpoint-keys, $breakpoint)
 
-  $minScreen: nth($breakpoint-values, $breakpoint-index)
+  $minScreen: list.nth($breakpoint-values, $breakpoint-index)
   $next-breakpoint-index: $breakpoint-index + 1
-  $maxScreen: nth($breakpoint-values, $next-breakpoint-index)
+  $maxScreen: list.nth($breakpoint-values, $next-breakpoint-index)
 
   @return calc(#{$minSize}px + (#{$startSize} - #{$minSize}) * ((100vw - #{$minScreen}px) / (#{$maxScreen} - #{$minScreen})))
 
-
-//@function adaptiv-val-large($startSize, $minSize, $maxScreen, $minScreen)
-//  @return calc(#{$minSize}px + (#{$startSize} - #{$minSize}) * ((100vw - #{$minScreen}px) / (#{$maxScreen} - #{$minScreen})))
 
 
