@@ -7,6 +7,7 @@ use Filament\Tables;
 use App\Models\SeoPages;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
+use App\Models\TranslationPage;
 use Filament\Resources\Resource;
 use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\Tabs\Tab;
@@ -22,7 +23,9 @@ class SeoPagesResource extends Resource
 {
     protected static ?string $model = SeoPages::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-h1';
+
+    protected static ?string $pluralModelLabel = 'SEO Страницы';
 
     public static function form(Form $form): Form
     {
@@ -33,6 +36,12 @@ class SeoPagesResource extends Resource
                     Tabs\Tab::make('English')->schema(self::seoFields('en')),
                     Tabs\Tab::make('Русский')->schema(self::seoFields('ru')),
                 ]),
+                Forms\Components\Select::make('page_id')->label('Страница')
+                ->options(TranslationPage::pluck('name', 'id'))
+                ->searchable()
+                ->preload()
+                ->required(),
+                FileUpload::make("seo_image")->label("Картинка (імпорт)")->directory('seo_images'),
             ]);
     }
 
@@ -40,10 +49,19 @@ class SeoPagesResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('id')->label('#'),
+                Tables\Columns\TextColumn::make('page.name')->label('Страница'),
+                Tables\Columns\TextColumn::make('seo_title_uk')->label('SEO Заголовок'),
+                Tables\Columns\TextColumn::make('seo_h1_uk')->label('SEO H1'),
+                Tables\Columns\TextColumn::make('seo_description_uk')->label('SEO Описание'),
+                Tables\Columns\TextColumn::make('seo_keywords_uk')->label('SEO Ключевые слова'),
+                Tables\Columns\TextColumn::make('seo_text_uk')->label('SEO текст'),
             ])
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('page_id')
+                ->options(TranslationPage::pluck('name', 'id'))
+                ->label('Страница')
+                ->placeholder('Все страницы'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -79,8 +97,6 @@ class SeoPagesResource extends Resource
             Textarea::make("seo_description_$lang")->label("SEO Опис ($lang)"),
             TextInput::make("seo_keywords_$lang")->label("SEO Ключові слова ($lang)"),
             Textarea::make("seo_text_$lang")->label("SEO текст ($lang)"),
-
-            FileUpload::make("image_$lang")->label("Картинка (імпорт)")->directory('seo_images'),
         ];
     }
 }

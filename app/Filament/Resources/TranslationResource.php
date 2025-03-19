@@ -24,7 +24,7 @@ class TranslationResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Переводы';
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-globe-alt';
 
     public static function form(Form $form): Form
     {
@@ -59,8 +59,8 @@ class TranslationResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('page.name')->label('Страница')->searchable(),
-                Tables\Columns\TextColumn::make('field')->label('Название поля'),
+                Tables\Columns\TextColumn::make('page.name')->label('Страница'),
+                Tables\Columns\TextColumn::make('field')->label('Название поля')->searchable(),
                 Tables\Columns\TextColumn::make('text_uk')->label('Текст UK')->limit(50)->searchable(),
             ])
             ->filters([
@@ -96,6 +96,9 @@ class TranslationResource extends Resource
             'byPage' => Pages\ListTranslationsByPage::route('/{slug}'),
         ];
     }
+
+
+    // Код для создания отдельных вкладок в группе под существующие страницы сайта
 
     // public static function getNavigationItems(): array
     // {

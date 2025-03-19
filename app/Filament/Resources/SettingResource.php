@@ -17,6 +17,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
 use Filament\Pages\SubNavigationPosition;
 use Illuminate\Database\Eloquent\Builder;
+use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\MarkdownEditor;
 use App\Filament\Resources\SettingResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -41,10 +42,12 @@ class SettingResource extends Resource
                 ->required()
                 ->unique(ignoreRecord: true),
 
-            Tabs::make('Мови')->tabs([
-                Tab::make('Українська')->schema(components: self::seoFields('uk')),
-                Tabs\Tab::make('English')->schema(self::seoFields('en')),
-                Tabs\Tab::make('Русский')->schema(self::seoFields('ru')),
+            Section::make('SEO Home Page')->schema([
+                Tabs::make('Мови')->tabs([
+                    Tab::make('Українська')->schema(components: self::seoFields('uk')),
+                    Tabs\Tab::make('English')->schema(self::seoFields('en')),
+                    Tabs\Tab::make('Русский')->schema(self::seoFields('ru')),
+                ]),
             ]),
 
             Section::make('Контактні дані')->schema([

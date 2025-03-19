@@ -67,7 +67,7 @@
                 <nav class="h1 section-name__title-text">
                     <ul>
                         <li>
-                            <a href="/tech-stack" style="transition-delay: 300ms">
+                            <a href="/technology" style="transition-delay: 300ms">
                                 <span>Tech stack</span>
                                 <span>Tech stack</span>
                             </a>
