@@ -11,4 +11,9 @@ class TechCategory extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function techStacks()
+    {
+        return $this->hasMany(TechStack::class, 'category_id');
+    }
 }

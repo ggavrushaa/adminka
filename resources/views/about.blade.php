@@ -10,7 +10,7 @@
     <div class="bg-ripples"></div>
     <div class="container">
         <ul class="breadcrumb">
-            <li><a href="/">Home</a></li>
+            <li><a href="{{ route('home', app()->getLocale()) }}">Home</a></li>
             <li>About</li>
         </ul>
 
@@ -19,7 +19,7 @@
                 <div class="section-name">
                     <div class="section-name__subtitle subtitle-section">
                         <p class="subtitle-section__number"></p>
-                        <h1 class="subtitle-section__text">АBOUT US</h1>
+                        <h1 class="subtitle-section__text">{{$translations['about']['header_subtitle'] ?? '-----'}}</h1>
                     </div>
                     <div class="section-name__title">
                         <div class="h1 section-name__title-text stop-motion-animation">
