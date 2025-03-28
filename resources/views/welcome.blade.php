@@ -13,12 +13,15 @@
             <div class="section-name">
                 <div class="section-name__subtitle subtitle-section">
                     <p class="subtitle-section__number">01</p>
-                    <p class="subtitle-section__text">Hello</p>
+                    <p class="subtitle-section__text">
+                        {{ $translations['golovna']['header_subtitle'] }}
+                    </p>
                 </div>
                 <div class="section-name__title">
+
                     <h1 class="h1 section-name__title-text">
-                        We Create <span class="glitch" data-text="High-tech">High-tech</span>
-                        Web- Products </h1>
+                        <?= $translations["golovna"]['title-part-1'] ?> <span class="glitch" data-text="<?= $translations["golovna"]['title-part-2'] ?>"><?= $translations["golovna"]['title-part-2'] ?></span>
+                        <?= $translations["golovna"]['title-part-3'] ?> </h1>
                 </div>
             </div>
             <div class="home-header__images">
@@ -39,33 +42,32 @@
             <div class="section-name section-name__blue">
                 <div class="section-name__subtitle subtitle-section">
                     <p class="subtitle-section__number">02</p>
-                    <p class="subtitle-section__text">Who we are</p>
+                    <p class="subtitle-section__text">{{ $translations['golovna']['who_we_subtitle'] }}</p>
                 </div>
                 <div class="section-name__title">
-                    <h2 class="h2 section-name__title-text">IT-partner of top companies in Ukraine and the world since 2013.
-                        We're good at automation and building web apps.</h2>
+                    <h2 class="h2 section-name__title-text">{{ $translations['golovna']['who_we_title'] }}</h2>
                 </div>
             </div>
             <div class="who-statistics">
                 <div class="who-statistics__item statistics-item">
-                    <p class="statistics-item__title">team members</p>
+                    <p class="statistics-item__title">{{ $translations['golovna']['who_we_stat1_text'] }}</p>
                     <p class="statistics-item__number">15+</p>
                 </div>
                 <div class="who-statistics__item statistics-item">
-                    <p class="statistics-item__title">clients worldwide</p>
+                    <p class="statistics-item__title">{{ $translations['golovna']['who_we_stat2_text'] }}</p>
                     <p class="statistics-item__number">30+</p>
                 </div>
                 <div class="who-statistics__item statistics-item">
-                    <p class="statistics-item__title">projects completed</p>
+                    <p class="statistics-item__title">{{ $translations['golovna']['who_we_stat3_text'] }}</p>
                     <p class="statistics-item__number">90+</p>
                 </div>
                 <div class="who-statistics__item statistics-item">
-                    <p class="statistics-item__title">ua rating</p>
+                    <p class="statistics-item__title">{{ $translations['golovna']['who_we_stat4_text'] }}</p>
                     <p class="statistics-item__number">Top 10</p>
                 </div>
             </div>
             <div class="who-features">
-                <p class="h3">Features</p>
+                <p class="h3">{{ $translations['golovna']['features_title '] }}</p>
                 <div class="who-feature__content content-feature">
                     <div class="content-feature__thumb feature-thumb">
                         <div class="feature-thumb__fraction">
@@ -77,58 +79,40 @@
                             <div class="feature-thumb__item active" data-index="1">
                                 <p class="thumb-number">01</p>
                                 <div class="thumb-separator"></div>
-                                <p class="thumb-title">Maximum immersion</p>
+                                <p class="thumb-title">{{ $translations['golovna']['features_tab1_title'] }}</p>
                             </div>
                             <div class="feature-thumb__item" data-index="2">
                                 <p class="thumb-number">02</p>
                                 <div class="thumb-separator"></div>
-                                <p class="thumb-title">Experience in various industries</p>
+                                <p class="thumb-title">{{ $translations['golovna']['features_tab2_title'] }}</p>
                             </div>
                             <div class="feature-thumb__item" data-index="3">
                                 <p class="thumb-number">03</p>
                                 <div class="thumb-separator"></div>
-                                <p class="thumb-title">Long-term IT partnership</p>
+                                <p class="thumb-title">{{ $translations['golovna']['features_tab3_title'] }}</p>
                             </div>
                         </div>
                     </div>
                     <div class="swiper content-feature__main feature-main">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <p class="feature-main__title">Maximum immersion</p>
+                                <p class="feature-main__title">{{ $translations['golovna']['features_tab1_title'] }}</p>
                                 <div class="feature-main__text">
-                                    <p>We are the most meticulous of all our competitors, so be prepared for questions.</p>
-
-                                    <p> </p>
-
-                                    <p>The superpower of the team - we immerse ourselves in business processes, sometimes in
-                                        the business model, we understand the problems and give solutions, how to automate /
-                                        scale / solve the client's request with web technologies.</p>
-
-                                    <p> </p>
+                                    <p>{{ $translations['golovna']['features_tab1_text'] }}</p>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <p class="feature-main__title">Experience in various industries</p>
+                                <p class="feature-main__title">{{ $translations['golovna']['features_tab2_title'] }}</p>
                                 <div class="feature-main__text">
-                                    <p>Industry knowledge and experience allow us to effectively solve the problems of
-                                        companies, bringing maximum benefit.<br />
+                                    <p>
+                                        {{ $translations['golovna']['features_tab2_text'] }}
                                     </p>
-
-                                    <p>Over the years, we have implemented projects in various business areas: consulting,
-                                        retail, real estate, telecom, finance, insurance, business services, education,
-                                        automotive, booking&tickets, beauty, music&entertainment, rent service,
-                                        architecture&design construction, hotel industry.</p>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <p class="feature-main__title">Long-term IT partnership</p>
+                                <p class="feature-main__title">{{ $translations['golovna']['features_tab3_title'] }}</p>
                                 <div class="feature-main__text">
-                                    <p>As they say - No man is an island. In our opinion - with partners you will win faster
-                                        and grander. We work together with you for your business, not just winning your
-                                        tasks. We are involved in the process as much as possible, we argue with you, show
-                                        our thoughts, together with you we will find the best solution and the best
-                                        technologies. This type of cooperation is the most effective, and it is thanks to
-                                        this that our customers stay with us for a long time.</p>
+                                    <p>{{ $translations['golovna']['features_tab3_text'] }}</p>
                                 </div>
                             </div>
                         </div>
@@ -141,654 +125,13 @@
     </section>
 
     <section class="section-bg-black video-case" id="section-case">
-        <div class="container">
-            <div class="bg-ripples"></div>
-            <div class="case-top">
-                <div class="section-name">
-                    <div class="section-name__subtitle subtitle-section">
-                        <p class="subtitle-section__number">03</p>
-                        <p class="subtitle-section__text">what we do</p>
-                    </div>
-                    <div class="section-name__title">
-                        <h2 class="h2 section-name__title-text">Cases</h2>
-                    </div>
-                    <div class="btn-wrapper">
-                        <a href="/cases" class="btn btn-tertiary btn-icon-right icon-arrow-right-top">view all Cases</a>
-                    </div>
-                </div>
-                <div class="swiper-arrows">
-                    <button type="button" class="icon-arrow-left swiper-btn case-btn-prev"></button>
-                    <button type="button" class="icon-arrow-right swiper-btn case-btn-next"></button>
-                </div>
-            </div>
-            <div class="swiper case-swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="video">
-                            <video autoplay="" playsinline="" loop="" muted="">
-                                <source src="/uploads/cases/65d4c5b9008d5.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="info">
-                            <p class="info-type">Mobile App</p>
-                            <p class="info-name">Varto</p>
-
-
-                            <a href="/cases/varto" class="btn btn-primary btn-icon icon-arrow-right-top btn-link"></a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="video">
-                            <video autoplay="" playsinline="" loop="" muted="">
-                                <source src="/uploads/cases/6757094ddeb9e.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="info">
-                            <p class="info-type">E-commerce</p>
-                            <p class="info-name">Agromat</p>
-
-
-                            <a href="https://www.agromat.ua/" class="btn btn-primary btn-icon icon-link-blank btn-link"
-                                target="_blank"></a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="video">
-                            <video autoplay="" playsinline="" loop="" muted="">
-                                <source src="/uploads/cases/65d4c6d9c8e42.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="info">
-                            <p class="info-type">E-commerce</p>
-                            <p class="info-name">VENTS</p>
-
-
-                            <a href="https://ventilation-system.com/"
-                                class="btn btn-primary btn-icon icon-link-blank btn-link" target="_blank"></a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="video">
-                            <video autoplay="" playsinline="" loop="" muted="">
-                                <source src="/uploads/cases/65d4c9a4a9d96.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="info">
-                            <p class="info-type">E-commerce</p>
-                            <p class="info-name">Yözh. Basic clothes</p>
-
-
-                            <a href="https://yozh.com.ua/" class="btn btn-primary btn-icon icon-link-blank btn-link"
-                                target="_blank"></a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="video">
-                            <video autoplay="" playsinline="" loop="" muted="">
-                                <source src="/uploads/cases/65ccdbee489af.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="info">
-                            <p class="info-type">Portal</p>
-                            <p class="info-name">Active community</p>
-
-
-                            <a href="https://ag.com.ua/" class="btn btn-primary btn-icon icon-link-blank btn-link"
-                                target="_blank"></a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="video">
-                            <video autoplay="" playsinline="" loop="" muted="">
-                                <source src="/uploads/cases/660ff7ca146f1.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        <div class="info">
-                            <p class="info-type">Corporate website</p>
-                            <p class="info-name">Brand. Alla Zadneprovska</p>
-
-
-                            <a href="https://allazadneprovska.com/"
-                                class="btn btn-primary btn-icon icon-link-blank btn-link" target="_blank"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <x-cases-slider-component />
     </section>
 
     <div class="common-background">
         <section class="section-bg-black section-tech" id="section-tech">
             <div class="bg-ripples"></div>
-            <div class="container">
-                <div class="tech-top">
-                    <div class="section-name">
-                        <div class="section-name__subtitle subtitle-section">
-                            <p class="subtitle-section__number">04</p>
-                            <p class="subtitle-section__text">what we use</p>
-                        </div>
-                        <div class="section-name__title">
-                            <h2 class="h2 section-name__title-text">Tech stack</h2>
-                        </div>
-                        <div class="btn-wrapper">
-                            <a href="/tech-stack" class="btn btn-tertiary btn-icon-right icon-arrow-right-top">view all
-                                technologies</a>
-                        </div>
-                    </div>
-                    <div class="tech-description">
-                        <p>We provide custom software development services using the following proven technologies.</p>
-                        <div class="btn-wrapper">
-                            <a href="/tech-stack" class="btn btn-tertiary btn-icon-right icon-arrow-right-top">view all
-                                technologies</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-block js-tab">
-                    <div class="tab-block__navigation">
-                        <button type="button" class="icon-arrow-left js-btn-prev"></button>
-                        <button type="button" class="icon-arrow-right js-btn-next"></button>
-                    </div>
-                    <div class="tab-top">
-                        <div class="tab-top__wrapper">
-                            <button type="button" class="tab-top__item js-tab-btn active" tabindex="0"
-                                title="Frameworks" data-index="0">
-                                Frameworks </button>
-                            <button type="button" class="tab-top__item js-tab-btn active" tabindex="1"
-                                title="Languages" data-index="1">
-                                Languages </button>
-                            <button type="button" class="tab-top__item js-tab-btn active" tabindex="2" title="Tools"
-                                data-index="2">
-                                Tools </button>
-                            <button type="button" class="tab-top__item js-tab-btn active" tabindex="3"
-                                title="Technologies" data-index="3">
-                                Technologies </button>
-                            <button type="button" class="tab-top__item js-tab-btn active" tabindex="4"
-                                title="Applications and bases" data-index="4">
-                                Applications and bases </button>
-                            <button type="button" class="tab-top__item js-tab-btn active" tabindex="5"
-                                title="Integration" data-index="5">
-                                Integration </button>
-                            <button type="button" class="tab-top__item js-tab-btn active" tabindex="6" title="Design"
-                                data-index="6">
-                                Design </button>
-                            <div class="scrollbar js-scrollbar">
-                                <span></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-bottom">
-                        <div class="tab-bottom__wrapper">
-                            <div class="tab-bottom__item _js-tab-0 active">
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d4803cd4e9f.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d4803cd4d6b.svg" alt="Laravel">
-                                    </div>
-                                    Laravel
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d48051bd8a1.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d48051bd57a.svg" alt="Yii2">
-                                    </div>
-                                    Yii2
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d35bc362297.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d35bc36215c.svg" alt="Vue.js">
-                                    </div>
-                                    Vue.js
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d35bdc1fb03.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d35bdc1ef68.svg" alt="Bootstrap">
-                                    </div>
-                                    Bootstrap
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d354692ab49.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d354692a63c.svg" alt="Reactnative">
-                                    </div>
-                                    Reactnative
-                                </div>
-                            </div>
-                            <div class="tab-bottom__item _js-tab-1 ">
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d35bfb2407c.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d4806164fea.svg" alt="PHP">
-                                    </div>
-                                    PHP
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d35c0fd86b3.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d35c0fd842a.svg" alt="JavaScript">
-                                    </div>
-                                    JavaScript
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d49d588c0ba.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d49d588bf05.svg" alt="Typescript">
-                                    </div>
-                                    Typescript
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d4a917e5822.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d4a917e56ab.svg" alt="Solidity">
-                                    </div>
-                                    Solidity
-                                </div>
-                            </div>
-                            <div class="tab-bottom__item _js-tab-2 ">
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d4985ddf721.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d345d5c2f4d.svg" alt="jQuery">
-                                    </div>
-                                    jQuery
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d34612a8a0c.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d34612a80ae.svg" alt="CSS3">
-                                    </div>
-                                    CSS3
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d346690784e.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d346690778a.svg" alt="SASS">
-                                    </div>
-                                    SASS
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d346a2dacbe.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d346a2dabb5.svg" alt="LESS">
-                                    </div>
-                                    LESS
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d34783001f6.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d34782f4094.svg" alt="Gulp">
-                                    </div>
-                                    Gulp
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d347cfab8c4.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d347cfab65f.svg" alt="GitHub">
-                                    </div>
-                                    GitHub
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d3480bb44a5.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d3480bb438d.svg" alt="Composer">
-                                    </div>
-                                    Composer
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d3484575b4a.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d34845759fd.svg" alt="Blender">
-                                    </div>
-                                    Blender
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d348aac7a8f.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d348aac797c.svg" alt="HTML5">
-                                    </div>
-                                    HTML5
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d348ead2dd5.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d348ead2a69.svg" alt="Three.js">
-                                    </div>
-                                    Three.js
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d34bbc8bd20.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d34bbc8b29e.svg" alt="LottieFiles">
-                                    </div>
-                                    LottieFiles
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d3559b0fbac.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d3559b0f5f0.svg" alt="Firebase">
-                                    </div>
-                                    Firebase
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d35612cf329.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d35612ce93a.svg" alt="WebSocket">
-                                    </div>
-                                    WebSocket
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d4a9f27f896.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d4a9f27f70d.svg" alt="Plesk">
-                                    </div>
-                                    Plesk
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d4aa4cd0855.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d4aa4cd067d.svg" alt="AWS">
-                                    </div>
-                                    AWS
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d4acca65494.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d4acca65353.svg" alt="Git">
-                                    </div>
-                                    Git
-                                </div>
-                            </div>
-                            <div class="tab-bottom__item _js-tab-3 ">
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d34c3d8d4f6.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d34c3d8d2eb.svg" alt="AMP">
-                                    </div>
-                                    AMP
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d34ce097084.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d34ce096f86.svg" alt="PWA">
-                                    </div>
-                                    PWA
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d4a987dfc11.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d4a987dfadb.svg" alt="WebRTC">
-                                    </div>
-                                    WebRTC
-                                </div>
-                            </div>
-                            <div class="tab-bottom__item _js-tab-4 ">
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d34d73cd352.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d34d73ccef2.svg" alt="Redis">
-                                    </div>
-                                    Redis
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d34dc4c07ab.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d34dc4bfed9.svg" alt="Docker">
-                                    </div>
-                                    Docker
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d34e089c9a4.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d34edf7ea2d.svg" alt="MariaDB">
-                                    </div>
-                                    MariaDB
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d356edcee11.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d356edcea4b.svg" alt="MySQL">
-                                    </div>
-                                    MySQL
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d3574b3b3f8.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d3574b3afbc.svg" alt="MongoDB">
-                                    </div>
-                                    MongoDB
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d35c20efe5a.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d35c20ef86d.svg" alt="Memcach">
-                                    </div>
-                                    Memcach
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d35c550b0b3.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d35c550ab3e.svg" alt="Apache">
-                                    </div>
-                                    Apache
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d35c8a1d717.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d35c8a1cdcd.svg" alt="Node.js">
-                                    </div>
-                                    Node.js
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d35ccda8ebf.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d35ccda8cbd.svg" alt="WebGL">
-                                    </div>
-                                    WebGL
-                                </div>
-                            </div>
-                            <div class="tab-bottom__item _js-tab-5 ">
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d35d1190721.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d35d1190162.svg" alt="laximo">
-                                    </div>
-                                    laximo
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d35d8ce4ed9.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d35d8ce497b.svg" alt="1С">
-                                    </div>
-                                    1С
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d35de60c0c6.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d35de60ba42.svg" alt="Wayforpay">
-                                    </div>
-                                    Wayforpay
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d35e3410775.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d35e340fe81.svg" alt="LiqPay">
-                                    </div>
-                                    LiqPay
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d35e898b6d2.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d35e898af86.svg" alt="NovaPoshta">
-                                    </div>
-                                    NovaPoshta
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d35eebef6cb.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d35eebef243.svg" alt="REST API">
-                                    </div>
-                                    REST API
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d35f2d9cd92.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d35f2d9c5f7.svg" alt="Opendatabot">
-                                    </div>
-                                    Opendatabot
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d35f72a63e5.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d35f72a5b25.svg" alt="TecDoc">
-                                    </div>
-                                    TecDoc
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d35fe0e9591.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d35fe0e9159.svg" alt="GoogleMap">
-                                    </div>
-                                    GoogleMap
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d36044121f5.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d36044120ad.svg" alt="Zoom">
-                                    </div>
-                                    Zoom
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d3609b69db2.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d3609b683a8.svg" alt="TurboSMS">
-                                    </div>
-                                    TurboSMS
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d360d753359.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d360d752f53.svg" alt="Portmone">
-                                    </div>
-                                    Portmone
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d49e27b0a5a.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d49e27b089d.svg" alt="Amazon">
-                                    </div>
-                                    Amazon
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d49e9e96f1f.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d49e9e967b8.svg" alt="PayPal">
-                                    </div>
-                                    PayPal
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d49f3e3e239.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d49f3e3dd3b.svg"
-                                            alt="MicrosoftDynamics">
-                                    </div>
-                                    MicrosoftDynamics
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d49fbe1d197.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d49fbe1c58e.svg" alt="masterbuh">
-                                    </div>
-                                    masterbuh
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d4a03ad2f60.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d4a03ad2c0b.svg" alt="R2">
-                                    </div>
-                                    R2
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d4a0a313168.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d4a0a313037.svg" alt="YouControl">
-                                    </div>
-                                    YouControl
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d4a7a2db965.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d4a7a2db7c1.svg" alt="Przelewy24">
-                                    </div>
-                                    Przelewy24
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d4a833e6aef.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d4a833e6a35.svg" alt="Вчасно">
-                                    </div>
-                                    Вчасно
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d4a8b5425bb.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d4a8b542232.svg" alt="Вчасно.Каса">
-                                    </div>
-                                    Вчасно.Каса
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d4abb7d0c82.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d4abb7d0ae6.svg" alt="Укр Пошта">
-                                    </div>
-                                    Укр Пошта
-                                </div>
-                            </div>
-                            <div class="tab-bottom__item _js-tab-6 ">
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d3620f2155c.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d3620f211eb.svg" alt="Illustrator">
-                                    </div>
-                                    Illustrator
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d3626a78c24.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d3626a784c4.svg" alt="Photoshop">
-                                    </div>
-                                    Photoshop
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d362da3c1de.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d362da3bbbf.svg" alt="Adobe XD ">
-                                    </div>
-                                    Adobe XD
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d363951cf14.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d363951c5db.svg" alt="InVision">
-                                    </div>
-                                    InVision
-                                </div>
-                                <div class="tech-item">
-                                    <div class="img">
-                                        <img src="/uploads/tech/65d363cfe0bcc.svg" alt="">
-                                        <img class="hover" src="/uploads/tech/65d363cfe0398.svg" alt="Figma">
-                                    </div>
-                                    Figma
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="btn-wrapper">
-                        <a href="/tech-stack" class="btn btn-tertiary btn-icon-right icon-arrow-right-top">view all
-                            technologies</a>
-                    </div>
-                </div>
-            </div>
+           <x-tech-stack-component />
         </section>
 
         <section class="section-bg-black section-marquee">

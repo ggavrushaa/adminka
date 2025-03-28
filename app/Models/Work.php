@@ -17,4 +17,9 @@ class Work extends Model
         'no_work_page', 'show_in_work_block', 
         'show_in_footer',
     ];
+
+    public function getLocalizedTitleAttribute(): string
+    {
+        return $this->{"title_" . app()->getLocale()};
+    }
 }

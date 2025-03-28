@@ -67,25 +67,25 @@
                 <nav class="h1 section-name__title-text">
                     <ul>
                         <li>
-                            <a href="/tech-stack" style="transition-delay: 300ms">
+                            <a href="{{ route('technology', app()->getLocale()) }}" style="transition-delay: 300ms">
                                 <span>Tech stack</span>
                                 <span>Tech stack</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/cases" style="transition-delay: 400ms">
+                            <a href="{{ route('cases', app()->getLocale()) }}" style="transition-delay: 400ms">
                                 <span>Cases</span>
                                 <span>Cases</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/about" style="transition-delay: 600ms">
+                            <a href="{{ route('about', app()->getLocale()) }}" style="transition-delay: 600ms">
                                 <span>About us</span>
                                 <span>About us</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/contacts" style="transition-delay: 800ms">
+                            <a href="{{ route('contacts', app()->getLocale()) }}" style="transition-delay: 800ms">
                                 <span>Contacts</span>
                                 <span>Contacts</span>
                             </a>
@@ -111,10 +111,9 @@
                 <div class="circle-arrow"></div>
             </a>
             <div class="lang">
-                <a class="" href="/ua">Ua</a>
-
-
-                <span class="active">Eng</span>
+                <a class="{{ app()->getLocale() == 'uk' ? 'active' : '' }}" href="{{route('home', ['uk'])}}">Ua</a>
+                <a class="{{ app()->getLocale() == 'ru' ? 'active' : '' }}" href="{{route('home', ['ru'])}}">Ru</a>
+                <a class="{{ app()->getLocale() == 'en' ? 'active' : '' }}" href="{{route('home', ['en'])}}">Eng</a>
             </div>
         </div>
     </div>

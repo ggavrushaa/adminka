@@ -5,7 +5,7 @@
         <div class="footer-top">
             <div class="footer-row">
                 <div class="footer-col footer-col__logo">
-                    <img src="/img/components/logo-white.svg" alt="IT company UAITLAB">
+                    <img href="/" src="/img/components/logo-white.svg" alt="IT company UAITLAB">
                     <div class="mash">
                         <a href="https://www.behance.net/uaitlab" class="btn btn-primary btn-icon icon-behance"
                             target="_blank" rel="nofollow"></a>
@@ -14,7 +14,7 @@
                         <a href="https://www.facebook.com/uaitlab/" class="btn btn-primary btn-icon icon-facebook"
                             target="_blank" rel="nofollow"></a>
                     </div>
-                    <p class="advisory">© 2025 UAITLAB</p>
+                    <p href="/" class="advisory">© 2025 UAITLAB</p>
                     <button class="btn btn-tertiary btn-icon btn-icon-right icon-arrow-top btn-scroll-top">go to
                         top</button>
                 </div>
@@ -65,7 +65,7 @@
                                 <a href="/services/mobile">Mobile app development</a>
                             </li>
                             <li>
-                                <a href="/services/tech-support">Technical support (SLA)</a>
+                                <a href="/services/support">Technical support (SLA)</a>
                             </li>
                         </ul>
                     </div>
@@ -85,7 +85,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p class="advisory">© 2025 UAITLAB</p>
+            <p href="/" class="advisory">© 2025 UAITLAB</p>
             <button class="btn btn-tertiary btn-icon btn-icon-right icon-arrow-top btn-scroll-top">go to top</button>
             <ul>
                 <li>
