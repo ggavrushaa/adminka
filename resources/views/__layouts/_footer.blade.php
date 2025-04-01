@@ -19,7 +19,7 @@
                         top</button>
                 </div>
                 <div class="footer-col footer-col__location">
-                    <p class="footer-col__name footer-col__name_line">Location</p>
+                    <p class="footer-col__name footer-col__name_line">{{ $translations['pidval']['location'] }}</p>
                     <div class="footer-col__text">
                         <p>st. Academician Tupolev, 54 Ukraine, Kiev</p>
                     </div>
@@ -33,45 +33,45 @@
             </div>
             <div class="footer-row">
                 <div class="footer-col footer-col__nav">
-                    <p class="footer-col__name">Navigation:</p>
+                    <p class="footer-col__name">{{ $translations['pidval']['navigation'] }}:</p>
                     <div class="footer-col__text">
                         <ul>
                             <li>
-                                <a href="/tech-stack">Tech stack</a>
+                                <a href="/tech-stack">{{ $translations['fiksovana-sapka']['tech_stack'] }}</a>
                             </li>
                             <li>
-                                <a href="/cases">Work</a>
+                                <a href="/cases">{{ $translations['fiksovana-sapka']['work'] }}</a>
                             </li>
                             <li>
-                                <a href="/about">About us</a>
+                                <a href="/about">{{ $translations['fiksovana-sapka']['about_us'] }}</a>
                             </li>
                             <li>
-                                <a href="/contacts">Contacts</a>
+                                <a href="/contacts">{{ $translations['fiksovana-sapka']['contacts'] }}</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="footer-col footer-col__services">
-                    <p class="footer-col__name">Services:</p>
+                    <p class="footer-col__name">{{ $translations['pidval']['service'] }}</p>
                     <div class="footer-col__text">
                         <ul>
                             <li>
-                                <a href="/services/web">Web development</a>
+                                <a href="/services/web">{{ $translations['pidval']['web'] }}</a>
                             </li>
                             <li>
-                                <a href="/services/automation">Automation</a>
+                                <a href="/services/automation">{{ $translations['pidval']['automation'] }}</a>
                             </li>
                             <li>
-                                <a href="/services/mobile">Mobile app development</a>
+                                <a href="/services/mobile">{{ $translations['pidval']['mobile'] }}</a>
                             </li>
                             <li>
-                                <a href="/services/support">Technical support (SLA)</a>
+                                <a href="/services/support">{{ $translations['pidval']['support'] }}</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="footer-col footer-col__products">
-                    <p class="footer-col__name">Cases:</p>
+                    <p class="footer-col__name">{{ $translations['pidval']['cases'] }}</p>
                     <div class="footer-col__text">
                         <ul>
                             <li><a href="/cases/varto" target="_blank">Varto</a></li>
@@ -85,14 +85,14 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p href="/" class="advisory">© 2025 UAITLAB</p>
-            <button class="btn btn-tertiary btn-icon btn-icon-right icon-arrow-top btn-scroll-top">go to top</button>
+            <p href="/" class="advisory">© {{ date('Y') }} UAITLAB</p>
+            <button class="btn btn-tertiary btn-icon btn-icon-right icon-arrow-top btn-scroll-top">{{ $translations['pidval']['btn_top'] }}</button>
             <ul>
                 <li>
-                    <a href="/cookies">Cookies</a>
+                    <a href="/">Cookies</a>
                 </li>
                 <li>
-                    <a href="/cookies">Privacy</a>
+                    <a href="/">Privacy</a>
                 </li>
             </ul>
         </div>

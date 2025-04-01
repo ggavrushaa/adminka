@@ -25,7 +25,17 @@ class Review extends Model
 
     public function source()
     {
-        return $this->belongsTo(ReviewSource::class, 'source_id');
+        return $this->belongsTo(ReviewSource::class);
+    }
+
+    public function getLocalizedQuoteAttribute(): string
+    {
+        return $this->{"quote_" . app()->getLocale()};
+    }
+
+    public function getLocalizedTextAttribute(): string
+    {
+        return $this->{"text_" . app()->getLocale()};
     }
 
 }

@@ -12,11 +12,15 @@ Route::group([
     Route::view('/about', 'about')->name('about');
     Route::view('/technology', 'technology')->name('technology');
     Route::view('/cases', 'cases')->name('cases');
-    Route::view('/services/web', 'services.web');
-    Route::view('/services/automation', 'services.automation');
-    Route::view('/services/mobile', 'services.mobile');
-    Route::view('/services/support', 'services.support');
+    Route::view('/services/web', 'services.web')->name('service.web');
+    Route::view('/services/automation', 'services.automation')->name('service.automation');
+    Route::view('/services/mobile', 'services.mobile')->name('service.mobile');
+    Route::view('/services/support', 'services.support')->name('service.support');
     Route::view('/cases/varto', 'works.varto');
+    Route::view('/cases/yozh', 'works.yozh');
+    Route::view('/blog', 'blog.index');
+    Route::view('/blog/{id}', 'blog.show')->name('blog.show');
+    Route::view('/partners', 'partners');
 });
 
-Route::redirect('/', '/en');
+Route::redirect('/', destination: '/en');
