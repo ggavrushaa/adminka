@@ -11,4 +11,9 @@ class ReviewSource extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class, 'source_id');
+    }
 }

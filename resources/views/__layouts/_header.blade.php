@@ -38,7 +38,7 @@
             </svg>
         </a>
         <a href="/form/" type="button"
-            class="btn btn-primary btn-icon icon-chat-2 header-btn__chat _circle-animation">Let’s talk</a>
+            class="btn btn-primary btn-icon icon-chat-2 header-btn__chat _circle-animation">{{ $translations['fiksovana-sapka']['btn_lets_talk'] }}</a>
     </div>
 </header>
 
@@ -56,38 +56,38 @@
                     <div class="close-button-block"></div>
                 </div>
             </button>
-            Close
+            {{ $translations['fiksovana-sapka']['btn_close'] }}
         </div>
         <div class="section-name">
             <div class="section-name__subtitle subtitle-section">
                 <p class="subtitle-section__number">00</p>
-                <p class="subtitle-section__text">Menu</p>
+                <p class="subtitle-section__text">{{ $translations['fiksovana-sapka']['menu'] }}</p>
             </div>
             <div class="section-name__title">
                 <nav class="h1 section-name__title-text">
                     <ul>
                         <li>
                             <a href="{{ route('technology', app()->getLocale()) }}" style="transition-delay: 300ms">
-                                <span>Tech stack</span>
-                                <span>Tech stack</span>
+                                <span>{{ $translations['fiksovana-sapka']['tech_stack'] }}</span>
+                                <span>{{ $translations['fiksovana-sapka']['tech_stack'] }}</span>
                             </a>
                         </li>
                         <li>
                             <a href="{{ route('cases', app()->getLocale()) }}" style="transition-delay: 400ms">
-                                <span>Cases</span>
-                                <span>Cases</span>
+                                <span>{{ $translations['fiksovana-sapka']['cases'] }}</span>
+                                <span>{{ $translations['fiksovana-sapka']['cases'] }}</span>
                             </a>
                         </li>
                         <li>
                             <a href="{{ route('about', app()->getLocale()) }}" style="transition-delay: 600ms">
-                                <span>About us</span>
-                                <span>About us</span>
+                                <span>{{ $translations['fiksovana-sapka']['about_us'] }}</span>
+                                <span>{{ $translations['fiksovana-sapka']['about_us'] }}</span>
                             </a>
                         </li>
                         <li>
                             <a href="{{ route('contacts', app()->getLocale()) }}" style="transition-delay: 800ms">
-                                <span>Contacts</span>
-                                <span>Contacts</span>
+                                <span>{{ $translations['fiksovana-sapka']['contacts'] }}</span>
+                                <span>{{ $translations['fiksovana-sapka']['contacts'] }}</span>
                             </a>
                         </li>
                     </ul>
@@ -104,7 +104,7 @@
                     <circle class="circle-bg" cx="50%" cy="50%" r="30%" fill="red"></circle>
                     <text>
                         <textPath xlink:href="#circle">
-                            Let`s talk - Let`s talk -
+                            {{ $translations['fiksovana-sapka']['header_title'] }}
                         </textPath>
                     </text>
                 </svg>
