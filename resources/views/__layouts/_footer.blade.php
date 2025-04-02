@@ -37,7 +37,7 @@
                     <div class="footer-col__text">
                         <ul>
                             <li>
-                                <a href="/tech-stack">{{ $translations['fiksovana-sapka']['tech_stack'] }}</a>
+                                <a href="{{ route('technology', app()->getLocale()) }}">{{ $translations['fiksovana-sapka']['tech_stack'] }}</a>
                             </li>
                             <li>
                                 <a href="/cases">{{ $translations['fiksovana-sapka']['work'] }}</a>
