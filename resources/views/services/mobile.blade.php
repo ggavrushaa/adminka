@@ -6,6 +6,7 @@
 @section('title', 'Mobile Development')
 @section('description', 'Mobile Development is the process of creating applications that can be accessed and used on mobile devices, such as smartphones and tablets')
 
+@section('content')
 <div class="section-bg-black services-header _mobiledev">
     <div class="bg-ripples"></div>
     <div class="container">
@@ -566,8 +567,4 @@
     </div>
 </section>
 
-            <div class="screen-size"
-                style="display: none; position: fixed; bottom: 10px; right: 10px; background-color: #2B2B2B; padding: 5px 20px; font-size: 12px; color: white">
-                <p class="ss-w"></p>
-                <p class="ss-h"></p>
-            </div>
+@endsection

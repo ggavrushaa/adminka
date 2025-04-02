@@ -6,6 +6,7 @@
 @section('title', 'Automation')
 @section('description', 'Automation is the process of creating applications that can perform tasks automatically without human intervention')
 
+@section('content')
 <div class="section-bg-black services-header">
     <div class="bg-ripples"></div>
     <div class="container">
@@ -524,9 +525,4 @@
         </div>
     </div>
 </section>
-
-            <div class="screen-size"
-                style="display: none; position: fixed; bottom: 10px; right: 10px; background-color: #2B2B2B; padding: 5px 20px; font-size: 12px; color: white">
-                <p class="ss-w"></p>
-                <p class="ss-h"></p>
-            </div>
+@endsection

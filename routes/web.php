@@ -16,8 +16,8 @@ Route::group([
     Route::view('/services/automation', 'services.automation')->name('service.automation');
     Route::view('/services/mobile', 'services.mobile')->name('service.mobile');
     Route::view('/services/support', 'services.support')->name('service.support');
-    Route::view('/cases/varto', 'works.varto');
-    Route::view('/cases/yozh', 'works.yozh');
+    Route::view('/cases/varto', 'works.varto')->name('works.varto');
+    Route::view('/cases/yozh', 'works.yozh')->name('works.yozh');
     Route::view('/blog', 'blog.index');
     Route::view('/blog/{id}', 'blog.show')->name('blog.show');
     Route::view('/partners', 'partners');

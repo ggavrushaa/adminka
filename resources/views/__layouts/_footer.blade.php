@@ -40,13 +40,13 @@
                                 <a href="{{ route('technology', app()->getLocale()) }}">{{ $translations['fiksovana-sapka']['tech_stack'] }}</a>
                             </li>
                             <li>
-                                <a href="/cases">{{ $translations['fiksovana-sapka']['work'] }}</a>
+                                <a href="{{ route('cases', app()->getLocale()) }}">{{ $translations['fiksovana-sapka']['work'] }}</a>
                             </li>
                             <li>
-                                <a href="/about">{{ $translations['fiksovana-sapka']['about_us'] }}</a>
+                                <a href="{{ route('about', app()->getLocale()) }}">{{ $translations['fiksovana-sapka']['about_us'] }}</a>
                             </li>
                             <li>
-                                <a href="/contacts">{{ $translations['fiksovana-sapka']['contacts'] }}</a>
+                                <a href="{{ route('contacts', app()->getLocale()) }}">{{ $translations['fiksovana-sapka']['contacts'] }}</a>
                             </li>
                         </ul>
                     </div>
@@ -74,10 +74,10 @@
                     <p class="footer-col__name">{{ $translations['pidval']['cases'] }}</p>
                     <div class="footer-col__text">
                         <ul>
-                            <li><a href="/cases/varto" target="_blank">Varto</a></li>
+                            <li><a href="{{ route('works.varto', app()->getLocale()) }}" target="_blank">Varto</a></li>
                             <li><a href="https://ag.com.ua/" target="_blank">Active community</a></li>
                             <li><a href="https://ventilation-system.com/" target="_blank">VENTS</a></li>
-                            <li><a href="https://yozh.com.ua/" target="_blank">Yözh. Basic clothes</a></li>
+                            <li><a href="{{ route('works.yozh', app()->getLocale()) }}" target="_blank">Yözh. Basic clothes</a></li>
                             <li><a href="https://www.agromat.ua/" target="_blank">Agromat</a></li>
                         </ul>
                     </div>

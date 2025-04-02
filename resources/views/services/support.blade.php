@@ -6,6 +6,7 @@
 @section('title', 'Technical Support')
 @section('description', 'Technical Support is the process of providing assistance to users of technology products, such as mobile phones, computers, and software applications')
 
+@section('content')
 <div class="section-bg-black services-header">
     <div class="bg-ripples"></div>
     <div class="container">
@@ -551,8 +552,4 @@
     </div>
 </section>
 
-            <div class="screen-size"
-                style="display: none; position: fixed; bottom: 10px; right: 10px; background-color: #2B2B2B; padding: 5px 20px; font-size: 12px; color: white">
-                <p class="ss-w"></p>
-                <p class="ss-h"></p>
-            </div>
+@endsection

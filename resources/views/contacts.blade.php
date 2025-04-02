@@ -6,6 +6,7 @@
 @section('title', 'Contact Us')
 @section('description', 'Contact us for any questions or inquiries. We are always happy to help you.')
 
+@section('content')
 <div class="contact">
     <div class="contact__content">
         <div class="contact__info">
@@ -118,3 +119,4 @@
         </form>
     </div>
 </div>
+@endsection

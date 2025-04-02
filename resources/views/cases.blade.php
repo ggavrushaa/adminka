@@ -6,6 +6,7 @@
 @section('title', 'Cases')
 @section('description', 'Our cases are the best examples of our work. We are proud of each project we have done. Check out our cases and see for yourself.')
 
+@section('content')
 <div class="section-bg-black anim-letter-header">
     <div class="bg-ripples"></div>
     <div class="container">
@@ -204,9 +205,4 @@
         </div>
     </div>
 </section>
-
-            <div class="screen-size"
-                style="display: none; position: fixed; bottom: 10px; right: 10px; background-color: #2B2B2B; padding: 5px 20px; font-size: 12px; color: white">
-                <p class="ss-w"></p>
-                <p class="ss-h"></p>
-            </div>
+@endsection

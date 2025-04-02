@@ -6,6 +6,7 @@
 @section('title', 'About Us')
 @section('description', 'About Us')
 
+@section('content')
 <section class="section-bg-black anim-letter-header _about">
     <div class="bg-ripples"></div>
     <div class="container">
@@ -1502,8 +1503,4 @@
     </div>
 </section>
 
-            <div class="screen-size"
-                style="display: none; position: fixed; bottom: 10px; right: 10px; background-color: #2B2B2B; padding: 5px 20px; font-size: 12px; color: white">
-                <p class="ss-w"></p>
-                <p class="ss-h"></p>
-            </div>
+@endsection

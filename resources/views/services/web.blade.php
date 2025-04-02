@@ -6,6 +6,7 @@
 @section('title', 'Web Development')
 @section('description', 'Web Development is the skill of transforming your ideas and tasks into visually appealing and functional applications for your business')
 
+@section('content')
 <div class="section-bg-black services-header _webdev">
     <div class="bg-ripples"></div>
     <div class="container">
@@ -769,8 +770,4 @@
     </div>
 </section>
 
-            <div class="screen-size"
-                style="display: none; position: fixed; bottom: 10px; right: 10px; background-color: #2B2B2B; padding: 5px 20px; font-size: 12px; color: white">
-                <p class="ss-w"></p>
-                <p class="ss-h"></p>
-            </div>
+@endsection
