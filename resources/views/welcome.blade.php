@@ -20,8 +20,9 @@
                 <div class="section-name__title">
 
                     <h1 class="h1 section-name__title-text">
-                        <?= $translations["golovna"]['title-part-1'] ?> <span class="glitch" data-text="<?= $translations["golovna"]['title-part-2'] ?>"><?= $translations["golovna"]['title-part-2'] ?></span>
-                        <?= $translations["golovna"]['title-part-3'] ?> </h1>
+                        <?= $translations['golovna']['title-part-1'] ?> <span class="glitch"
+                            data-text="<?= $translations['golovna']['title-part-2'] ?>"><?= $translations['golovna']['title-part-2'] ?></span>
+                        <?= $translations['golovna']['title-part-3'] ?> </h1>
                 </div>
             </div>
             <div class="home-header__images">
@@ -131,7 +132,7 @@
     <div class="common-background">
         <section class="section-bg-black section-tech" id="section-tech">
             <div class="bg-ripples"></div>
-           <x-tech-stack-component />
+            <x-tech-stack-component />
         </section>
 
         <section class="section-bg-black section-marquee">
@@ -213,12 +214,12 @@
                                 <div class="card__description">
                                     <p>{{ $translations['golovna']['card1_desc'] }}</p>
                                 </div>
-                                @if(count(explode('#', $translations['golovna']['card1_labels'])) > 0)
-                                <div class="tags">
-                                    @foreach (explode('#', $translations['golovna']['card1_labels']) as $label)
-                                        <p class="tag">{{ $label }}</p>
-                                    @endforeach
-                                </div>
+                                @if (count(explode('#', $translations['golovna']['card1_labels'])) > 0)
+                                    <div class="tags">
+                                        @foreach (explode('#', $translations['golovna']['card1_labels']) as $label)
+                                            <p class="tag">{{ $label }}</p>
+                                        @endforeach
+                                    </div>
                                 @endif
                                 <div class="btn-wrapper">
                                     <a href="{{ route('service.mobile', app()->getLocale()) }}"
@@ -261,12 +262,12 @@
                                 <div class="card__description">
                                     <p>{{ $translations['golovna']['card2_desc'] }}</p>
                                 </div>
-                                @if(count(explode('#', $translations['golovna']['card2_labels'])) > 0)
-                                <div class="tags">
-                                    @foreach (explode('#', $translations['golovna']['card2_labels']) as $label)
-                                        <p class="tag">{{ $label }}</p>
-                                    @endforeach
-                                </div>
+                                @if (count(explode('#', $translations['golovna']['card2_labels'])) > 0)
+                                    <div class="tags">
+                                        @foreach (explode('#', $translations['golovna']['card2_labels']) as $label)
+                                            <p class="tag">{{ $label }}</p>
+                                        @endforeach
+                                    </div>
                                 @endif
                                 <div class="btn-wrapper">
                                     <a href="{{ route('service.web', app()->getLocale()) }}"
@@ -309,12 +310,12 @@
                                 <div class="card__description">
                                     <p>{{ $translations['golovna']['card3_desc'] }}</p>
                                 </div>
-                                @if(count(explode('#', $translations['golovna']['card3_labels'])) > 0)
-                                <div class="tags">
-                                    @foreach (explode('#', $translations['golovna']['card3_labels']) as $label)
-                                        <p class="tag">{{ $label }}</p>
-                                    @endforeach
-                                </div>
+                                @if (count(explode('#', $translations['golovna']['card3_labels'])) > 0)
+                                    <div class="tags">
+                                        @foreach (explode('#', $translations['golovna']['card3_labels']) as $label)
+                                            <p class="tag">{{ $label }}</p>
+                                        @endforeach
+                                    </div>
                                 @endif
                                 <div class="btn-wrapper">
                                     <a href="{{ route('service.support', app()->getLocale()) }}"
@@ -357,12 +358,12 @@
                                 <div class="card__description">
                                     <p>{{ $translations['golovna']['card4_desc'] }}</p>
                                 </div>
-                                @if(count(explode('#', $translations['golovna']['card4_labels'])) > 0)
-                                <div class="tags">
-                                    @foreach (explode('#', $translations['golovna']['card4_labels']) as $label)
-                                        <p class="tag">{{ $label }}</p>
-                                    @endforeach
-                                </div>
+                                @if (count(explode('#', $translations['golovna']['card4_labels'])) > 0)
+                                    <div class="tags">
+                                        @foreach (explode('#', $translations['golovna']['card4_labels']) as $label)
+                                            <p class="tag">{{ $label }}</p>
+                                        @endforeach
+                                    </div>
                                 @endif
                                 <div class="btn-wrapper">
                                     <a href="{{ route('service.automation', app()->getLocale()) }}"
@@ -474,6 +475,65 @@
         <x-reviews-component />
     </section>
 
+    <section class="section-bg-black section-clients section-media">
+        <div class="bg-ripples"></div>
+
+        <div class="container">
+            <div class="section-name">
+                <div class="section-name__subtitle subtitle-section">
+                    <p class="subtitle-section__number">08</p>
+                    <p class="subtitle-section__text">we are proud of </p>
+                </div>
+                <div class="section-name__title">
+                    <h2 class="h2 section-name__title-text">Media</h2>
+                </div>
+            </div>
+
+            <div class="swiper clients-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="/img/home/media-img-1.svg" alt="">
+                            <img class="hover" src="/img/home/media-img_hover-1.svg" alt="">
+                        </div>
+
+                        <div class="desc">
+                            <p>Незалежний всеукраїнський портал новин</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="/img/home/media-img-2.svg" alt="">
+                            <img class="hover" src="/img/home/media-img_hover-2.svg" alt="">
+                        </div>
+                        <div class="desc">
+                            <p>Портал про гаджети, технології і програмне забезпечення</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="/img/home/media-img-3.svg" alt="">
+                            <img class="hover" src="/img/home/media-img_hover-3.svg" alt="">
+                        </div>
+                        <div class="desc">
+                            <p>Асоціація ритейлерів України</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="/img/home/media-img-4.svg" alt="">
+                            <img class="hover" src="/img/home/media-img_hover-4.png" alt="">
+                        </div>
+                        <div class="desc">
+                            <p>Інформаційний ресурс про український ринок роздрібної торгівлі</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+    </section>
+
     <section class="section-form">
         <div class="container">
             <div class="section-name">
@@ -486,7 +546,8 @@
                 </div>
 
                 <div class="btn-wrapper">
-                    <a href="/form" class="btn btn-primary btn-bg-orange">{{ $translations['golovna']['btn_form_link'] }}</a>
+                    <a href="/form"
+                        class="btn btn-primary btn-bg-orange">{{ $translations['golovna']['btn_form_link'] }}</a>
                 </div>
 
                 <div class="marquee-text">

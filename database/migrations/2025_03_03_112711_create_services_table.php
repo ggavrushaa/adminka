@@ -7,41 +7,41 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::create('services', function (Blueprint $table) {
-            $table->id()->from(1001);
-            $table->string('name_ru');
-            $table->string('name_en');
-            $table->string('name_uk');
+        // Schema::create('services', function (Blueprint $table) {
+        //     $table->id()->from(1001);
+        //     $table->string('name_ru');
+        //     $table->string('name_en');
+        //     $table->string('name_uk');
 
-            $table->json('category');
+        //     $table->json('category');
 
-            $table->boolean('faq_on_site')->default(false);
-            $table->boolean('show_on_site')->default(false);
+        //     $table->boolean('faq_on_site')->default(false);
+        //     $table->boolean('show_on_site')->default(false);
 
-            $table->string('seo_title_ru')->nullable();
-            $table->string('seo_title_en')->nullable();
-            $table->string('seo_title_uk')->nullable();
+        //     $table->string('seo_title_ru')->nullable();
+        //     $table->string('seo_title_en')->nullable();
+        //     $table->string('seo_title_uk')->nullable();
 
-            $table->string('seo_h1_ru')->nullable();
-            $table->string('seo_h1_en')->nullable();
-            $table->string('seo_h1_uk')->nullable();
+        //     $table->string('seo_h1_ru')->nullable();
+        //     $table->string('seo_h1_en')->nullable();
+        //     $table->string('seo_h1_uk')->nullable();
 
-            $table->text('seo_desc_ru')->nullable();
-            $table->text('seo_desc_en')->nullable();
-            $table->text('seo_desc_uk')->nullable();
+        //     $table->text('seo_desc_ru')->nullable();
+        //     $table->text('seo_desc_en')->nullable();
+        //     $table->text('seo_desc_uk')->nullable();
 
-            $table->text('seo_keywords_ru')->nullable();
-            $table->text('seo_keywords_en')->nullable();
-            $table->text('seo_keywords_uk')->nullable();
+        //     $table->text('seo_keywords_ru')->nullable();
+        //     $table->text('seo_keywords_en')->nullable();
+        //     $table->text('seo_keywords_uk')->nullable();
 
-            $table->longText('seo_text_ru')->nullable();
-            $table->longText('seo_text_en')->nullable();
-            $table->longText('seo_text_uk')->nullable();
+        //     $table->longText('seo_text_ru')->nullable();
+        //     $table->longText('seo_text_en')->nullable();
+        //     $table->longText('seo_text_uk')->nullable();
 
-            $table->string('seo_image')->nullable();
+        //     $table->string('seo_image')->nullable();
 
-            $table->timestamps();
-        });
+        //     $table->timestamps();
+        // });
 
         Schema::create('service_technologies', function (Blueprint $table) {
             $table->id();

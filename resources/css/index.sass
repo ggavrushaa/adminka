@@ -158,6 +158,8 @@
               opacity: 0
               &.hover
                 opacity: 1
+          & .desc
+            color: $deep-black
       & .img
         position: absolute
         left: 50%
@@ -299,6 +301,37 @@
           text-transform: uppercase
         & .reviewer-info__text_grey
           color: $text-light-grey
+
+.section-media
+  .clients-slider
+    .swiper-slide
+      padding: 20px
+      min-height: 300px
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      .img
+        width: 86%
+        max-width: rem(300)
+        height: 45px
+        position: relative
+        left: auto
+        top: auto
+        transform: none
+      & img
+        display: block
+        margin: 0 auto
+        width: 100%
+        max-width: 100%
+      .desc
+        font-weight: 400
+        font-size: rem(14)
+        line-height: rem(20)
+        letter-spacing: 0
+        text-align: center
+        color: white
+        margin-top: 20px
 
 .section-form
   background-color: $burning-orange
@@ -778,6 +811,13 @@
       & .swiper-scrollbar
         margin-top: 40px
 
+  .section-media
+    .clients-slider
+      .swiper-slide
+        max-width: 100%
+        & .img
+          max-width: rem(300)
+          height: 54px
   .section-reviews
     padding: 35px 0 100px 0
     & .section-name
@@ -995,6 +1035,20 @@
         bottom: 0
         width: 100%
         margin-top: 0
+
+  .section-media
+    & .clients-slider
+      height: auto
+      & .swiper-wrapper
+        height: auto
+        display: grid
+        grid-template-columns: repeat(2,1fr)
+        gap: 24px
+        & .swiper-slide
+          height: auto
+          width: 100%
+      .swiper-scrollbar
+        display: none
 
   .section-reviews
     & .tab-block
@@ -1218,6 +1272,17 @@
       & .swiper-scrollbar
         display: none
 
+  .section-media
+    .clients-slider
+      .swiper-wrapper
+        grid-template-columns: repeat(2,1fr)
+        & .swiper-slide
+          padding: rem(84) rem(20) rem(20) rem(20)
+          justify-content: flex-start
+          .desc
+            font-size: rem(16)
+            line-height: rem(24)
+
   .section-reviews
     & .section-name
       & .marquee-text
@@ -1385,7 +1450,7 @@
         min-height: rem(320)
         &:nth-child(5n+4)
           grid-column: 1/3
-          
+
   .create-partners
     .container
       display: grid
@@ -1400,7 +1465,7 @@
       .form-title
         font-size: rem(36)
         line-height: 140%
-      .form-group 
+      .form-group
         margin-bottom: rem(24)
         .form-label
           font-size: rem(20)
@@ -1412,9 +1477,6 @@
       position: absolute
       bottom: 0
       left: var(--padding-container)
-    
-        
-
 
 @media (min-width: 1440px)
 
@@ -1471,6 +1533,15 @@
         & .swiper-slide
           & .img
             max-width: 80.35%
+
+  .section-media
+    .clients-slider
+      .swiper-wrapper
+        grid-template-columns: repeat(3,1fr)
+        & .swiper-slide
+          .img
+            max-width: rem(350)
+            height: 64px
 
   .section-reviews
     height: 100vh
@@ -1547,22 +1618,22 @@
       & .list__item
         gap: 0 130px
 
-  .partners-header 
-    .stop-motion-animation 
+  .partners-header
+    .stop-motion-animation
       .word-anim__wrapper
         margin: 0 rem(-10) 0 rem(10)
 
   .partners-main
     padding: rem(148) 0 rem(100) 0
-    ul 
+    ul
       li
         min-height: rem(289)
 
-  .create-partners 
+  .create-partners
     padding: rem(100) 0
     .container
-      grid-template-columns: 6fr 6fr 
-    .title 
+      grid-template-columns: 6fr 6fr
+    .title
       font-size: rem(48)
       strong
         display: inline
