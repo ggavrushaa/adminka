@@ -1,4 +1,4 @@
-@import "vars"
+@use '_vars' as *
 
 .home-header
   overflow: hidden
@@ -1261,6 +1261,7 @@
       & .swiper-wrapper
         display: grid
         grid-template-columns: repeat(4, 1fr)
+        height: auto
         gap: 20px
         & .swiper-slide
           width: auto

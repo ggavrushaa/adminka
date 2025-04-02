@@ -1,5 +1,6 @@
-@vite(['resources/css/index.sass'])
-
+@push('styles')
+    @vite(['resources/css/index.sass'])
+@endpush
 
 @extends('__layouts.main')
 
@@ -1747,11 +1748,5 @@
             </div>
         </div>
     </section>
-
-    <div class="screen-size"
-        style="display: none; position: fixed; bottom: 10px; right: 10px; background-color: #2B2B2B; padding: 5px 20px; font-size: 12px; color: white">
-        <p class="ss-w"></p>
-        <p class="ss-h"></p>
-    </div>
 
 @endsection

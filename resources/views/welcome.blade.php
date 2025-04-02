@@ -1,4 +1,6 @@
-@vite(['resources/css/index.sass'])
+@push('styles')
+    @vite(['resources/css/index.sass'])
+@endpush
 
 
 @extends('__layouts.main')
@@ -538,7 +540,7 @@
         <div class="container">
             <div class="section-name">
                 <div class="section-name__subtitle subtitle-section">
-                    <p class="subtitle-section__number">08</p>
+                    <p class="subtitle-section__number">09</p>
                     <p class="subtitle-section__text">{{ $translations['golovna']['form_subtitle'] }}</p>
                 </div>
                 <div class="section-name__title">

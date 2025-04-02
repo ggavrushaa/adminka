@@ -14,4 +14,5 @@
     <meta property="og:description" content="@yield('description')">
 
     @vite(['resources/js/app.js', 'resources/css/app.sass'])
+    @stack('styles')
 </head>

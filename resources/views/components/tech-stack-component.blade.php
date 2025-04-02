@@ -30,7 +30,7 @@
                         $categoryIndex = 0;
                     @endphp
                     @foreach ($categories as $category)
-                        <button type="button" class="tab-top__item js-tab-btn" 
+                        <button type="button" class="tab-top__item js-tab-btn {{ ($categoryIndex === 0) ? 'active' : '' }}" 
                         tabindex="{{ $categoryIndex }}" 
                         title="{{ $category->name }}"
                         data-index="{{ $categoryIndex }}">
