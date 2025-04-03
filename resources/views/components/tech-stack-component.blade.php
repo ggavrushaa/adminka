@@ -1,10 +1,12 @@
 <div class="container">
         <div class="tech-top">
             <div class="section-name">
+                @if($page == false)
                 <div class="section-name__subtitle subtitle-section">
                     <p class="subtitle-section__number">04</p>
                     <p class="subtitle-section__text">{{ $translations['golovna']['tech_title'] }}</p>
                 </div>
+                @endif
                 <div class="section-name__title">
                     <h2 class="h2 section-name__title-text">{{ $translations['golovna']['tech_subtitle'] }}</h2>
                 </div>

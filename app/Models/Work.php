@@ -22,4 +22,8 @@ class Work extends Model
     {
         return $this->{"title_" . app()->getLocale()};
     }
+    public function getLocalizedDescriptionAttribute(): string
+    {
+        return $this->{"description_" . app()->getLocale()};
+    }
 }

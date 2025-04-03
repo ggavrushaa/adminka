@@ -2,10 +2,12 @@
     <div class="bg-ripples"></div>
     <div class="case-top">
         <div class="section-name">
+            @if($page == false)
             <div class="section-name__subtitle subtitle-section">
                 <p class="subtitle-section__number">03</p>
                 <p class="subtitle-section__text">{{ $translations['golovna']['cases_title'] }}</p>
             </div>
+            @endif
             <div class="section-name__title">
                 <h2 class="h2 section-name__title-text">{{ $translations['golovna']['cases_subtitle'] }}</h2>
             </div>
@@ -34,6 +36,7 @@
 
                         <img src="/storage/{{ $work->image }}" loading="lazy" alt="" title="">
                     </picture>
+                    @endif
                 </div>
                 <div class="info">
                     <p class="info-type">{{ $work->project_type }}</p>
@@ -41,7 +44,6 @@
                     <a href="{{ $work->link }}" class="btn btn-primary btn-icon icon-arrow-right-top btn-link"></a>
                 </div>
             </div>
-            @endif
             @endforeach
         </div>
     </div>

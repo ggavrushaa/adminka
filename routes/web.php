@@ -2,6 +2,7 @@
 
 use Faker\Provider\ar_EG\Address;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FormController;
 
 Route::group([
     'prefix' => '{locale}', 
@@ -21,6 +22,7 @@ Route::group([
     Route::view('/blog', 'blog.index');
     Route::view('/blog/{id}', 'blog.show')->name('blog.show');
     Route::view('/partners', 'partners');
+    Route::get('/form', [FormController::class, 'index'])->name('form');
 });
 
 Route::redirect('/', destination: '/en');

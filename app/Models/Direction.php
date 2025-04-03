@@ -13,4 +13,9 @@ class Direction extends Model
         'show_on_site', 'order_column',
     ];
 
+    public function getLocalizedNameAttribute(): string
+    {
+        return $this->{"name_" . app()->getLocale()};
+    }
+
 }

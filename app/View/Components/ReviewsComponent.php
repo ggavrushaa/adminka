@@ -16,7 +16,7 @@ class ReviewsComponent extends Component
     public function __construct()
     {
         $this->sources = ReviewSource::all();
-        $this->reviews = Review::all();
+        $this->reviews = Review::where('show_on_site', 1)->get();
     }
 
     public function render(): View|Closure|string

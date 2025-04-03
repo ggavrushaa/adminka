@@ -51,7 +51,10 @@ class WorkResource extends Resource
                             ]),
                         ]),
                         Forms\Components\FileUpload::make('image')->label('Картинка')->image()->directory('works'),
-                        Forms\Components\FileUpload::make('video')->label('Видео')->directory('videos'),
+                        Forms\Components\FileUpload::make('video')->label('Видео')
+                            ->directory('videos')
+                            ->maxSize(50000)
+                            ->rules(['file', 'max:50000']),
                         Forms\Components\TextInput::make('link')->label('Ссылка')->url(),
                         Forms\Components\TextInput::make('project_type')->label('Тип проекта')->placeholder('Например, mobile app'),
                         Forms\Components\Toggle::make('show_on_site')->label('Показывать на сайте'),

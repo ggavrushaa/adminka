@@ -37,7 +37,7 @@
                 </defs>
             </svg>
         </a>
-        <a href="/form/" type="button"
+        <a href="{{ route('form', app()->getLocale()) }}" type="button"
             class="btn btn-primary btn-icon icon-chat-2 header-btn__chat _circle-animation">{{ $translations['fiksovana-sapka']['btn_lets_talk'] }}</a>
     </div>
 </header>

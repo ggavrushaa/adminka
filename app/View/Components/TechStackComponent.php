@@ -12,8 +12,10 @@ class TechStackComponent extends Component
 {
     public $stacks;
     public $categories;
-    public function __construct()
+    public $page;
+    public function __construct($page = null)
     {
+        $this->page = $page;
         $this->stacks = TechStack::where('show_on_site', 1)->get();
         $this->categories = TechCategory::with('techStacks')->get();
     }

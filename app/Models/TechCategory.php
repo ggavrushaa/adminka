@@ -14,6 +14,8 @@ class TechCategory extends Model
 
     public function techStacks()
     {
-        return $this->hasMany(TechStack::class, 'category_id');
+        return $this->hasMany(TechStack::class, 'category_id')
+            ->where('show_on_site', 1)
+            ->orderBy('name');
     }
 }

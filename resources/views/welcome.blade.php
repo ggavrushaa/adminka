@@ -380,96 +380,7 @@
 
         <section class="section-bg-black section-clients">
             <div class="bg-ripples"></div>
-
-            <div class="container">
-                <div class="section-name">
-                    <div class="section-name__subtitle subtitle-section">
-                        <p class="subtitle-section__number">06</p>
-                        <p class="subtitle-section__text">{{ $translations['golovna']['clients_subtitle'] }}</p>
-                    </div>
-                    <div class="section-name__title">
-                        <h2 class="h2 section-name__title-text">{{ $translations['golovna']['clients_title'] }}</h2>
-                    </div>
-                </div>
-
-                <div class="swiper clients-slider">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="img">
-                                <img src="/img/home/clients/client-1.svg" alt="">
-                                <img class="hover" src="/img/home/clients/client-1__white.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="img">
-                                <img src="/img/home/clients/client-7.svg" alt="">
-                                <img class="hover" src="/img/home/clients/client-7__white.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="img">
-                                <img src="/img/home/clients/client-6.svg" alt="">
-                                <img class="hover" src="/img/home/clients/client-6__white.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="img">
-                                <img src="/img/home/clients/client-13.svg" alt="">
-                                <img class="hover" src="/img/home/clients/client-13__white.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="img">
-                                <img src="/img/home/clients/client-14.svg" alt="">
-                                <img class="hover" src="/img/home/clients/client-14__white.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="img">
-                                <img src="/img/home/clients/client-15.svg" alt="">
-                                <img class="hover" src="/img/home/clients/client-15__white.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="img">
-                                <img src="/img/home/clients/client-8.svg" alt="">
-                                <img class="hover" src="/img/home/clients/client-8__white.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="img">
-                                <img src="/img/home/clients/client-10.svg" alt="">
-                                <img class="hover" src="/img/home/clients/client-10__white.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="img">
-                                <img src="/img/home/clients/client-9.svg" alt="">
-                                <img class="hover" src="/img/home/clients/client-9__white.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="img">
-                                <img src="/img/home/clients/client-5.svg" alt="">
-                                <img class="hover" src="/img/home/clients/client-5__white.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="img">
-                                <img src="/img/home/clients/client-3.svg" alt="">
-                                <img class="hover" src="/img/home/clients/client-3__white.svg" alt="">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="img">
-                                <img src="/img/home/clients/client-12.svg" alt="">
-                                <img class="hover" src="/img/home/clients/client-12__white.svg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-scrollbar"></div>
-                </div>
-            </div>
+            <x-customer-component :page="false"/>
         </section>
     </div>
 
@@ -479,61 +390,7 @@
 
     <section class="section-bg-black section-clients section-media">
         <div class="bg-ripples"></div>
-
-        <div class="container">
-            <div class="section-name">
-                <div class="section-name__subtitle subtitle-section">
-                    <p class="subtitle-section__number">08</p>
-                    <p class="subtitle-section__text">we are proud of </p>
-                </div>
-                <div class="section-name__title">
-                    <h2 class="h2 section-name__title-text">Media</h2>
-                </div>
-            </div>
-
-            <div class="swiper clients-slider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="img">
-                            <img src="/img/home/media-img-1.svg" alt="">
-                            <img class="hover" src="/img/home/media-img_hover-1.svg" alt="">
-                        </div>
-
-                        <div class="desc">
-                            <p>Незалежний всеукраїнський портал новин</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="img">
-                            <img src="/img/home/media-img-2.svg" alt="">
-                            <img class="hover" src="/img/home/media-img_hover-2.svg" alt="">
-                        </div>
-                        <div class="desc">
-                            <p>Портал про гаджети, технології і програмне забезпечення</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="img">
-                            <img src="/img/home/media-img-3.svg" alt="">
-                            <img class="hover" src="/img/home/media-img_hover-3.svg" alt="">
-                        </div>
-                        <div class="desc">
-                            <p>Асоціація ритейлерів України</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="img">
-                            <img src="/img/home/media-img-4.svg" alt="">
-                            <img class="hover" src="/img/home/media-img_hover-4.png" alt="">
-                        </div>
-                        <div class="desc">
-                            <p>Інформаційний ресурс про український ринок роздрібної торгівлі</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-scrollbar"></div>
-            </div>
-        </div>
+        <x-media-component />
     </section>
 
     <section class="section-form">
@@ -548,7 +405,7 @@
                 </div>
 
                 <div class="btn-wrapper">
-                    <a href="/form"
+                    <a href="{{ route('form', app()->getLocale()) }}"
                         class="btn btn-primary btn-bg-orange">{{ $translations['golovna']['btn_form_link'] }}</a>
                 </div>
 

@@ -5,7 +5,8 @@
 @extends('__layouts.main')
 
 @section('title', 'Cases')
-@section('description', 'Our cases are the best examples of our work. We are proud of each project we have done. Check
+@section('description',
+    'Our cases are the best examples of our work. We are proud of each project we have done. Check
     out our cases and see for yourself.')
 
 @section('content')
@@ -46,124 +47,7 @@
     </div>
 
     <div class="case-catalog">
-        <div class="container">
-
-            <div class="case-catalog__content">
-                <div class="case-card">
-                    <div class="case-img">
-
-                        <video autoplay="" playsinline="" loop="" muted="">
-                            <source src="/uploads/cases/65d4c5b9008d5.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="case-info">
-                        <a href="/cases/varto" class="btn btn-primary btn-icon icon-arrow-right-top btn-link"></a>
-                        <div class="case-tag">Mobile App</div>
-                        <p class="case-name">Varto</p>
-                        <div class="case-link"></div>
-                        <div class="case-desc">
-                            <p>"Varto" is the only insurance company that specializes exclusively in the field of medical
-                                insurance and accident protection. This guarantees the possibility of perfect service to
-                                their customers in this direction.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="case-card">
-                    <div class="case-img">
-
-                        <video autoplay="" playsinline="" loop="" muted="">
-                            <source src="/uploads/cases/6757094ddeb9e.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="case-info">
-                        <a href="https://www.agromat.ua/" class="btn btn-primary btn-icon icon-link-blank btn-link"
-                            target="_blank"></a>
-                        <div class="case-tag">E-commerce</div>
-                        <p class="case-name">Agromat</p>
-                        <div class="case-link">https://www.agromat.ua/</div>
-                        <div class="case-desc">
-                            <p>From three sites to one: these and other non-standard solutions for the national chain of
-                                stores "Agromat"</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="case-card">
-                    <div class="case-img">
-
-                        <video autoplay="" playsinline="" loop="" muted="">
-                            <source src="/uploads/cases/65d4c6d9c8e42.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="case-info">
-                        <a href="https://ventilation-system.com/" class="btn btn-primary btn-icon icon-link-blank btn-link"
-                            target="_blank"></a>
-                        <div class="case-tag">E-commerce</div>
-                        <p class="case-name">VENTS</p>
-                        <div class="case-link">https://ventilation-system.com/</div>
-                        <div class="case-desc">
-                            <p>Manufacturer of modern ventilation equipment for solving any tasks in the field of
-                                ventilation. The company's equipment is in demand in 123 countries of the world.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="case-card">
-                    <div class="case-img">
-
-                        <video autoplay="" playsinline="" loop="" muted="">
-                            <source src="/uploads/cases/65d4c9a4a9d96.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="case-info">
-                        <a href="https://yozh.com.ua/" class="btn btn-primary btn-icon icon-link-blank btn-link"
-                            target="_blank"></a>
-                        <div class="case-tag">E-commerce</div>
-                        <p class="case-name">Yözh. Basic clothes</p>
-                        <div class="case-link">https://yozh.com.ua/</div>
-                        <div class="case-desc">
-                            <p>A basic clothing brand with a big history and an even bigger soul. Production was established
-                                in Ukraine in 1999.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="case-card">
-                    <div class="case-img">
-
-                        <video autoplay="" playsinline="" loop="" muted="">
-                            <source src="/uploads/cases/65ccdbee489af.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="case-info">
-                        <a href="https://ag.com.ua/" class="btn btn-primary btn-icon icon-link-blank btn-link"
-                            target="_blank"></a>
-                        <div class="case-tag">Portal</div>
-                        <p class="case-name">Active community</p>
-                        <div class="case-link">https://ag.com.ua/</div>
-                        <div class="case-desc">
-                            <p>A portal for solving socio-political issues in their communities and the country.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="case-card">
-                    <div class="case-img">
-
-                        <video autoplay="" playsinline="" loop="" muted="">
-                            <source src="/uploads/cases/660ff7ca146f1.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="case-info">
-                        <a href="https://allazadneprovska.com/" class="btn btn-primary btn-icon icon-link-blank btn-link"
-                            target="_blank"></a>
-                        <div class="case-tag">Corporate website</div>
-                        <p class="case-name">Brand. Alla Zadneprovska</p>
-                        <div class="case-link">https://allazadneprovska.com/</div>
-                        <div class="case-desc">
-                            <p>Personal website of the founder of the coaching school, Allya Zadneprovskaya. The resource
-                                has collected all the projects and services of the deputy.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <x-cases-block-component />
     </div>
 
     <section class="create">
