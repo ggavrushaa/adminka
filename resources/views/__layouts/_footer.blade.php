@@ -48,6 +48,12 @@
                             <li>
                                 <a href="{{ route('contacts', app()->getLocale()) }}">{{ $translations['fiksovana-sapka']['contacts'] }}</a>
                             </li>
+                            <li>
+                                <a href="{{ route('partners', app()->getLocale()) }}">{{ $translations['fiksovana-sapka']['partners'] }}</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('blog.index', app()->getLocale()) }}">{{ $translations['fiksovana-sapka']['blog'] }}</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

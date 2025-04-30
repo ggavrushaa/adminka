@@ -11,4 +11,17 @@ class FormController extends Controller
         $directions = \App\Models\Direction::where('show_on_site', 1)->orderBy('order_column')->get();
         return view('form', compact('directions'));
     }
+
+    public function store(Request $request)
+    {
+        dd($request->all());
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'direction' => 'required',
+            'message' => 'required',
+        ]);
+
+    }
 }

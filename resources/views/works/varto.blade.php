@@ -31,9 +31,7 @@
                     </div>
                     <div class="header-description">
                         <p>
-                            VARTO Insurance Company is the only insurance company that specializes exclusively in health
-                            insurance and accident protection. This guarantees the possibility of perfect
-                            to provide perfect service to their clients in this area.
+                            {{ $translations['cases']['varto_subtitle'] }}
                         </p>
                     </div>
                 </div>

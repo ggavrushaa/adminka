@@ -7,41 +7,41 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-        // Schema::create('services', function (Blueprint $table) {
-        //     $table->id()->from(1001);
-        //     $table->string('name_ru');
-        //     $table->string('name_en');
-        //     $table->string('name_uk');
+        Schema::create('services', function (Blueprint $table) {
+            $table->id()->from(1001);
+            $table->string('name_ru');
+            $table->string('name_en');
+            $table->string('name_uk');
 
-        //     $table->json('category');
+            $table->json('category');
 
-        //     $table->boolean('faq_on_site')->default(false);
-        //     $table->boolean('show_on_site')->default(false);
+            $table->boolean('faq_on_site')->default(false);
+            $table->boolean('show_on_site')->default(false);
 
-        //     $table->string('seo_title_ru')->nullable();
-        //     $table->string('seo_title_en')->nullable();
-        //     $table->string('seo_title_uk')->nullable();
+            $table->string('seo_title_ru')->nullable();
+            $table->string('seo_title_en')->nullable();
+            $table->string('seo_title_uk')->nullable();
 
-        //     $table->string('seo_h1_ru')->nullable();
-        //     $table->string('seo_h1_en')->nullable();
-        //     $table->string('seo_h1_uk')->nullable();
+            $table->string('seo_h1_ru')->nullable();
+            $table->string('seo_h1_en')->nullable();
+            $table->string('seo_h1_uk')->nullable();
 
-        //     $table->text('seo_desc_ru')->nullable();
-        //     $table->text('seo_desc_en')->nullable();
-        //     $table->text('seo_desc_uk')->nullable();
+            $table->text('seo_desc_ru')->nullable();
+            $table->text('seo_desc_en')->nullable();
+            $table->text('seo_desc_uk')->nullable();
 
-        //     $table->text('seo_keywords_ru')->nullable();
-        //     $table->text('seo_keywords_en')->nullable();
-        //     $table->text('seo_keywords_uk')->nullable();
+            $table->text('seo_keywords_ru')->nullable();
+            $table->text('seo_keywords_en')->nullable();
+            $table->text('seo_keywords_uk')->nullable();
 
-        //     $table->longText('seo_text_ru')->nullable();
-        //     $table->longText('seo_text_en')->nullable();
-        //     $table->longText('seo_text_uk')->nullable();
+            $table->longText('seo_text_ru')->nullable();
+            $table->longText('seo_text_en')->nullable();
+            $table->longText('seo_text_uk')->nullable();
 
-        //     $table->string('seo_image')->nullable();
+            $table->string('seo_image')->nullable();
 
-        //     $table->timestamps();
-        // });
+            $table->timestamps();
+        });
 
         Schema::create('service_technologies', function (Blueprint $table) {
             $table->id();
@@ -94,6 +94,12 @@ return new class extends Migration {
             $table->timestamps();
         });
 
+        Schema::create('tags', function (Blueprint $table) {
+            $table->id()->from(1001);
+            $table->string('name');
+            $table->timestamps();
+        });
+
         Schema::create('service_articles', function (Blueprint $table) {
             $table->id();
             $table->foreignId('service_id')->constrained('services')->onDelete('cascade');
@@ -117,6 +123,7 @@ return new class extends Migration {
             $table->foreignId('article_id')->constrained('articles')->onDelete('cascade');
             $table->foreignId('service_id')->constrained('services')->onDelete('cascade');
         });
+
     }
 
     public function down(): void
@@ -129,5 +136,6 @@ return new class extends Migration {
         Schema::dropIfExists('article_tags');
         Schema::dropIfExists('article_cases');
         Schema::dropIfExists('article_services');
+        Schema::dropIfExists('tags');
     }
 };

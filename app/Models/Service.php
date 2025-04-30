@@ -3,10 +3,12 @@
 namespace App\Models;
 
 use App\Enums\ServiceCategoryEnum;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Service extends Model
 {
+    use HasFactory;
     protected $table = 'services';
 
     protected $fillable = [
@@ -41,4 +43,16 @@ class Service extends Model
     {
         return $this->belongsToMany(Article::class, 'service_articles', 'service_id', 'article_id');
     }
+
+    public function getLocalizedNameAttribute()
+    {
+        return $this->{'name_' . app()->getLocale()};
+    }
+
+    public function getLocalizedSeoDescAttribute()
+    {
+        return $this->{'seo_desc_' . app()->getLocale()};
+    }
+
+   
 }

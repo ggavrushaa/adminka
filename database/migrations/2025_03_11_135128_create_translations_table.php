@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('translations', function (Blueprint $table) {
             $table->id()->from(1001);
             $table->foreignId('page_id')->constrained('translations_pages');
-            $table->string('field')->unique();
+            $table->string('field');
             $table->text('text_en');
             $table->text('text_ru');
         $table->text('text_uk');

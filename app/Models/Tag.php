@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
+    use HasFactory;
     protected $table = 'tags';
 
     protected $fillable = [
@@ -16,6 +18,7 @@ class Tag extends Model
     {
         return $this->belongsToMany(Article::class, 'article_tags');
     }
+
 
 
 }

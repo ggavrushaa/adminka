@@ -31,8 +31,8 @@
                         </video>
                     @else
                     <picture>
-                        <source srcset="storage/{{ $work->image }}" type="image/webp">
-                        <source srcset="/storage/{{ $work->image }}" type="image/jpg">
+                        <source src="/storage/{{ $work->image }}" type="image/webp">
+                        <source src="/storage/{{ $work->image }}" type="image/jpg">
 
                         <img src="/storage/{{ $work->image }}" loading="lazy" alt="" title="">
                     </picture>

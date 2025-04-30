@@ -2,7 +2,7 @@
     @vite(['resources/css/form.sass'])
 @endpush
 
-@vite('resources/js/custom-select.js')
+@vite('resources/js/cdn/custom-select.js')
 
 @extends('__layouts.main')
 
@@ -48,7 +48,8 @@
                     </svg>
                 </div>
             </div>
-            <form class="form-content" action="/form" method="post">
+            <form class="form-content" action="{{ route('form.store', app()->getLocale()) }}" method="post">
+                @csrf
                 <div class="form-content__wrapper">
                     <div class="form-item active contact">
                         <h2 class="h2 form-title">Let’s talk</h2>
@@ -101,7 +102,8 @@
                                 <div class="select__toggle">
                                     <label>Choose a direction</label>
                                     <button type="button" name="direction-btn" data-type="button" data-select="toggle"
-                                        data-index="-1" onblur="selectHandlerBlur(this)"></button>
+                                        data-index="-1" onblur="selectHandlerBlur(this)">
+                                    </button>
                                     <input type="hidden" class="select-hidden" id="direction" name="direction">
                                 </div>
                                 <div class="select__dropdown">
@@ -109,7 +111,7 @@
                                         @foreach($directions as $key => $direction)
                                         <li class="select__option" data-select="option" data-value="{{ $direction->value }}"
                                             data-index="{{ $key }}">
-                                            {{ $direction->locilizedName }} 
+                                            {{ $direction->locilized_name }} 
                                         </li>
                                         @endforeach
                                     </ul>
@@ -231,11 +233,11 @@
                     </div>
                 </div>
 
-                <input type="hidden" name="_csrf"
-                    value="o6gcNrMVBbW0jJMQSWYaoyhBhyBlKXgGy-eMYUbk8NOX5FBO2CE34tjDwSQhLWDgfgfyZlMQCTGggegDLIfdgQ==">
+                {{-- <input type="hidden" name="_csrf"
+                    value="o6gcNrMVBbW0jJMQSWYaoyhBhyBlKXgGy-eMYUbk8NOX5FBO2CE34tjDwSQhLWDgfgfyZlMQCTGggegDLIfdgQ=="> --}}
                 <input type="hidden" name="token" id="token">
-                <input type="hidden" name="lang" value="en">
-
+                <input type="hidden" name="lang" value="{{ app()->getLocale() }}">
+                <input type="hidden" name="form" value="feedback">
             </form>
             <div class="form-navigation">
                 <a href="/" class="btn btn-border _hide js-btn-home">To the main page</a>

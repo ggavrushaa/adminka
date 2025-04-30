@@ -2,6 +2,7 @@
 
 use Faker\Provider\ar_EG\Address;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\FormController;
 
 Route::group([
@@ -19,10 +20,13 @@ Route::group([
     Route::view('/services/support', 'services.support')->name('service.support');
     Route::view('/cases/varto', 'works.varto')->name('works.varto');
     Route::view('/cases/yozh', 'works.yozh')->name('works.yozh');
-    Route::view('/blog', 'blog.index');
-    Route::view('/blog/{id}', 'blog.show')->name('blog.show');
-    Route::view('/partners', 'partners');
+    Route::view('/partners', 'partners')->name('partners');
     Route::get('/form', [FormController::class, 'index'])->name('form');
+    Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
+    Route::get('/blog', function() {
+        return view('blog.index');
+    })->name('blog.index');
+    Route::post('/form', [FormController::class, 'store'])->name('form.store');
 });
 
 Route::redirect('/', destination: '/en');
