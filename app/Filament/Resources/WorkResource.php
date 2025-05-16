@@ -57,6 +57,7 @@ class WorkResource extends Resource
                             ->rules(['file', 'max:50000']),
                         Forms\Components\TextInput::make('link')->label('Ссылка')->url(),
                         Forms\Components\TextInput::make('project_type')->label('Тип проекта')->placeholder('Например, mobile app'),
+                        Forms\Components\TextInput::make('slug')->label('Слаг')->placeholder('Например, varto'),
                         Forms\Components\Toggle::make('show_on_site')->label('Показывать на сайте'),
                         Forms\Components\Toggle::make('no_work_page')->label('Страница проекта отсутствует'),
                         Forms\Components\Toggle::make('show_in_work_block')->label('Показывать в блоке проектов'),

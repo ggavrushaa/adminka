@@ -17,7 +17,7 @@ class Work extends Model
         'image', 'video', 'link', 
         'project_type', 'show_on_site', 
         'no_work_page', 'show_in_work_block', 
-        'show_in_footer',
+        'show_in_footer', 'slug',
     ];
 
     public function getLocalizedTitleAttribute(): string

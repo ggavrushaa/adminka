@@ -41,7 +41,11 @@
                 <div class="info">
                     <p class="info-type">{{ $work->project_type }}</p>
                     <p class="info-name">{{ $work->localized_title }}</p>
-                    <a href="{{ $work->link }}" class="btn btn-primary btn-icon icon-arrow-right-top btn-link"></a>
+                    @if($work->no_work_page == true)
+                    <a href="{{ $work->link }}" class="btn btn-primary btn-icon icon-link-blank btn-link" target="_blank"></a>
+                    @else
+                   <a href="{{ route('works.' . $work->slug, app()->getLocale()) }}" class="btn btn-primary btn-icon icon-arrow-right-top btn-link" target="_blank"></a>
+                    @endif
                 </div>
             </div>
             @endforeach
