@@ -14,8 +14,8 @@
         <div class="bg-ripples"></div>
         <div class="container">
             <ul class="breadcrumb">
-                <li><a href="/">Main</a></li>
-                <li><a href="/cases">Cases</a></li>
+                <li><a href="{{ route('home', app()->getLocale()) }}">Main</a></li>
+                <li><a href="{{ route('cases', app()->getLocale()) }}">Cases</a></li>
                 <li>Yözh</li>
             </ul>
             <div class="case-header__content">

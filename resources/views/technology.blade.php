@@ -14,7 +14,7 @@
         <div class="bg-ripples"></div>
         <div class="container">
             <ul class="breadcrumb">
-                <li><a href="/">Home</a></li>
+                <li><a href="{{ route('home', app()->getLocale()) }}">Home</a></li>
                 <li>Tech Stack</li>
             </ul>
             <div class="case-header__content">
