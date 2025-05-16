@@ -111,9 +111,9 @@
                 <div class="circle-arrow"></div>
             </a>
             <div class="lang">
-                <a class="{{ app()->getLocale() == 'uk' ? 'active' : '' }}" href="{{route('home', ['uk'])}}">Ua</a>
-                <a class="{{ app()->getLocale() == 'ru' ? 'active' : '' }}" href="{{route('home', ['ru'])}}">Ru</a>
-                <a class="{{ app()->getLocale() == 'en' ? 'active' : '' }}" href="{{route('home', ['en'])}}">Eng</a>
+                <a class="{{ app()->getLocale() == 'uk' ? 'active' : '' }}" href="{{route(Route::currentRouteName(), ['uk'])}}">Ua</a>
+                <a class="{{ app()->getLocale() == 'ru' ? 'active' : '' }}" href="{{route(Route::currentRouteName(), ['ru'])}}">Ru</a>
+                <a class="{{ app()->getLocale() == 'en' ? 'active' : '' }}" href="{{route(Route::currentRouteName(), ['en'])}}">Eng</a>
             </div>
         </div>
     </div>

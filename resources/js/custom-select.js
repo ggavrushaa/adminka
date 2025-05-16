@@ -6,7 +6,7 @@ const SELECTOR_DATA = '[data-select]';
 const SELECTOR_DATA_TOGGLE = '[data-select="toggle"]';
 const SELECTOR_OPTION_SELECTED = '.select__option_selected';
 
-class CustomSelect {
+export class CustomSelect {
     constructor(target, params) {
         this._elRoot = typeof target === 'string' ? document.querySelector(target) : target;
         this._params = params || {};
@@ -310,7 +310,7 @@ document.addEventListener('click', (e) => {
 
 let inputs = document.querySelectorAll('.select.required .select__input');
 
-function selectHandlerBlur(input){
+export function selectHandlerBlur(input){
     // console.log(input);
     if (input.closest('button')){
         setTimeout(() => {

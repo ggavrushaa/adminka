@@ -2,7 +2,7 @@
     @vite(['resources/css/form.sass'])
 @endpush
 
-@vite('resources/js/cdn/custom-select.js')
+@vite('resources/js/custom-select.js')
 
 @extends('__layouts.main')
 
@@ -111,7 +111,7 @@
                                         @foreach($directions as $key => $direction)
                                         <li class="select__option" data-select="option" data-value="{{ $direction->value }}"
                                             data-index="{{ $key }}">
-                                            {{ $direction->locilized_name }} 
+                                            {{ $direction->name_en }} 
                                         </li>
                                         @endforeach
                                     </ul>

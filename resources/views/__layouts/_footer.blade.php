@@ -62,16 +62,16 @@
                     <div class="footer-col__text">
                         <ul>
                             <li>
-                                <a href="/services/web">{{ $translations['pidval']['web'] }}</a>
+                                <a href="{{ route('service.web', app()->getLocale()) }}">{{ $translations['pidval']['web'] }}</a>
                             </li>
                             <li>
-                                <a href="/services/automation">{{ $translations['pidval']['automation'] }}</a>
+                                <a href="{{ route('service.automation', app()->getLocale()) }}">{{ $translations['pidval']['automation'] }}</a>
                             </li>
                             <li>
-                                <a href="/services/mobile">{{ $translations['pidval']['mobile'] }}</a>
+                                <a href="{{ route('service.mobile', app()->getLocale()) }}">{{ $translations['pidval']['mobile'] }}</a>
                             </li>
                             <li>
-                                <a href="/services/support">{{ $translations['pidval']['support'] }}</a>
+                                <a href="{{ route('service.support', app()->getLocale()) }}">{{ $translations['pidval']['support'] }}</a>
                             </li>
                         </ul>
                     </div>

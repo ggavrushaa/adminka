@@ -2,6 +2,8 @@ import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { CustomSelect, selectHandlerBlur } from './custom-select';
+window.selectHandlerBlur = selectHandlerBlur;
 // import ScrollSmoother from 'gsap/ScrollSmoother';
 
 const supportsTouch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
