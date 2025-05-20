@@ -7,7 +7,7 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\ContactsController;
 
 Route::group([
-    'prefix' => '{locale}', 
+    'prefix' => '{locale}',
     'middleware' => ['setlocale']
 ], function () {
     Route::view('/', 'welcome')->name('home');
@@ -24,11 +24,11 @@ Route::group([
     Route::view('/partners', 'partners')->name('partners');
     Route::get('/form', [FormController::class, 'index'])->name('form');
     Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
-    Route::get('/blog', function() {
+    Route::get('/blog', function () {
         return view('blog.index');
     })->name('blog.index');
     Route::post('/form', [FormController::class, 'store'])->name('form.store');
-    Route::post('/form', [ContactsController::class, 'store'])->name('contacts.store');
+    Route::post('/contact', [ContactsController::class, 'store'])->name('contacts.store');
 });
 
 Route::redirect('/', destination: '/en');
