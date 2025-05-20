@@ -4,6 +4,7 @@ use Faker\Provider\ar_EG\Address;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\ContactsController;
 
 Route::group([
     'prefix' => '{locale}', 
@@ -27,6 +28,7 @@ Route::group([
         return view('blog.index');
     })->name('blog.index');
     Route::post('/form', [FormController::class, 'store'])->name('form.store');
+    Route::post('/form', [ContactsController::class, 'store'])->name('contacts.store');
 });
 
 Route::redirect('/', destination: '/en');

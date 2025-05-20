@@ -334,5 +334,5 @@ export function selectHandlerBlur(input){
                 select.classList.add('has-error');
             }
         }
-    }
+    }   
 }

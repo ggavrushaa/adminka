@@ -14,7 +14,7 @@
         <div class="container">
             <div class="section-name section-name__blue">
                 <div class="section-name__title">
-                    <h1 class="h2 section-name__title-text">Feedback form</h1>
+                    <h1 class="h2 section-name__title-text">{{$translations['lets-talk']['title']}}</h1>
                 </div>
             </div>
 
@@ -48,7 +48,8 @@
                     </svg>
                 </div>
             </div>
-            <form class="form-content" action="{{ route('form.store', app()->getLocale()) }}" method="post">
+            <form class="form-content" action="{{ route('form.store', app()->getLocale()) }}" method="post"
+                enctype="multipart/form-data">
                 @csrf
                 <div class="form-content__wrapper">
                     <div class="form-item active contact">
@@ -76,7 +77,7 @@
                         <div class="form-group _mb0 required" data-valid="empty,maxlength-255">
                             <label for="user-company" class="form-label">From company</label>
                             <div class="form-control__wrapper">
-                                <input type="text" id="user-company" name="company" class="form-control"
+                                <input type="text" id="user-company" name="company_name" class="form-control"
                                     placeholder="Link of your company">
 
                                 <div class="help-block" data-empty="Required field"
@@ -89,7 +90,7 @@
                         <div class="form-group solution" data-valid="empty,maxlength-255">
                             <label for="user-solution" class="form-label">Project name</label>
                             <div class="form-control__wrapper">
-                                <input type="text" class="form-control" name="solution" id="user-solution"
+                                <input type="text" class="form-control" name="project_name" id="user-solution"
                                     placeholder="What problems do you want to solve?" />
                             </div>
                             <div class="help-block" data-empty="Required field"
@@ -97,22 +98,22 @@
                         </div>
                         <div class="select-wrapper">
                             <p class="label-title">in direction</p>
-                            <div class="select _js-custom-select required" id="direction-contacts" data-required
-                                data-valid="select" data-i18-error="Required field">
+                            <div class="select _js-custom-select required" id="direction-contacts" data-valid="select"
+                                data-i18-error="Required field">
                                 <div class="select__toggle">
                                     <label>Choose a direction</label>
                                     <button type="button" name="direction-btn" data-type="button" data-select="toggle"
-                                        data-index="-1" onblur="selectHandlerBlur(this)">
+                                        data-index="0" onblur="selectHandlerBlur(this)">
                                     </button>
                                     <input type="hidden" class="select-hidden" id="direction" name="direction">
                                 </div>
                                 <div class="select__dropdown">
                                     <ul class="select__options js-sorting-select">
-                                        @foreach($directions as $key => $direction)
-                                        <li class="select__option" data-select="option" data-value="{{ $direction->value }}"
-                                            data-index="{{ $key }}">
-                                            {{ $direction->name_en }} 
-                                        </li>
+                                        @foreach ($directions as $key => $direction)
+                                            <li class="select__option" data-select="option"
+                                                data-value="{{ $direction->name_en }}" data-index="{{ $key }}">
+                                                {{ $direction->name_en }}
+                                            </li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -164,7 +165,7 @@
                                         data-text-uploaded="Files downloaded">
                                         Add file (pdf, jpg, png, doc, xls) </label>
                                     <input type="file" id="file" name="file[]" class="form-control"
-                                        accept=".pdf, .jpg, .png, .doc, .xls, .xlsx, .docx" multiple>
+                                        accept=".pdf, .jpg, .png, .doc, .xls, .xlsx, .docx" enctype="multipart/form-data">
 
                                     <button type="button"
                                         class="btn btn-primary btn-bg-black btn-icon icon-plus btn-link load-more"></button>
@@ -217,6 +218,13 @@
                             <label for="policy-1" class="form-label">I have read and agree to the Privacy Policy</label>
 
                             <div class="help-block" data-empty="Required field"></div>
+                            @if ($errors->any())
+                                <div>
+                                    @foreach ($errors->all() as $error)
+                                        <p>{{ $error }}</p>
+                                    @endforeach
+                                </div>
+                            @endif
                         </div>
 
                     </div>
@@ -224,7 +232,7 @@
                         <h2 class="h2 form-title">Thank you!</h2>
 
                         <div class="last-step__description">
-                            <p>The request is accepted. You can text us anytime via <a href="/contacts">contacts</a></p>
+                            <p>The request is accepted. You can text us anytime via <a href="{{ route('contacts', app()->getLocale()) }}">contacts</a></p>
 
                             <div id="gtx-trans" style="position: absolute; left: 338px; top: -6px;">
                                 <div class="gtx-trans-icon"> </div>
@@ -235,8 +243,7 @@
 
                 {{-- <input type="hidden" name="_csrf"
                     value="o6gcNrMVBbW0jJMQSWYaoyhBhyBlKXgGy-eMYUbk8NOX5FBO2CE34tjDwSQhLWDgfgfyZlMQCTGggegDLIfdgQ=="> --}}
-                <input type="hidden" name="token" id="token">
-                <input type="hidden" name="lang" value="{{ app()->getLocale() }}">
+                <input type="hidden" name="language" value="{{ app()->getLocale() }}">
                 <input type="hidden" name="form" value="feedback">
             </form>
             <div class="form-navigation">

@@ -35,24 +35,24 @@ class LetsTalkRequestResource extends Resource
                 Forms\Components\TextInput::make('name')->label('Имя')->required(),
                 Forms\Components\TextInput::make('email')->email()->label('Email')->required(),
                 Forms\Components\TextInput::make('position')->label('Должность')->required(),
-                    Forms\Components\TextInput::make('company_name')->label('Название компании')->required(),
-                    Forms\Components\TextInput::make('project_name')->label('Название проекта')->required(),
-                    Forms\Components\TextInput::make('phone')->tel()->label('Телефон')->required(),
-                    Forms\Components\TextArea::make('task')->label('Задача')->required(),
-                    Forms\Components\TextInput::make('budget')->label('Бюджет')->required(),
-                    Forms\Components\TextInput::make('contact_in')->label('Связаться в...')->required(),
-                    Forms\Components\TextInput::make('direction')->label('Направление')->required(),
-                    Forms\Components\DateTimePicker::make('created_at')->label('Дата'),
-                    Forms\Components\FileUpload::make('files')->label('Файлы')
-                        ->multiple()
-                        ->directory('lets_talk_requests')
-                        ->hidden(fn ($record) => $record !== null),
-                    Forms\Components\Select::make('language')->label('Язык')->options([
-                        'ru' => 'Русский',
-                        'uk' => 'Украинский', 
-                        'en' => 'Английский',
-                    ])->visible(fn ($record) => $record == null),
-                    Forms\Components\Toggle::make('status')->label('Статус'),
+                Forms\Components\TextInput::make('company_name')->label('Название компании')->required(),
+                Forms\Components\TextInput::make('project_name')->label('Название проекта')->required(),
+                Forms\Components\TextInput::make('phone')->tel()->label('Телефон')->required(),
+                Forms\Components\TextArea::make('task')->label('Задача')->required(),
+                Forms\Components\TextInput::make('budget')->label('Бюджет')->required(),
+                Forms\Components\TextInput::make('contact_in')->label('Связаться в...')->required(),
+                Forms\Components\TextInput::make('direction')->label('Направление')->required(),
+                Forms\Components\DateTimePicker::make('created_at')->label('Дата'),
+                Forms\Components\FileUpload::make('files')->label('Файлы')
+                    ->multiple()
+                    ->directory('lets_talk_requests')
+                    ->hidden(fn($record) => $record !== null),
+                Forms\Components\Select::make('language')->label('Язык')->options([
+                    'ru' => 'Русский',
+                    'uk' => 'Украинский',
+                    'en' => 'Английский',
+                ])->visible(fn($record) => $record == null),
+                Forms\Components\Toggle::make('status')->label('Статус'),
             ]);
     }
 
@@ -70,7 +70,17 @@ class LetsTalkRequestResource extends Resource
                 Tables\Columns\TextColumn::make(name: 'task')->label('Задача'),
                 Tables\Columns\TextColumn::make(name: 'budget')->label('Бюджет'),
                 Tables\Columns\TextColumn::make(name: 'contact_in')->label('Связаться в...'),
-                Tables\Columns\ImageColumn::make('files')->label('Файлы'),
+                Tables\Columns\TextColumn::make('files')
+                    ->label('Файлы')
+                    ->formatStateUsing(function ($state) {
+                        $files = json_decode($state, true) ?? [];
+                        return collect($files)->map(function ($file) {
+                            $fileName = fake()->word() . '.' . pathinfo($file, PATHINFO_EXTENSION);
+                            $url = asset('storage/' . $file);
+                            return "<a href='{$url}' target='_blank'>{$fileName}</a>";
+                        })->implode('<br>');
+                    })
+                    ->html(),
                 Tables\Columns\TextColumn::make(name: 'direction')->label('Направление'),
                 Tables\Columns\TextColumn::make('created_at')->label('Дата')->date(),
                 Tables\Columns\ToggleColumn::make('status')->label('Статус'),

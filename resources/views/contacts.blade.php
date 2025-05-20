@@ -73,7 +73,8 @@
                     </div>
                 </div>
             </div>
-            <form class="contact__form" id="contacts-form" action="/contacts">
+            <form class="contact__form" id="contacts-form" action="{{ route('contacts.store', app()->getLocale()) }}" method="POST">
+                @csrf
                 <p class="h2 form-title">Get in touch</p>
                 <div class="form-desc">
                     <p>Email us if you have any questions</p>
@@ -92,7 +93,7 @@
                 <div class="form-group">
                     <label class="form-label" for="position">I’m</label>
                     <input class="form-control" type="text" id="position" placeholder="Owner, CEO, project, etc"
-                        name="message">
+                        name="position">
                     <div class="help-block"></div>
                 </div>
 
@@ -113,10 +114,10 @@
                     </div>
                 </div>
 
-                <input type="hidden" name="_csrf"
+                {{-- <input type="hidden" name="_csrf"
                     value="kp-HRYuNoI6TH1-CEEo6BIrC4saoTSRaD8YSb4jDQULZyvQQ4sj269ZKDLtCDUJV1fqymd0ObzhKj0gl0K40JQ==">
-                <input type="hidden" name="token" id="token">
-                <input type="hidden" name="lang" value="en">
+                <input type="hidden" name="token" id="token"> --}}
+                <input type="hidden" name="language" value="{{ app()->getLocale() }}">
 
                 <button type="submit" class="btn btn-primary btn-submit _circle-animation">Send Message</button>
 
