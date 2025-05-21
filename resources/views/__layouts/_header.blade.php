@@ -110,11 +110,19 @@
                 </svg>
                 <div class="circle-arrow"></div>
             </a>
+            @php
+                $currentUrl = url()->current();
+                $currentLocale = app()->getLocale();
+
+                $newUrl = fn($lang) => preg_replace("#^/{$currentLocale}#", "/{$lang}", request()->getRequestUri());
+            @endphp
+
             <div class="lang">
-                <a class="{{ app()->getLocale() == 'uk' ? 'active' : '' }}" href="{{route(Route::currentRouteName(), ['uk'])}}">Ua</a>
-                <a class="{{ app()->getLocale() == 'ru' ? 'active' : '' }}" href="{{route(Route::currentRouteName(), ['ru'])}}">Ru</a>
-                <a class="{{ app()->getLocale() == 'en' ? 'active' : '' }}" href="{{route(Route::currentRouteName(), ['en'])}}">Eng</a>
+                <a class="{{ app()->getLocale() == 'uk' ? 'active' : '' }}" href="{{ $newUrl('uk') }}">Ua</a>
+                <a class="{{ app()->getLocale() == 'ru' ? 'active' : '' }}" href="{{ $newUrl('ru') }}">Ru</a>
+                <a class="{{ app()->getLocale() == 'en' ? 'active' : '' }}" href="{{ $newUrl('en') }}">Eng</a>
             </div>
+
         </div>
     </div>
 </div>

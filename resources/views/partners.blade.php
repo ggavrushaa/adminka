@@ -22,7 +22,7 @@
                     <div class="section-name">
                         <div class="section-name__subtitle subtitle-section">
                             <p class="subtitle-section__number"></p>
-                            <h1 class="subtitle-section__text">Ambassador</h1>
+                            <h1 class="subtitle-section__text">{{ $translations['partneram']['subtitle'] ?? '---' }}</h1>
                         </div>
                         <div class="section-name__title">
                             <div class="h1 section-name__title-text stop-motion-animation">
@@ -43,8 +43,7 @@
                     </div>
                     <div class="description">
                         <p>
-                            We are pleased to introduce our partners who participate in our projects and help develop our
-                            community.
+                            {{ $translations['partneram']['description'] ?? '---' }}
                         </p>
                     </div>
                 </div>
@@ -57,9 +56,7 @@
         <div class="container">
             <div class="desc">
                 <p>
-                    Our partners are professional and talented Ukrainian companies from various industries who share our
-                    values and strive for success in the innovative sphere. They not only support our mission, but also
-                    help us find new opportunities and perspectives for development.
+                    {{ $translations['partneram']['desc'] ?? '---' }}
                 </p>
             </div>
             <ul>
@@ -69,7 +66,9 @@
                     </div>
                     <p class="partner-name">Master</p>
                     <div class="partner-desc">
-                        <p>A platform for accounting and management accounting. 100% Ukrainian solution.</p>
+                        <p>
+                            {{ $translations['partneram']['desc_1'] ?? '---' }}
+                        </p>
                     </div>
                 </li>
                 <li>
@@ -78,8 +77,9 @@
                     </div>
                     <p class="partner-name">Вчасно - EDO</p>
                     <div class="partner-desc">
-                        <p> Instant document exchange service that allows you to sign, send, receive and store documents
-                            online.</p>
+                        <p> 
+                            {{ $translations['partneram']['desc_2'] ?? '---' }}
+                        </p>
                     </div>
                 </li>
                 <li>
@@ -88,7 +88,9 @@
                     </div>
                     <p class="partner-name">MiroHost</p>
                     <div class="partner-desc">
-                        <p>Аn undisputed TOP hosting provider in the Ukrainian market.</p>
+                        <p>
+                            {{ $translations['partneram']['desc_3'] ?? '---' }}
+                        </p>
                     </div>
                 </li>
                 <li>
@@ -97,9 +99,9 @@
                     </div>
                     <p class="partner-name">UniTalk</p>
                     <div class="partner-desc">
-                        <p>А platform for business communications. IP telephony and virtual PBX, call tracking, call
-                            recording, call back buttons and widgets for the website, various types of phone calls and
-                            routing</p>
+                        <p>
+                            {{ $translations['partneram']['desc_4'] ?? '---' }}
+                        </p>
                     </div>
                 </li>
                 <li>
@@ -108,7 +110,9 @@
                     </div>
                     <p class="partner-name">Imena.ua</p>
                     <div class="partner-desc">
-                        <p>А domain name registrar in any zone. A TOP domain name registrar in Ukraine.</p>
+                        <p>
+                            {{ $translations['partneram']['desc_5'] ?? '---' }}
+                        </p>
                     </div>
                 </li>
             </ul>
@@ -119,40 +123,41 @@
         <div class="container">
             <h2 class="title">
 
-                Join us to <strong>become a part of our community</strong> and discover the world of innovation and
-                technology with us!
+                {{ $translations['partneram']['title'] ?? '---' }} <strong>{{ $translations['partneram']['title_strong'] ?? '---' }}</strong> 
+                {{ $translations['partneram']['title2'] ?? '---' }}
             </h2>
 
-            <form class="form" id="contacts-form" action="/contacts">
-                <p class="h2 form-title">Get Lets work together</p>
+            <form class="form" id="contacts-form" action="{{ route('contacts.store', app()->getLocale()) }}" method="POST">
+                @csrf
+                <p class="h2 form-title">{{ $translations['partneram']['form_title'] ?? '---' }}</p>
 
                 <div class="form-group required" data-valid="empty,maxlength-45">
-                    <label class="form-label" for="name">My full name is</label>
+                    <label class="form-label" for="name">{{$translations['contacts']['name'] ?? '---'}}</label>
                     <div class="form-control__wrapper">
                         <input class="form-control" type="text" name="name" id="name"
-                            placeholder="Write your name">
+                            placeholder="{{$translations['contacts']['name_placeholder'] ?? '---'}}">
                         <div class="help-block" data-empty="Required field"
                             data-maxlength="Maximum length of characters: 45"></div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-label" for="position">I’m</label>
-                    <input class="form-control" type="text" id="position" placeholder="Owner, CEO, project, etc"
-                        name="message">
+                    <label class="form-label" for="position">{{$translations['contacts']['position'] ?? '---'}}</label>
+                    <input class="form-control" type="text" id="position" placeholder="{{$translations['contacts']['position_placeholder'] ?? '---'}}"
+                        name="position">
                     <div class="help-block"></div>
                 </div>
 
                 <div class="form-group about-task">
-                    <label for="user-task" class="form-label">I need</label>
+                    <label for="user-task" class="form-label">{{$translations['contacts']['message'] ?? '---'}}</label>
                     <div class="form-control__wrapper">
-                        <textarea name="message" id="user-task" class="form-control" rows="3" placeholder="Write your message.."></textarea>
+                        <textarea name="message" id="user-task" class="form-control" rows="3" placeholder="{{$translations['contacts']['message_placeholder'] ?? '---'}}"></textarea>
                     </div>
                     <div class="help-block"></div>
                 </div>
 
                 <div class="form-group email required" data-valid="mask">
-                    <label class="form-label" for="email">I will wait for your reply to this email:</label>
+                    <label class="form-label" for="email">{{$translations['contacts']['email'] ?? '---'}}</label>
                     <div class="form-control__wrapper">
                         <input class="form-control _js-mask-email" type="text" id="email"
                             placeholder="your@company.com" name="email" inputmode="text">
@@ -160,13 +165,10 @@
                     </div>
                 </div>
 
-                <input type="hidden" name="_csrf"
-                    value="vbJs2eAZ1jmRJdGBGNEWCGRUtFVcD9GxCgbozoEXFdjVyzWpmFOkWPJouOwqu1hQIxnBZzF6tdxSTJuNy00m7g==">
-                <input type="hidden" name="token" id="token"
-                    value="HFNGc4Jx4eVjY-A3INGk0cGw4zdnRTQWFoZBdHZ2R5Njx6QBIsN1wkUSEfMj0YdRJpJQQLUBRLHVIAfTI9LHQ9FSFCOm1gJTQ-LkUNcXNzTAh0SiIrSkUcOD0dJUUNBgNLSnt6QRs8MUlrHmhpN3NdH3AbPDA6FmsBI2YYeAY-FyE-VzJLNhZcQG8">
-                <input type="hidden" name="lang" value="en">
+                <input type="hidden" name="lang" value="{{ app()->getLocale() }}">
+                <input type="hidden" name="form_type" value="partners">
 
-                <button type="submit" class="btn btn-primary btn-submit _circle-animation">Send Message</button>
+                <button type="submit" class="btn btn-primary btn-submit _circle-animation">{{$translations['partneram']['btn'] ?? '---'}}</button>
 
             </form>
 

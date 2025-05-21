@@ -11,7 +11,7 @@
     <div class="blog-page">
         <div class="container">
             <ul class="breadcrumb">
-                <li><a href="/">Home</a></li>
+                <li><a href="{{ route('home', app()->getLocale()) }}">Home</a></li>
                 <li><a href="/blog/">blog</a></li>
                 <li>{{ $article->localized_name }}</li>
             </ul>
@@ -50,24 +50,24 @@
                     <p class="h4 sidebar-title">Читай також</p>
 
                     <div class="list">
-                        @foreach($articles as $article)
-                        <a href="{{ route('blog.show', [app()->getLocale(), $article->id]) }}" class="blog-card">
+                        @foreach($articles as $a)
+                        <a href="{{ route('blog.show', [app()->getLocale(), $a->id]) }}" class="blog-card">
                             <div class="img">
                                 <picture>
-                                    <source srcset="{{ $article->image }}" type="image/webp"
+                                    <source srcset="{{ $a->image }}" type="image/webp"
                                         media="(min-device-width: 768px)">
-                                    <source srcset="{{ $article->image }}" type="image/jpeg"
+                                    <source srcset="{{ $a->image }}" type="image/jpeg"
                                         media="(min-device-width: 768px)">
 
-                                    <source srcset="{{ $article->image }}" type="image/webp">
-                                    <source srcset="{{ $article->image }}" type="image/jpeg">
+                                    <source srcset="{{ $a->image }}" type="image/webp">
+                                    <source srcset="{{ $a->image }}" type="image/jpeg">
 
-                                    <img src="{{ $article->image }}" loading="lazy" alt="" title="">
+                                    <img src="{{ $a->image }}" loading="lazy" alt="" title="">
                                 </picture>
                             </div>
                             <div class="info">
-                                <p class="date">{{$article->created_at}}</p>
-                                @foreach ($article->tags as $tag )
+                                <p class="date">{{$a->created_at}}</p>
+                                @foreach ($a->tags as $tag )
                                     <p class="tag">
                                         {{ $tag->name }}
                                     </p>
@@ -171,56 +171,7 @@
     </section>
 
     <section class="create">
-        <div class="container">
-            <h2 class="title">How about becoming partners?</h2>
-
-
-            <a href="/uploads/files/65e17e71a6676.pdf" class="form-download__item" target="_blank">
-                <button class="btn btn-border btn-bg-orange btn-icon icon-download"></button>
-                <span>uaitlab presentation</span>
-            </a>
-            <a href="/form" class="circle-text">
-                <svg viewBox="0 0 100 100" class="circle-svg">
-                    <defs>
-                        <path id="circle" d="M 50, 50m -37, 0a 37,37 0 1,1 74,0a 37,37 0 1,1 -74,0"></path>
-                    </defs>
-                    <circle class="circle-bg" cx="50%" cy="50%" r="30%" fill="red"></circle>
-                    <text>
-                        <textPath xlink:href="#circle">
-                            Lets get work together - Lets get work together -
-                        </textPath>
-                    </text>
-                </svg>
-                <div class="circle-arrow"></div>
-            </a>
-        </div>
-
-        <div class="marquees">
-            <div class="marquee-text">
-                <div class="marquee-group">
-                    <span class="marquee-grey">high-tech web-products for business.</span>
-                </div>
-                <div class="marquee-group">
-                    <span class="marquee-grey">high-tech web-products for business.</span>
-                </div>
-            </div>
-            <div class="marquee-text">
-                <div class="marquee-group reverse_scroll">
-                    <span class="marquee-grey">high-tech web-products for business.</span>
-                </div>
-                <div class="marquee-group reverse_scroll">
-                    <span class="marquee-grey">high-tech web-products for business.</span>
-                </div>
-            </div>
-            <div class="marquee-text">
-                <div class="marquee-group">
-                    <span class="marquee-grey">high-tech web-products for business.</span>
-                </div>
-                <div class="marquee-group">
-                    <span class="marquee-grey">high-tech web-products for business.</span>
-                </div>
-            </div>
-        </div>
+        <x-form-partner-component />
     </section>
 
 @endsection

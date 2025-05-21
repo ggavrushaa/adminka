@@ -23,7 +23,7 @@
                     <div class="section-name">
                         <div class="section-name__subtitle subtitle-section">
                             <p class="subtitle-section__number"></p>
-                            <p class="subtitle-section__text">Mobile App </p>
+                            <p class="subtitle-section__text">{{ $translations['cases']['varto_title'] ?? '-----' }}</p>
                         </div>
                         <div class="section-name__title">
                             <h1 class="h1 section-name__title-text">VARTO</h1>
@@ -53,7 +53,7 @@
     <section class="case-banner">
         <div class="container">
             <h2 class="h2 title">
-                INSURANCE POLICY ALWAYS WITH YOU.
+                {{ $translations['cases']['varto_banner_title'] ?? '-----' }}
             </h2>
             <div class="img">
                 <picture>
@@ -102,37 +102,33 @@
     <section class="list-block">
         <div class="container">
             <div class="list-item">
-                <p class="h2">Goals:</p>
+                <p class="h2">{{ $translations['cases']['varto_list_title'] ?? '-----' }}</p>
                 <ul>
                     <li>
                         <span>01</span>
-                        Integrate all data into a service that not only provides users with easy access to their insurance
-                        policy information but also facilitates seamless navigation to find healthcare providers, access a
-                        repository of medical documents (prescriptions, test results), and track insurance events.
-                        Additionally, ensure convenient communication between the client and the insurance company's
-                        support.
+                        {{ $translations['cases']['varto_list_subtitle'] ?? '-----' }}
                     </li>
                     <li>
                         <span>02</span>
-                        Implement a necessary system for managing user inquiries and requests.
+                        {{ $translations['cases']['varto_list_subtitle_2'] ?? '-----' }}
                     </li>
                 </ul>
             </div>
 
             <div class="list-item">
-                <p class="h2">Tasks:</p>
+                <p class="h2">{{ $translations['cases']['varto_list_title_2'] ?? '-----' }}</p>
                 <ul>
                     <li>
                         <span>01</span>
-                        Develop a mobile application for iOS and Android.
+                        {{ $translations['cases']['varto_list_subtitle_3'] ?? '-----' }}
                     </li>
                     <li>
                         <span>02</span>
-                        Create a fast and convenient communication channel with the company through chat or call.
+                        {{ $translations['cases']['varto_list_subtitle_4'] ?? '-----' }}
                     </li>
                     <li>
                         <span>03</span>
-                        Develop a request management system, similar to CRM.
+                        {{ $translations['cases']['varto_list_subtitle_5'] ?? '-----' }}
                     </li>
                 </ul>
             </div>
@@ -266,7 +262,7 @@
     <section class="solution">
         <div class="container">
             <div class="solution-header">
-                <h2 class="solution-header__title">Solution</h2>
+                <h2 class="solution-header__title">{{ $translations['cases']['varto_solution_title'] ?? '---' }}</h2>
             </div>
             <ul class="solution-main">
                 <li class="solution-item">
@@ -274,8 +270,7 @@
                         <div class="solution-item__text">
                             <span class="solution-item__text_number">01</span>
                             <p>
-                                We formulated a technical task to develop a mobile application with additional useful
-                                features. Such a product is more in line with the client's goals than their own idea.
+                                {{ $translations['cases']['varto_solution_subtitle'] ?? '-----' }}
                             </p>
                         </div>
                     </div>
@@ -298,8 +293,7 @@
                         <div class="solution-item__text">
                             <span class="solution-item__text_number">02</span>
                             <p>
-                                Using React Native, we created an application that is available on both Android and iOS.
-                                This technology allows us to reduce the time of product development and release.
+                                {{ $translations['cases']['varto_solution_subtitle_2'] ?? '-----' }}
                             </p>
                         </div>
                     </div>
@@ -322,9 +316,7 @@
                         <div class="solution-item__text">
                             <span class="solution-item__text_number">03</span>
                             <p>
-                                The business logic of the product allows the user to use their personal phone number to
-                                identify themselves in the system. This is a simple, reliable, and convenient way for both
-                                the user and the company.
+                                {{ $translations['cases']['varto_solution_subtitle_3'] ?? '-----' }}
                             </p>
                         </div>
                     </div>
@@ -347,8 +339,7 @@
                         <div class="solution-item__text">
                             <span class="solution-item__text_number">04</span>
                             <p>
-                                The user's account provides the ability to view the contract and receive medical documents.
-                                The client can download the documents in PDF format.
+                                {{ $translations['cases']['varto_solution_subtitle_4'] ?? '-----' }}
                             </p>
                         </div>
                     </div>
@@ -371,8 +362,7 @@
                         <div class="solution-item__text">
                             <span class="solution-item__text_number">05</span>
                             <p>
-                                Map of the nearest medical institutions near the client. We determine geolocation and show
-                                all relevant partners within a given radius.
+                                {{ $translations['cases']['varto_solution_subtitle_5'] ?? '-----' }}
                             </p>
                         </div>
                     </div>
@@ -396,8 +386,7 @@
                         <div class="solution-item__text">
                             <span class="solution-item__text_number">06</span>
                             <p>
-                                Chat for online appointment with a doctor - 24/7 communication with operators, history of
-                                calls, the ability to return and continue previous chats.
+                                {{ $translations['cases']['varto_solution_subtitle_6'] ?? '-----' }}
                             </p>
                         </div>
                     </div>
@@ -423,52 +412,48 @@
     <section class="section-bg-black additional">
         <div class="bg-ripples"></div>
         <div class="container">
-            <h2 class="h2 additional-title">Additional:</h2>
+            <h2 class="h2 additional-title">{{ $translations['cases']['varto_additional_title'] ?? '-----' }}</h2>
             <ul class="additional-list">
                 <li class="w-100 w-46__1280 w-56__1440 count-gap-3__1440">
                     <span class="number">01</span>
                     <p>
-                        CRM (request management), which displays summary data on the work of managers, profits, and pole
-                        expiration dates, so that managers can remind the client about updates. <br>
-                        The structure of the product
-                        is as simple as possible.
+                        {{ $translations['cases']['varto_additional_subtitle'] ?? '-----' }}
                     </p>
                 </li>
                 <li class="w-50 w-27__1280 w-22__1440 count-gap-3__1440">
                     <span class="number">02</span>
                     <p>
-                        Synchronization with the previous system and storage of the history of the previous contact with the
-                        client.
+                        {{ $translations['cases']['varto_additional_subtitle_2'] ?? '-----' }}
                     </p>
                 </li>
                 <li class="w-50 w-27__1280 w-22__1440 count-gap-3__1440">
                     <span class="number">03</span>
                     <p>
-                        The system administrator configures various rights and manages the access of rights for managers.
+                        {{ $translations['cases']['varto_additional_subtitle_3'] ?? '-----' }}
                     </p>
                 </li>
                 <li class="w-25 w-18__1280 w-14__1440 count-gap-3__1440">
                     <span class="number">04</span>
                     <p>
-                        Data protection
+                        {{ $translations['cases']['varto_additional_subtitle_4'] ?? '-----' }}
                     </p>
                 </li>
                 <li class="w-25 w-28__1280 w-30__1440 count-gap-3__1440">
                     <span class="number">05</span>
                     <p>
-                        Integration with 1C and its finalization
+                        {{ $translations['cases']['varto_additional_subtitle_5'] ?? '-----' }}
                     </p>
                 </li>
                 <li class="w-25 w-27__1280 w-28__1440 count-gap-3__1440">
                     <span class="number">06</span>
                     <p>
-                        PUSH notifications - system notifications + updates.
+                        {{ $translations['cases']['varto_additional_subtitle_6'] ?? '-----' }}
                     </p>
                 </li>
                 <li class="w-25 w-27__1280 w-28__1440 count-gap-3__1440">
                     <span class="number">07</span>
                     <p>
-                        The module responsible for building reports.
+                        {{ $translations['cases']['varto_additional_subtitle_7'] ?? '-----' }}
                     </p>
                 </li>
             </ul>
@@ -833,9 +818,9 @@
                     </ul>
                 </div>
                 <div class="about-project__item timing">
-                    <h2 class="project-title">Timing</h2>
+                    <h2 class="project-title">{{ $translations['cases']['timing'] ?? '-----' }}</h2>
                     <ul class="list">
-                        <li>526 hours</li>
+                        <li>526 {{ $translations['cases']['days'] ?? '-----' }}</li>
                     </ul>
                 </div>
             </div>
@@ -884,56 +869,6 @@
     </div>
 
     <section class="create">
-        <div class="container">
-            <h2 class="title">Let’s create your next project</h2>
-
-
-            <a href="/uploads/files/65e17e71a6676.pdf" class="form-download__item" target="_blank">
-                <button class="btn btn-border btn-bg-orange btn-icon icon-download"></button>
-                <span>uaitlab presentation</span>
-            </a>
-            <a href="/form" class="circle-text">
-                <svg viewBox="0 0 100 100" class="circle-svg">
-                    <defs>
-                        <path id="circle" d="M 50, 50m -37, 0a 37,37 0 1,1 74,0a 37,37 0 1,1 -74,0"></path>
-                    </defs>
-                    <circle class="circle-bg" cx="50%" cy="50%" r="30%" fill="red"></circle>
-                    <text>
-                        <textPath xlink:href="#circle">
-                            Lets get work together - Lets get work together -
-                        </textPath>
-                    </text>
-                </svg>
-                <div class="circle-arrow"></div>
-            </a>
-        </div>
-
-        <div class="marquees">
-            <div class="marquee-text">
-                <div class="marquee-group">
-                    <span class="marquee-grey">high-tech web-products for business.</span>
-                </div>
-                <div class="marquee-group">
-                    <span class="marquee-grey">high-tech web-products for business.</span>
-                </div>
-            </div>
-            <div class="marquee-text">
-                <div class="marquee-group reverse_scroll">
-                    <span class="marquee-grey">high-tech web-products for business.</span>
-                </div>
-                <div class="marquee-group reverse_scroll">
-                    <span class="marquee-grey">high-tech web-products for business.</span>
-                </div>
-            </div>
-            <div class="marquee-text">
-                <div class="marquee-group">
-                    <span class="marquee-grey">high-tech web-products for business.</span>
-                </div>
-                <div class="marquee-group">
-                    <span class="marquee-grey">high-tech web-products for business.</span>
-                </div>
-            </div>
-        </div>
-
+      <x-form-contact-component />
     </section>
 @endsection

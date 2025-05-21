@@ -18,6 +18,7 @@ class ContactsStoreRequest extends FormRequest
             'position' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'message' => 'required|string|max:1000',
+            'form_type' => 'required|string|in:contacts,partners',
         ];
     }
 }

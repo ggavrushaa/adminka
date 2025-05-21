@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Models\Request\ContactRequest;
 use App\Http\Requests\ContactsStoreRequest;
+use App\Models\Request\PartnerRequest;
 
 class ContactsController extends Controller
 {
@@ -14,7 +15,11 @@ class ContactsController extends Controller
         try {
             $data = $request->validated();
 
-            ContactRequest::create($data);
+            if ($data['form_type'] === 'contacts') {
+                ContactRequest::create($data);
+            } else {
+                PartnerRequest::create($data);
+            }
 
             return response()->json(['success' => true]);
         } catch (\Exception $e) {

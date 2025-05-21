@@ -41,8 +41,7 @@
                         </div>
                     </div>
                     <div class="description">
-                        <p>The company has projects implemented over the past 11 years in Ukraine, France, Тhe United
-                            Kingdom, Switzerland, Spain, USA.</p>
+                        <p>{{ $translations['about']['header_description'] ?? '-----' }}</p>
                     </div>
                 </div>
             </div>
@@ -54,23 +53,24 @@
 
             <div class="mission-main">
                 <div class="item">
-                    <p class="mission-title">OUR GOAL</p>
+                    <p class="mission-title">{{ $translations['about']['mission_title'] ?? '-----' }}</p>
                     <div class="mission-text">
-                        <p>Our goal is to create conditions for the development of various business areas in the online
-                            environment and to build a quality infrastructure for the clients of these businesses.</p>
+                        <p>
+                            {{ $translations['about']['mission_text'] ?? '-----' }}</p>
+                        </p>
                     </div>
                 </div>
                 <div class="item">
-                    <p class="mission-title">OUR MISSION</p>
+                    <p class="mission-title">{{ $translations['about']['vision_title'] ?? '-----' }}</p>
                     <div class="mission-text">
-                        <p>is to help integrate business functions into the internet for the maximum realization of the
-                            potential of companies and people.</p>
+                        <p>
+                            {{ $translations['about']['vision_text'] ?? '-----' }}</p>
+                        </p>
                     </div>
                 </div>
                 <div class="item _orange">
                     <p class="mission-title">
-                        "We speed up where a prompt reaction is necessary, save where the budget needs to be used
-                        rationally, optimize and improve processes and products where mistakes and losses are unacceptable."
+                        {{ $translations['about']['quote'] ?? '-----' }}</p>
                     </p>
                     <div class="mission-author">CEO, Mykyta Zadneproskyi</div>
                 </div>
@@ -82,29 +82,34 @@
         <div class="bg-ripples"></div>
         <div class="container">
             <div class="about-partner__title">
-                <p>For partnership, it is <span class="marker">important</span> and <span class="marker">valuable</span> to
-                    have:</p>
+                <p>
+                    {{ $translations['about']['partner_title1'] ?? '-----' }} 
+                    <span class="marker">{{ $translations['about']['partner_title2'] ?? '-----' }}</span>
+                     {{ $translations['about']['partner_title3'] ?? '-----' }} 
+                     <span class="marker">{{ $translations['about']['partner_title4'] ?? '-----' }}</span> 
+                     {{ $translations['about']['partner_title5'] ?? '-----' }}
+                </p>
             </div>
             <ol class="about-partner__list">
                 <li>
                     <span>01</span>
-                    Clear understanding of the task.
+                    {{ $translations['about']['partner_list1'] ?? '-----' }}
                 </li>
                 <li>
                     <span>02</span>
-                    Full interaction in projects.
+                    {{ $translations['about']['partner_list2'] ?? '-----' }}
                 </li>
                 <li>
                     <span>03</span>
-                    Use of modern and appropriate technologies.
+                    {{ $translations['about']['partner_list3'] ?? '-----' }}
                 </li>
                 <li>
                     <span>04</span>
-                    Maximum automation.
+                    {{ $translations['about']['partner_list4'] ?? '-----' }}
                 </li>
                 <li>
                     <span>05</span>
-                    Usefulness for the business and its clients.
+                    {{ $translations['about']['partner_list5'] ?? '-----' }}
                 </li>
             </ol>
         </div>
@@ -114,7 +119,7 @@
         <div class="container">
             <div class="section-name">
                 <div class="section-name__title">
-                    <h2 class="section-name__title-text">Recognition of quality and perseverance</h2>
+                    <h2 class="section-name__title-text">{{ $translations['about']['stat_title'] ?? '-----' }}</h2>
                 </div>
             </div>
 
@@ -126,7 +131,8 @@
                     <p class="item-title">It-rating</p>
                     <div class="item-desc">
                         <p>
-                            Top 10 IT companies of Ukraine, Top 5 IT companies with Yii2 framework, Laravel </p>
+                            {{ $translations['about']['stat_text1'] ?? '-----' }}</p>    
+                        </p>
                     </div>
                     <a href="https://it-rating.ua/uaitlab" class="icon-arrow-right-top btn-link" target="_blank"
                         rel="nofollow"></a>
@@ -138,7 +144,8 @@
                     <p class="item-title">Clutch</p>
                     <div class="item-desc">
                         <p>
-                            Top B2B Companies Global and Ukraine since 2021. </p>
+                            {{ $translations['about']['stat_text2'] ?? '-----' }}</p>
+                        </p>
                     </div>
                     <a href="https://clutch.co/profile/uaitlab#reviews" class="icon-arrow-right-top btn-link"
                         target="_blank" rel="nofollow"></a>
@@ -150,7 +157,8 @@
                     <p class="item-title">tech behemoths</p>
                     <div class="item-desc">
                         <p>
-                            The best custom development and web design companies in Ukraine 2022-2023. </p>
+                            {{ $translations['about']['stat_text3'] ?? '-----' }}</p>
+                        </p>
                     </div>
                     <a href="https://techbehemoths.com/company/uaitlab" class="icon-arrow-right-top btn-link"
                         target="_blank" rel="nofollow"></a>
@@ -207,56 +215,7 @@
     </section>
 
     <section class="create">
-        <div class="container">
-            <h2 class="title">How about becoming partners?</h2>
-
-
-            <a href="/uploads/files/65e17e71a6676.pdf" class="form-download__item" target="_blank">
-                <button class="btn btn-border btn-bg-orange btn-icon icon-download"></button>
-                <span>uaitlab presentation</span>
-            </a>
-            <a href="/form" class="circle-text">
-                <svg viewBox="0 0 100 100" class="circle-svg">
-                    <defs>
-                        <path id="circle" d="M 50, 50m -37, 0a 37,37 0 1,1 74,0a 37,37 0 1,1 -74,0"></path>
-                    </defs>
-                    <circle class="circle-bg" cx="50%" cy="50%" r="30%" fill="red"></circle>
-                    <text>
-                        <textPath xlink:href="#circle">
-                            Lets get work together - Lets get work together -
-                        </textPath>
-                    </text>
-                </svg>
-                <div class="circle-arrow"></div>
-            </a>
-        </div>
-
-        <div class="marquees">
-            <div class="marquee-text">
-                <div class="marquee-group">
-                    <span class="marquee-grey">high-tech web-products for business.</span>
-                </div>
-                <div class="marquee-group">
-                    <span class="marquee-grey">high-tech web-products for business.</span>
-                </div>
-            </div>
-            <div class="marquee-text">
-                <div class="marquee-group reverse_scroll">
-                    <span class="marquee-grey">high-tech web-products for business.</span>
-                </div>
-                <div class="marquee-group reverse_scroll">
-                    <span class="marquee-grey">high-tech web-products for business.</span>
-                </div>
-            </div>
-            <div class="marquee-text">
-                <div class="marquee-group">
-                    <span class="marquee-grey">high-tech web-products for business.</span>
-                </div>
-                <div class="marquee-group">
-                    <span class="marquee-grey">high-tech web-products for business.</span>
-                </div>
-            </div>
-        </div>
+        <x-form-partner-component />
     </section>
 
 @endsection
