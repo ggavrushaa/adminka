@@ -71,8 +71,10 @@ class WorkResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('id')->label('#'),
                 Tables\Columns\TextColumn::make('title_uk')->label('Заголовок'),
-                Tables\Columns\ToggleColumn::make('show_on_site')->label('Показывать на сайте'),
+                Tables\Columns\ToggleColumn::make('show_on_site')->label('Показывать на сайте')->sortable(),
             ])
+            ->reorderable('order_column')
+            ->defaultSort('order_column')
             ->filters([
                 //
             ])
